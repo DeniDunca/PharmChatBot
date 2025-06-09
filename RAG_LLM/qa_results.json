@@ -1,0 +1,436 @@
+[
+  {
+    "id": 1,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=7af4b5e9-f5bb-410c-8370-f74e04e7683b&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the full name of the drug ATRIPLA?",
+        "answer": "The full name of the drug ATRIPLA is **efavirenz, emtricitabine, and tenofovir disoproxil fumarate tablets**."
+      },
+      {
+        "question": "Which company manufactures ATRIPLA?",
+        "answer": "ATRIPLA is manufactured by Gilead Sciences, Inc."
+      },
+      {
+        "question": "What are the three active ingredients in ATRIPLA?",
+        "answer": "The three active ingredients in ATRIPLA are efavirenz (EFV), emtricitabine (FTC), and tenofovir disoproxil fumarate (TDF)."
+      },
+      {
+        "question": "When was ATRIPLA initially approved in the U.S.?",
+        "answer": "ATRIPLA was initially approved in the U.S. in 2006."
+      },
+      {
+        "question": "What is the recommended dosage of ATRIPLA for adults and pediatric patients weighing at least 40 kg?",
+        "answer": "The recommended dosage of ATRIPLA for adults and pediatric patients weighing at least 40 kg is one tablet once daily, taken orally on an empty stomach, preferably at bedtime."
+      },
+      {
+        "question": "What warning is given regarding patients coinfected with HIV-1 and HBV when discontinuing ATRIPLA?",
+        "answer": "When discontinuing ATRIPLA, patients coinfected with HIV-1 and HBV should be closely monitored for severe acute exacerbations of hepatitis B. This includes both clinical and laboratory follow-up for at least several months. If appropriate, initiation of anti-hepatitis B therapy may be warranted."
+      },
+      {
+        "question": "What should be done to monitor patients who discontinue ATRIPLA and are coinfected with HIV-1 and HBV?",
+        "answer": "Patients who discontinue ATRIPLA and are coinfected with HIV-1 and HBV should be closely monitored for hepatic function with both clinical and laboratory follow-up for at least several months. If appropriate, initiation of anti-hepatitis B therapy may be warranted."
+      },
+      {
+        "question": "What potential side effect is associated with the discontinuation of ATRIPLA in HBV and HIV-1 coinfected patients?",
+        "answer": "A potential side effect associated with the discontinuation of ATRIPLA in patients coinfected with hepatitis B virus (HBV) and HIV-1 is a severe acute exacerbation of HBV. Close monitoring of hepatic function is necessary for several months after discontinuation, and initiation of anti-hepatitis B therapy may be warranted if appropriate."
+      },
+      {
+        "question": "What class of drugs does efavirenz belong to?",
+        "answer": "Efavirenz belongs to the class of drugs known as non-nucleoside reverse transcriptase inhibitors (NNRTIs)."
+      },
+      {
+        "question": "What are the other two drug classes represented by emtricitabine and tenofovir disoproxil fumarate in ATRIPLA?",
+        "answer": "The other two drug classes represented by emtricitabine and tenofovir disoproxil fumarate in ATRIPLA are **HIV-1 nucleoside analog reverse transcriptase inhibitors**. Both emtricitabine (FTC) and tenofovir disoproxil fumarate (TDF) belong to this class."
+      }
+    ],
+    "last_updated": "2025-05-27T11:59:19.722812"
+  },
+  {
+    "id": 2,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=4338428e-43d4-4e02-ac9d-bd98e738a7da&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the active ingredient in APRETUDE?",
+        "answer": "The active ingredient in APRETUDE is cabotegravir."
+      }
+    ],
+    "last_updated": "2025-05-27T12:17:23.107016"
+  },
+  {
+    "id": 3,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=46ef8e2e-ae63-6a3c-e054-00144ff8d46c&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the mechanism of action of ISENTRESS?",
+        "answer": "The mechanism of action of ISENTRESS\u00ae (raltegravir) is as a human immunodeficiency virus integrase strand transfer inhibitor (HIV-1 INSTI). It works by inhibiting the integrase enzyme, which is essential for the replication of HIV-1. By blocking this enzyme, ISENTRESS prevents the integration of the viral DNA into the host cell's DNA, thereby reducing the spread of the virus within the body."
+      },
+      {
+        "question": "For what age group is ISENTRESS indicated for the treatment of HIV-1 infection?",
+        "answer": "ISENTRESS is indicated for the treatment of HIV-1 infection in patients **4 weeks of age and older**."
+      },
+      {
+        "question": "What is the recommended dosage of ISENTRESS for adults using the film-coated tablet?",
+        "answer": "The recommended dosage of ISENTRESS for adults using the film-coated tablet is 400 mg orally twice daily."
+      },
+      {
+        "question": "How should ISENTRESS be administered in relation to food consumption?",
+        "answer": "ISENTRESS can be administered with or without food. This applies to all formulations of the medication, including the film-coated tablets, chewable tablets, and the oral suspension."
+      },
+      {
+        "question": "What are the alternative formulations of ISENTRESS for patients who cannot swallow tablets?",
+        "answer": "For patients who cannot swallow tablets, ISENTRESS offers alternative formulations:\n\n1. **Chewable Tablets**: Available in 100 mg (scored) and 25 mg strengths.\n2. **For Oral Suspension**: A formulation provided in single-use packets of 100 mg.\n\nThese alternatives are particularly suitable for children or individuals with difficulty swallowing. The specific choice between chewable tablets or oral suspension may depend on the patient's age, weight, and ability to chew or swallow, as outlined in the dosing guidance."
+      },
+      {
+        "question": "What is the recommended dosage adjustment for adults when coadministered with rifampin?",
+        "answer": "When ISENTRESS (raltegravir) is coadministered with rifampin in adults, the recommended dosage adjustment is **800 mg twice daily**. This is an increase from the standard adult dosage of 400 mg twice daily due to rifampin's effect as a strong inducer of UGT1A1, which can reduce raltegravir plasma concentrations."
+      },
+      {
+        "question": "How is the dosage of ISENTRESS determined for children weighing between 3 kg and 25 kg?",
+        "answer": "For children weighing between 3 kg and 25 kg, the dosage of ISENTRESS is determined based on their weight. Specifically:\n\n- For patients weighing between 11 kg and 20 kg, either the chewable tablet or the formulation for oral suspension can be used, as specified in Table 2.\n- For patients weighing less than 11 kg (but at least 3 kg), the appropriate formulation and dosage should also follow the guidance provided in Table 2, likely involving the chewable tablet or oral suspension.\n\nThe exact dosing amounts for these weight categories are detailed in Table 2 of the prescribing information."
+      },
+      {
+        "question": "What are the available dosage forms and strengths of ISENTRESS?",
+        "answer": "The available dosage forms and strengths of ISENTRESS are as follows:\n\n1. **Film-Coated Tablets**: 400 mg.\n2. **Chewable Tablets**: 100 mg (scored) and 25 mg.\n3. **For Oral Suspension**: Single-use packet of 100 mg."
+      },
+      {
+        "question": "Are there any contraindications listed for ISENTRESS?",
+        "answer": "No, there are no contraindications listed for ISENTRESS."
+      },
+      {
+        "question": "What serious adverse reaction is mentioned in the warnings and precautions section of the prescribing information?",
+        "answer": "The serious adverse reaction mentioned in the warnings and precautions section of the prescribing information is severe, potentially life-threatening, and fatal skin reactions. This includes cases of Stevens-Johnson syndrome, hypersensitivity reaction, and toxic epidermal necrolysis."
+      }
+    ],
+    "last_updated": "2025-05-27T12:01:51.392277"
+  },
+  {
+    "id": 4,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=f8b2634b-ccd7-4a42-8db3-26ba9e9627e6&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the name of the vaccine discussed in the text?",
+        "answer": "The name of the vaccine discussed in the text is **ACAM2000**."
+      },
+      {
+        "question": "What diseases does ACAM2000 provide active immunization for?",
+        "answer": "ACAM2000 provides active immunization for the prevention of **smallpox** and **mpox** disease."
+      },
+      {
+        "question": "Who is the manufacturer of ACAM2000?",
+        "answer": "The manufacturer of ACAM2000 is Emergent Product Development Gaithersburg Inc."
+      },
+      {
+        "question": "What is the route of administration for ACAM2000?",
+        "answer": "The route of administration for ACAM2000 is percutaneous use by scarification."
+      },
+      {
+        "question": "What are some serious complications associated with ACAM2000?",
+        "answer": "Some serious complications associated with ACAM2000 include:\n\n1. **Myocarditis and pericarditis** - Suspect cases have been observed at a rate of 5.7 per 1000 primary vaccinees.\n2. **Encephalitis, encephalomyelitis, and encephalopathy** - These are neurological conditions that can lead to severe disability or permanent neurological damage.\n3. **Progressive vaccinia (vaccinia necrosum)** - A severe and potentially fatal condition where the vaccinia virus causes progressive skin lesions.\n4. **Generalized vaccinia** - A widespread rash caused by the vaccinia virus.\n5. **Severe vaccinial skin infections** - Serious infections of the skin related to the vaccine.\n6. **Erythema multiforme major**, including **Stevens-Johnson syndrome** - A severe skin reaction that can be life-threatening.\n7. **Eczema vaccinatum** - A serious complication in individuals with a history of eczema or other skin conditions, which can result in permanent sequelae or death.\n8. **Ocular vaccinia** - Accidental infection of the eye, which can lead to blindness.\n9. **Fetal death** - The vaccine may cause fetal infection, often resulting in stillbirth or death if administered to a pregnant individual.\n\nThese complications can occur after either primary vaccination or revaccination and may result in severe disability, permanent neurological damage, or death. Certain individuals, such as those with cardiac disease, immune deficiencies, skin conditions, or pregnancy, are at increased risk."
+      },
+      {
+        "question": "What is the initial U.S. approval year for ACAM2000?",
+        "answer": "The initial U.S. approval year for ACAM2000 is 2007."
+      },
+      {
+        "question": "What warning is highlighted in the prescribing information?",
+        "answer": "The highlighted warning in the prescribing information for ACAM2000 is about **serious complications** associated with the vaccine. These include:\n\n- **Myocarditis and pericarditis** (observed at a rate of 5.7 per 1000 primary vaccinees)\n- **Encephalitis, encephalomyelitis, encephalopathy**\n- **Progressive vaccinia, generalized vaccinia, severe vaccinial skin infections**\n- **Erythema multiforme major (including Stevens-Johnson syndrome)**\n- **Eczema vaccinatum** resulting in permanent sequelae or death\n- **Accidental eye infection (ocular vaccinia)** which can lead to blindness\n- **Fetal death** following vaccination\n\nThese risks may occur after either **primary vaccination or revaccination** and may result in **severe disability, permanent neurological damage, or death**. The risks are particularly increased in certain individuals, such as those with cardiac disease, immune deficiencies, skin conditions like eczema, infants under 12 months, and pregnant individuals. \n\nThe warning also notes that ACAM2000 is a **live vaccinia virus vaccine**, which can be transmitted to close contacts, exposing them to similar risks."
+      },
+      {
+        "question": "What recent major change was made to the indications and usage of ACAM2000?",
+        "answer": "The recent major change to the indications and usage of ACAM2000 was made in August 2024, when mpox disease was added to the list of conditions for which the vaccine is indicated. ACAM2000 is now indicated for active immunization for the prevention of both smallpox and mpox disease in individuals determined to be at high risk for smallpox or mpox infection."
+      },
+      {
+        "question": "What is the strength of ACAM2000 as per the dosage forms mentioned?",
+        "answer": "The strength of ACAM2000, as per the dosage forms mentioned, is approximately 0.0025 mL per single dose after reconstitution."
+      },
+      {
+        "question": "What is required before administering ACAM2000?",
+        "answer": "Before administering ACAM2000, the person administering the vaccine must be trained on the safe and effective administration of the vaccine. Additionally, the vaccine should only be given to individuals determined to be at high risk for smallpox or mpox infection. It is also important to review the full prescribing information for details on preparation, administration, and precautions."
+      }
+    ],
+    "last_updated": "2025-05-27T12:03:50.777943"
+  },
+  {
+    "id": 5,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=00680bea-d2fb-4362-ba67-e866b732e9ed&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the primary use of Ezetimibe and Simvastatin tablets according to the prescribing information?",
+        "answer": "The primary use of Ezetimibe and Simvastatin tablets, as stated in the prescribing information, is as an adjunct to diet to reduce elevated low-density lipoprotein cholesterol (LDL-C) in adults with primary hyperlipidemia, in adults and pediatric patients aged 10 years and older with heterozygous familial hypercholesterolemia (HeFH), and as an adjunct to other LDL-C lowering therapies to reduce LDL-C in adults with homozygous familial hypercholesterolemia (HoFH)."
+      },
+      {
+        "question": "Which patient groups are indicated for treatment with Ezetimibe and Simvastatin tablets?",
+        "answer": "Ezetimibe and Simvastatin tablets are indicated for the following patient groups:\n\n1. Adults with primary hyperlipidemia.\n2. Adults and pediatric patients aged 10 years and older with heterozygous familial hypercholesterolemia (HeFH).\n3. Adults with homozygous familial hypercholesterolemia (HoFH), as an adjunct to other LDL-C lowering therapies to reduce LDL-C."
+      },
+      {
+        "question": "What is the role of Simvastatin when used as part of Ezetimibe and Simvastatin tablets?",
+        "answer": "Simvastatin, when used as part of Ezetimibe and Simvastatin tablets, is indicated to reduce the risk of total mortality by reducing the risk of coronary heart disease death, non-fatal myocardial infarction, and stroke, as well as the need for coronary and non-coronary revascularization procedures in adults with established coronary heart disease, cerebrovascular disease, peripheral vascular disease, and/or diabetes who are at high risk of coronary heart disease events."
+      },
+      {
+        "question": "In what year was Ezetimibe and Simvastatin tablets initially approved in the U.S.?",
+        "answer": "Ezetimibe and Simvastatin tablets were initially approved in the U.S. in 2004."
+      },
+      {
+        "question": "What major changes were made to the prescribing information in February 2024?",
+        "answer": "In February 2024, the following major changes were made to the prescribing information for Ezetimibe and Simvastatin tablets:\n\n1. **Indications and Usage (1)**: Updated.\n2. **Dosage and Administration (2.1, 2.2, 2.3, 2.4, 2.5)**: Updated.\n3. **Contraindications, Pregnancy, and Lactation (4)**: Removed.\n4. **Warnings and Precautions (5.1, 5.2, 5.3)**: Updated."
+      },
+      {
+        "question": "What type of inhibitor is Ezetimibe?",
+        "answer": "Ezetimibe is a dietary cholesterol absorption inhibitor."
+      },
+      {
+        "question": "What cardiovascular risks does Simvastatin help reduce in adults?",
+        "answer": "Simvastatin, as a component of ezetimibe and simvastatin tablets, helps reduce the risk of total mortality by reducing the risk of coronary heart disease death, non-fatal myocardial infarction, and stroke in adults. It also reduces the need for coronary and non-coronary revascularization procedures in adults with established coronary heart disease, cerebrovascular disease, peripheral vascular disease, and/or diabetes who are at high risk of coronary heart disease events."
+      },
+      {
+        "question": "What is the recommended administration method for Ezetimibe and Simvastatin tablets?",
+        "answer": "The recommended administration method for Ezetimibe and Simvastatin tablets is to take them orally once daily in the evening, with or without food."
+      },
+      {
+        "question": "What additional therapies can Ezetimibe and Simvastatin tablets be used with for LDL-C reduction?",
+        "answer": "Ezetimibe and Simvastatin tablets can be used as an adjunct to other LDL-C lowering therapies to reduce LDL-C in adults with homozygous familial hypercholesterolemia (HoFH). However, the specific additional therapies are not detailed in the provided context. For more information on compatible LDL-C lowering therapies, refer to the full prescribing information or consult a healthcare provider."
+      },
+      {
+        "question": "What diseases or conditions qualify adults for Simvastatin treatment as part of the combination therapy?",
+        "answer": "Adults with the following diseases or conditions qualify for Simvastatin treatment as part of the combination therapy with Ezetimibe:\n\n- Established coronary heart disease\n- Cerebrovascular disease\n- Peripheral vascular disease\n- Diabetes\n\nThese patients are at high risk of coronary heart disease events and can benefit from the Simvastatin component of the combination therapy to reduce the risk of total mortality, coronary heart disease death, non-fatal myocardial infarction, stroke, and the need for coronary and non-coronary revascularization procedures."
+      }
+    ],
+    "last_updated": "2025-05-27T12:05:07.840913"
+  },
+  {
+    "id": 6,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=00dd9bbb-ee8b-f369-8cd1-6ce28925f118&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the name of the drug discussed in the provided text?",
+        "answer": "The name of the drug discussed in the provided text is **BIVIGAM**."
+      },
+      {
+        "question": "What company manufactures BIVIGAM?",
+        "answer": "BIVIGAM is manufactured by KEDRION BIOPHARMA, INC."
+      },
+      {
+        "question": "What is the active ingredient in BIVIGAM?",
+        "answer": "The active ingredient in BIVIGAM is human immunoglobulin G (IgG). It is a 10% liquid solution intended for intravenous infusion."
+      },
+      {
+        "question": "What is the primary indication for the use of BIVIGAM?",
+        "answer": "The primary indication for the use of BIVIGAM is the treatment of primary humoral immunodeficiency (PI)."
+      },
+      {
+        "question": "What are some risk factors associated with thrombosis when using BIVIGAM?",
+        "answer": "Some risk factors associated with thrombosis when using BIVIGAM include advanced age, prolonged immobilization, hypercoagulable conditions, a history of venous or arterial thrombosis, use of estrogens, indwelling vascular catheters, hyperviscosity, and cardiovascular risk factors."
+      },
+      {
+        "question": "What is the initial infusion rate for BIVIGAM in patients with primary humoral immunodeficiency?",
+        "answer": "The initial infusion rate for BIVIGAM in patients with primary humoral immunodeficiency is **0.5 mg/kg/min for the first 10 minutes**. If tolerated, the rate can be increased every 20 minutes by 0.8 mg/kg/min, up to a maximum of 6 mg/kg/min."
+      },
+      {
+        "question": "What is the maximum maintenance infusion rate for BIVIGAM if tolerated?",
+        "answer": "The maximum maintenance infusion rate for BIVIGAM, if tolerated, is 6 mg/kg/min."
+      },
+      {
+        "question": "What should be ensured in patients at risk of hyperviscosity before administering BIVIGAM?",
+        "answer": "Before administering BIVIGAM to patients at risk of hyperviscosity, it is important to ensure adequate hydration. Additionally, a baseline assessment of blood viscosity should be considered for these patients. Monitoring for signs and symptoms of thrombosis and assessing blood viscosity during treatment is also recommended."
+      },
+      {
+        "question": "What is the warning associated with immune globulin intravenous products like BIVIGAM?",
+        "answer": "The warning associated with immune globulin intravenous (IGIV) products like BIVIGAM includes the risk of **thrombosis** and **renal dysfunction or acute renal failure**. \n\nThrombosis may occur, particularly in patients with risk factors such as advanced age, prolonged immobilization, hypercoagulable conditions, history of venous or arterial thrombosis, use of estrogens, indwelling vascular catheters, hyperviscosity, and cardiovascular risk factors.\n\nRenal dysfunction and acute renal failure may occur, especially in predisposed patients. These complications are more common with IGIV products containing sucrose, which BIVIGAM does not contain. However, caution is still advised for patients at risk, and monitoring is recommended."
+      },
+      {
+        "question": "What distinguishes BIVIGAM from other IGIV products in terms of renal safety?",
+        "answer": "BIVIGAM distinguishes itself from other IGIV (Immune Globulin Intravenous) products in terms of renal safety because it does not contain sucrose. Renal dysfunction, acute renal failure, osmotic nephrosis, and even death have been reported in patients receiving IGIV products that contain sucrose, particularly in predisposed individuals. Since BIVIGAM is free of sucrose, it reduces this specific risk, making it a safer option for patients, especially those at risk of renal dysfunction or renal failure. Additionally, the prescribing information emphasizes the importance of administering BIVIGAM at the minimum dose and infusion rate practicable in at-risk patients and ensuring adequate hydration prior to administration to further mitigate renal risks."
+      }
+    ],
+    "last_updated": "2025-05-27T13:02:22.266350"
+  },
+  {
+    "id": 7,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=fccefc9c-ea90-47c1-8b4b-45f987b438ca&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is digoxin classified as in terms of drug type?",
+        "answer": "Digoxin is classified as a cardiac glycoside, a closely related group of drugs that have specific effects on the myocardium. It is also specifically referred to as a digitalis glycoside, derived from the plant Digitalis lanata."
+      },
+      {
+        "question": "From which plant is digoxin extracted?",
+        "answer": "Digoxin is extracted from the leaves of *Digitalis lanata*."
+      },
+      {
+        "question": "What are the two main components of glycosides like digoxin?",
+        "answer": "The two main components of glycosides like digoxin are:\n\n1. **Sugar**: This is the carbohydrate portion of the glycoside.\n2. **Cardenolide**: This is the steroid-like structure that forms the non-sugar portion of the molecule.\n\nTogether, these components make up the structure of digoxin, a cardiac glycoside used in the treatment of heart conditions."
+      },
+      {
+        "question": "What is the molecular weight of digoxin?",
+        "answer": "The molecular weight of digoxin is **780.95**."
+      },
+      {
+        "question": "What are the solubility characteristics of digoxin in water and ether?",
+        "answer": "Digoxin is practically insoluble in water and in ether."
+      },
+      {
+        "question": "In what dosage forms is digoxin supplied for oral administration?",
+        "answer": "Digoxin is supplied in the following dosage forms for oral administration:\n\n1. **Digoxin Tablets** - Available in strengths of 125 mcg (0.125 mg) and 250 mcg (0.25 mg).  \n2. **Digoxin Elixir (Pediatric)** - Available in equivalent doses of 62.5 mcg, 125 mcg, 250 mcg, and 500 mcg.  \n3. **Digoxin Solution in Capsules** - Available in equivalent doses of 50 mcg, 100 mcg, 200 mcg, and 400 mcg.  \n\nThese formulations are designed to provide varying levels of systemic availability and equivalent dosing options depending on the patient's needs and route of administration."
+      },
+      {
+        "question": "What inactive ingredients are included in the 0.250 mg digoxin tablet?",
+        "answer": "The 0.250 mg digoxin tablet contains the following inactive ingredients: colloidal silicon dioxide, croscarmellose sodium, lactose anhydrous, magnesium stearate, microcrystalline cellulose, and stearic acid."
+      },
+      {
+        "question": "What inactive ingredients are included in the 0.125 mg digoxin tablet?",
+        "answer": "The inactive ingredients in the 0.125 mg digoxin tablet are:\n\n- Colloidal silicon dioxide  \n- Croscarmellose sodium  \n- D&C yellow aluminum lake #10  \n- Lactose anhydrous  \n- Magnesium stearate  \n- Microcrystalline cellulose  \n- Stearic acid"
+      },
+      {
+        "question": "What is the chemical mechanism of action of digoxin?",
+        "answer": "Digoxin's chemical mechanism of action involves inhibiting **sodium-potassium ATPase**, an enzyme responsible for regulating the balance of sodium and potassium inside cells. This inhibition leads to an increase in the intracellular concentration of sodium, which in turn stimulates **sodium-calcium exchange**, resulting in an increased intracellular concentration of calcium. The increased calcium levels enhance the force and velocity of myocardial systolic contraction, contributing to its **positive inotropic action**. Additionally, digoxin has indirect effects on the cardiovascular system through its influence on the **autonomic nervous system**, including a **vagomimetic action** and **baroreceptor sensitization**, which help reduce sympathetic nervous system and renin-angiotensin system activity."
+      },
+      {
+        "question": "What enzyme does digoxin inhibit, and what is its physiological effect?",
+        "answer": "Digoxin inhibits **sodium-potassium ATPase**, an enzyme that regulates the quantity of sodium and potassium inside cells. \n\nThe physiological effect of this inhibition is an increase in the intracellular concentration of sodium, which subsequently leads to an increase in the intracellular concentration of calcium (via stimulation of sodium-calcium exchange). This cascade of events results in several pharmacologic consequences, including:\n\n1. **Positive inotropic action**: Increased force and velocity of myocardial systolic contraction.\n2. **Neurohormonal deactivating effect**: Decreased activation of the sympathetic nervous system and renin-angiotensin system.\n3. **Vagomimetic effect**: Slowing of the heart rate and decreased conduction velocity through the atrioventricular (AV) node.\n\nThese effects are responsible for digoxin's therapeutic actions in heart failure and atrial arrhythmias."
+      }
+    ],
+    "last_updated": "2025-05-27T13:03:26.376957"
+  },
+  {
+    "id": 8,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=a295fc1e-d82c-4f44-bc2d-a552bf594c98&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the initial U.S. approval year for CAVERJECT?",
+        "answer": "The initial U.S. approval year for CAVERJECT is 1981."
+      },
+      {
+        "question": "What is the primary use of CAVERJECT according to the prescribing information?",
+        "answer": "The primary use of CAVERJECT, as stated in the prescribing information, is **for the treatment of erectile dysfunction**."
+      },
+      {
+        "question": "What are the two dosage forms and strengths available for CAVERJECT?",
+        "answer": "The two dosage forms and strengths available for CAVERJECT are:\n\n1. 20 mcg/vial lyophilized powder in single-dose vials for reconstitution.\n2. 40 mcg/vial lyophilized powder in single-dose vials for reconstitution."
+      },
+      {
+        "question": "Why is it important to use a new vial for each dose of CAVERJECT?",
+        "answer": "It is important to use a new vial for each dose of CAVERJECT because the medication is provided as a lyophilized powder in single-dose vials for reconstitution. Using a new vial ensures proper sterility, accurate dosing, and safe administration of the medication. Reusing a vial could compromise the integrity of the drug and increase the risk of contamination or incorrect dosing."
+      },
+      {
+        "question": "Where should the first intracavernosal injections of CAVERJECT be administered?",
+        "answer": "The first intracavernosal injections of CAVERJECT should be administered in the healthcare provider\u2019s office. This allows for proper monitoring and dose titration for each patient."
+      },
+      {
+        "question": "What is the recommended starting dose of CAVERJECT for erectile dysfunction of vasculogenic, psychogenic, or mixed etiology?",
+        "answer": "The recommended starting dose of CAVERJECT for erectile dysfunction of vasculogenic, psychogenic, or mixed etiology is 2.5 mcg."
+      },
+      {
+        "question": "What is the recommended starting dose of CAVERJECT for erectile dysfunction of pure neurogenic etiology?",
+        "answer": "The recommended starting dose of CAVERJECT for erectile dysfunction of pure neurogenic etiology (such as in cases of spinal cord injury) is **1.25 mcg**."
+      },
+      {
+        "question": "How often can CAVERJECT be administered in terms of frequency per week?",
+        "answer": "CAVERJECT can be administered no more than 3 times weekly, with at least 24 hours between each dose."
+      },
+      {
+        "question": "What should patients on self-injection treatment with CAVERJECT do every 3 months?",
+        "answer": "Patients on self-injection treatment with CAVERJECT should visit the prescribing healthcare provider's office every 3 months to assess the efficacy and safety of the therapy."
+      },
+      {
+        "question": "What should healthcare providers do before initiating at-home use of CAVERJECT by a patient?",
+        "answer": "Healthcare providers should instruct the patient on proper use and assess that they are well trained in the self-injection technique prior to initiation of at-home use of CAVERJECT. Additionally, the first intracavernosal injections should be administered in the healthcare provider\u2019s office, where the dose can be titrated to the lowest effective dose for each patient."
+      }
+    ],
+    "last_updated": "2025-05-27T13:04:26.533340"
+  },
+  {
+    "id": 9,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=b8eb330a-a75b-46cb-b694-5be9327ed2eb&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the active ingredient in DOPRAM Injection?",
+        "answer": "The active ingredient in DOPRAM Injection is doxapram hydrochloride."
+      },
+      {
+        "question": "What is the pH range of DOPRAM Injection?",
+        "answer": "The pH range of DOPRAM Injection is 3.5 to 5."
+      },
+      {
+        "question": "What is the primary use of DOPRAM Injection?",
+        "answer": "The primary use of DOPRAM Injection is as a respiratory stimulant. It is indicated for use in situations such as postanesthesia respiratory depression or apnea (excluding cases due to muscle relaxant drugs), drug-induced central nervous system depression, and acute respiratory insufficiency associated with chronic obstructive pulmonary disease in hospitalized patients."
+      },
+      {
+        "question": "What is the chemical name of doxapram hydrochloride?",
+        "answer": "The chemical name of doxapram hydrochloride is **1-ethyl-4-[2-(4-morpholinyl)ethyl]-3,3-diphenyl-2-pyrrolidinone monohydrochloride, monohydrate**."
+      },
+      {
+        "question": "How is doxapram hydrochloride administered?",
+        "answer": "Doxapram hydrochloride is administered intravenously. It is provided as a clear, colorless, sterile, non-pyrogenic, aqueous solution for intravenous injection."
+      },
+      {
+        "question": "What is the molecular weight of doxapram hydrochloride monohydrochloride monohydrate?",
+        "answer": "The molecular weight of doxapram hydrochloride monohydrochloride monohydrate is **432.98**."
+      },
+      {
+        "question": "What is the onset of respiratory stimulation after administering doxapram hydrochloride?",
+        "answer": "The onset of respiratory stimulation following the recommended single intravenous injection of doxapram hydrochloride usually occurs in 20 to 40 seconds."
+      },
+      {
+        "question": "What is the duration of the effect of doxapram hydrochloride?",
+        "answer": "The duration of the effect of doxapram hydrochloride may vary from 5 to 12 minutes."
+      },
+      {
+        "question": "What type of response may occur following doxapram administration?",
+        "answer": "A pressor response may occur following doxapram administration. This effect is more noticeable in hypovolemic states, provided there is no impairment of cardiac function. The pressor effect results from improved cardiac output rather than peripheral vasoconstriction. Additionally, an increased release of catecholamines has been noted after doxapram administration."
+      },
+      {
+        "question": "Through which receptors does doxapram hydrochloride produce respiratory stimulation?",
+        "answer": "Doxapram hydrochloride produces respiratory stimulation mediated through the **peripheral carotid chemoreceptors**. As the dosage level increases, it also stimulates the central respiratory centers in the medulla, followed by progressive stimulation of other parts of the brain and spinal cord."
+      }
+    ],
+    "last_updated": "2025-05-27T13:05:15.179686"
+  },
+  {
+    "id": 10,
+    "link": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=fb97b3ec-29ee-4df1-aa99-c23e57a21228&type=pdf",
+    "qa_pairs": [
+      {
+        "question": "What is the name of the drug discussed in the text?",
+        "answer": "The name of the drug discussed in the text is **ALYGLO**."
+      },
+      {
+        "question": "Who is the manufacturer of ALYGLO?",
+        "answer": "The manufacturer of ALYGLO is GC Biopharma Corp."
+      },
+      {
+        "question": "What is the concentration of ALYGLO?",
+        "answer": "The concentration of ALYGLO is 10% IgG (100 mg/mL)."
+      },
+      {
+        "question": "What are the potential risks associated with ALYGLO according to the boxed warning?",
+        "answer": "According to the boxed warning, the potential risks associated with ALYGLO include **thrombosis**, **renal dysfunction**, **acute renal failure**, **osmotic nephropathy**, and **death** in predisposed patients. These risks are specifically highlighted for immune globulin intravenous (IGIV) products like ALYGLO. Additionally, factors that may increase the risk of thrombosis with IGIV products include advanced age, prolonged immobilization, hypercoagulable conditions, history of venous or arterial thrombosis, use of estrogens, indwelling vascular catheters, hyperviscosity, and cardiovascular risk factors."
+      },
+      {
+        "question": "Which patient factors increase the risk of thrombosis with ALYGLO?",
+        "answer": "The patient factors that increase the risk of thrombosis with ALYGLO include:\n\n- Advanced age  \n- Prolonged immobilization  \n- Hypercoagulable conditions  \n- History of venous or arterial thrombosis  \n- Use of estrogens  \n- Indwelling vascular catheters  \n- Hyperviscosity  \n- Cardiovascular risk factors"
+      },
+      {
+        "question": "What complications can arise from IGIV products in predisposed patients according to the text?",
+        "answer": "According to the text, complications that can arise from IGIV (immune globulin intravenous) products in predisposed patients include:\n\n1. **Renal dysfunction**\n2. **Acute renal failure**\n3. **Osmotic nephropathy**\n4. **Death**\n\nAdditionally, the text notes that renal dysfunction and acute renal failure are more common in patients receiving IGIV products that contain **sucrose**. Since **ALYGLO does not contain sucrose**, this particular risk may be reduced with its use."
+      },
+      {
+        "question": "Why is ALYGLO considered safer in terms of renal dysfunction compared to other IGIV products?",
+        "answer": "Error: 400, {\"status\":0,\"message\":\"rate limit exceeded. Pending topup payment failed\",\"data\":null,\"code\":400,\"ev\":-1}\n"
+      },
+      {
+        "question": "What precautions should be taken for patients at risk of thrombosis or renal dysfunction before administering ALYGLO?",
+        "answer": "Error: 400, {\"status\":0,\"message\":\"rate limit exceeded. Pending topup payment failed\",\"data\":null,\"code\":400,\"ev\":-1}\n"
+      },
+      {
+        "question": "What is the indication for ALYGLO?",
+        "answer": "Error: 400, {\"status\":0,\"message\":\"rate limit exceeded. Pending topup payment failed\",\"data\":null,\"code\":400,\"ev\":-1}\n"
+      },
+      {
+        "question": "What is the recommended dosage range for ALYGLO?",
+        "answer": "Error: 400, {\"status\":0,\"message\":\"rate limit exceeded. Pending topup payment failed\",\"data\":null,\"code\":400,\"ev\":-1}\n"
+      }
+    ],
+    "last_updated": "2025-05-27T13:06:00.642934"
+  }
+]

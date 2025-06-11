@@ -57,7 +57,6 @@ for filepath in pdf_files:
         print(f"Error parsing {filepath}: {e}")
 
 
-
 login(token=os.getenv("TOKEN"))
 
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-MiniLM-L3-v2")  
@@ -65,15 +64,17 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/paraph
 vectorstore = DocArrayInMemorySearch.from_documents(all_documents, embedding=embedding_model)
 print(vectorstore)
 
-template = """
-Answer the question based on the context below. If you can't
-answer the question, reply "I don't know".
+with open('RAG_LLM/prompt.txt', 'r') as file:
+    prompt_text = file.read()
+
+temp = """
+Answer the question based on the context below. 
 
 Context: {context}
 
 Question: {question}
 """
-
+template = temp + "\n" + prompt_text
 prompt = PromptTemplate.from_template(template)
 print(prompt.format(context="Here is some context", question="Here is a question"))
 

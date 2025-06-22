@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+
+<style>
+    body{
+  background: #18181B;
+}
+
+.main{
+  font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #FDFDFD;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+h3 {
+  font-size: 1.5rem;
+  background: #0c087c;
+  padding: 10px;
+  margin: 0px;
+  border: 1px solid #6b7280;}
+
+.extended-title{
+  width:100%;
+}
+
+#gsk-overview{
+  display:flex;
+}
+
+h4 {
+  font-size: 1rem;
+  background: #27272A;
+  padding: 10px;
+  margin: 0px;
+  border-bottom: 1px solid #6b7280;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3px;
+  color:#000000;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header > * {
+  margin-inline: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  padding:10px;
+  border: 1px solid #27272A;
+}
+
+.flex-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+progress[value] {
+  --background: #6D6D6D;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4px;
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin: 20px 0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #27272A;
+  background-color: #27272A;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size:1.2rem;
+}
+
+.tab div {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.tab button:hover {
+  background-color: #18181B;
+}
+
+.tab-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom:-5px;
+}
+
+.tab button.active {
+  background-color: #18181B;
+  border-top: 1px solid #6b7280;
+  border-bottom: 1px solid #18181B;
+  border-left: 1px solid #6b7280;
+  border-right: 1px solid #6b7280;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  background: #18181B;
+  border: 1px solid #27272A;
+  border-top: 1px solid #6b7280;
+  margin-top: -2px;
+}
+
+#gsk-advice {
+  display: flex;
+  justify-content: center;
+}
+
+#gsk-metrics{
+  width:100%;
+}
+
+#recommendation {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e1ce86;
+  color: #27272A;
+  width:95%;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  font-size: 12pt;
+}
+
+.separator {
+  margin: 20px 0;
+}
+
+.separator-border {
+  margin: 20px 0;
+  border-bottom: 1px solid #6b7280;
+}
+
+#gsk-rag{
+  margin: 32px 28px;
+  padding: 12px 24px;
+  background-color: #111516;
+}
+
+.section-container {
+  margin-bottom: 32px;
+}
+
+  .components-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 0 32px;
+  }
+
+    .component-card {
+      background-color: #14191B;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+
+    .component-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #B1B1B1;
+      padding-bottom: 8px;
+    }
+
+    .component-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+    }
+      
+      .text-green {
+        color: #04B543;
+      }
+      
+      .text-orange {
+        color: #E76E0F;
+      }
+      
+      .text-red {
+        color: #EA3829;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #464646;
+        color: #E6E6E6;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 150%;
+        left: 50%;
+        margin-left: -60px;
+        font-size: 12px;
+        padding: 12px;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+    .overall-card {
+      background-color: #026836;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+  
+    .overall-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #E6E6E6;
+      padding: 14px 0 8px 0;
+      text-transform: uppercase;
+     }
+  
+    .overall-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+      color: #E6E6E6;
+    }
+
+.section-title {
+  font-size: 12px;
+  color: #B1B1B1;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.section-content {
+  color: #E6E6E6;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.section-card {
+  background-color: #14191B;
+  border-radius: 16px;
+  padding: 28px 32px 32px 32px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.correctness-indicator{
+  padding: 20px;
+  border-radius: 50px;
+  font-size: 16pt;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  text-align: center;
+}
+
+.metric-title{
+  margin: -2px;
+  border-bottom: none;
+}
+
+.hist-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-around;
+  width: 85%;
+}
+
+.hist-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.tab-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#component-table{
+  width:50%;
+  margin-top: 10px;
+}
+
+.green{
+  background-color: #0a980a;
+}
+
+.orange {
+  background-color: #e5b62a;
+}
+
+.red {
+  background-color: #ba0e0e;
+}
+
+.progress-green {
+  --color: #04B543;
+}
+
+.progress-orange {
+  --color: #E76E0F;
+}
+
+.progress-red {
+  --color: #EA3829;
+}
+
+.corr-plot{
+  flex: 1;
+  padding-left: 2%;
+}
+
+.tooltip-text {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  background-color: #2d3d4c;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+#fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+#delay {
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 1s;
+}
+
+td {
+  position: relative;
+}
+
+tr:hover .tooltip-text {
+  display: block;
+  visibility: visible;
+}
+
+.tr:hover #fade {
+  opacity: 1;
+}
+
+.tr:hover #delay {
+  opacity: 1;
+}
+
+.callout {
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  background: #D9EDF9;
+  border: 3px solid #0088D1;
+  color: #272eb5;
+  position: relative;
+  max-width: 40rem;
+  border-radius: 10px;
+  margin-top: 10%;
+  font-size: 11pt;
+}
+
+.callout-icon {
+  content: "";
+
+  /* SVG via a data URI! */
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  position: absolute;
+  left: 0.9rem;
+  top: 1.1rem;
+}
+
+.callout-icon svg{
+  fill: #016ca7;
+}
+.callout p+p {
+  margin-top: 1em;
+}
+
+.callout a {
+  color: #272eb5;
+  font-weight: bold;
+}
+
+#gsk-logo {
+  padding-top: 10px;
+}
+</style>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.3.4.min.js" integrity="sha384-5QIrjQuyo4I/x6DK/Sau33lcA3hT2TCZGr9vbk+2ebd7Da6FnR1amdM+9B5xOrSf" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.4.min.js" integrity="sha384-tXTWPp/bAKa+K9RPuXh7DNvye0Mv+P+6y4rAMVy+pWapsnXg9UG7g20WZ0N4i28A" crossorigin="anonymous"></script>
+
+
+
+
+
+<div class="main">
+    <div id="gsk-rag" class="dark:text-white dark:bg-zinc-800 rounded border border-gray-500">
+        <div class="header border-b border-b-gray-500">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 30 15" fill="none" id="gsk-logo">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M22.504 1.549a4.196 4.196 0 0 1 2.573-.887v.002a3.783 3.783 0 0 1 2.706 1.086 3.783 3.783 0 0 1 1.126 2.69 3.771 3.771 0 0 1-1.126 2.69 3.77 3.77 0 0 1-2.706 1.085l-4.794.011-2.533 3.467L8.203 15l2.881-3.335a9.829 9.829 0 0 1-4.663-1.68H3.185L0 7.163h3.934C4.263 3.165 8.187 0 12.96 0c2.24 0 4.489.696 6.175 1.909a7.423 7.423 0 0 1 1.882 1.919 4.194 4.194 0 0 1 1.487-2.28ZM7.05 3.249l3.91 3.915h1.505L7.89 2.584a7.773 7.773 0 0 0-.84.665Zm4.079-2.008 5.923 5.923h1.503l-6.086-6.087c-.45.023-.898.078-1.34.164ZM4.574 8.226h-1.77l.784.693h1.584a8.454 8.454 0 0 1-.598-.693Zm9.479 0H5.984c1.469 1.477 3.656 2.377 5.977 2.422l2.092-2.422Zm-2.458 4.472 5.492-1.902 1.878-2.569h-3.508l-3.862 4.47Zm10.361-5.552h3.265a2.714 2.714 0 0 0 1.747-4.648 2.711 2.711 0 0 0-1.888-.773 3.127 3.127 0 0 0-3.123 3.124v2.297Zm3.659-3.73a.677.677 0 1 1-.134 1.348.677.677 0 0 1 .134-1.348Z"
+                        clip-rule="evenodd" />
+                </svg>
+            <h1>RAG Evaluation Toolkit</h1>
+        </div>
+        
+        <div class="section-container">
+            <div class="components-container">
+                
+                <div class="component-card">
+                    <div class="component-title">GENERATOR</div>
+                    <div class="component-value tooltip  text-orange ">
+                        52.0%
+                            <span class="tooltiptext" id="fade">The Generator is the LLM inside the RAG to generate the answers.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=52.0 class=" progress-orange ">52.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">RETRIEVER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Retriever fetches relevant documents from the knowledge base according to a user query.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">REWRITER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Rewriter modifies the user query to match a predefined format or to include the context from the chat history.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">ROUTING</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Router filters the query of the user based on his intentions (intentions detection).</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">KNOWLEDGE_BASE</div>
+                    <div class="component-value tooltip  text-orange ">
+                        61.36%
+                            <span class="tooltiptext" id="fade">The knowledge base is the set of documents given to the RAG to generate the answers. Its scores is computed differently from the other components: it is the difference between the maximum and minimum correctness score across all the topics of the knowledge base.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=61.36363636363637 class=" progress-orange ">61.36%</progress>
+                    </div>
+                </div>
+                
+                <div class="overall-card">
+                    <div class="overall-title">Overall Correctness Score</div>
+                    <div class="overall-value">52%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">RECOMMENDATION</div>
+                <span class="section-content">Focus on improving the Generator, as the low score on complex questions indicates it struggles with paraphrasing, and enhance the knowledge base quality related to Over-the-Counter and Prescription Drugs to ensure consistent performance across all topics.</span>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">CORRECTNESS BY TOPIC</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"818650f8-a780-493b-938d-94d4cf9f08db":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p2405","attributes":{"height":350,"width_policy":"max","x_range":{"type":"object","name":"DataRange1d","id":"p2407","attributes":{"start":0}},"y_range":{"type":"object","name":"FactorRange","id":"p2414","attributes":{"factors":["Benzodiazepine Risks and Effects","Others","Over-the-Counter and Prescription Drugs"]}},"x_scale":{"type":"object","name":"LinearScale","id":"p2415"},"y_scale":{"type":"object","name":"CategoricalScale","id":"p2416"},"title":{"type":"object","name":"Title","id":"p2412","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p2434","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p2402","attributes":{"selected":{"type":"object","name":"Selection","id":"p2403","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2404"},"data":{"type":"map","entries":[["correctness",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAATkAAAAAAAMBSQC+66KKLLkJA"},"shape":[3],"dtype":"float64","order":"little"}],["metadata_values",["Benzodiazepine Risks and Effects","Others","Over-the-Counter and Prescription Drugs"]],["colors",["#d3ec87","#006837","#a50026"]]]}}},"view":{"type":"object","name":"CDSView","id":"p2435","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2436"}}},"glyph":{"type":"object","name":"HBar","id":"p2431","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#14191B"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p2432","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p2433","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p2443","attributes":{"data_source":{"id":"p2402"},"view":{"type":"object","name":"CDSView","id":"p2444","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2445"}}},"glyph":{"type":"object","name":"HBar","id":"p2440","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p2441","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p2442","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p2453","attributes":{"visible":false,"data_source":{"type":"object","name":"ColumnDataSource","id":"p2447","attributes":{"selected":{"type":"object","name":"Selection","id":"p2448","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2449"},"data":{"type":"map","entries":[["x",[0]],["y",[0]]]}}},"view":{"type":"object","name":"CDSView","id":"p2454","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2455"}}},"glyph":{"type":"object","name":"Line","id":"p2450","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_width":2,"line_dash":[6]}},"nonselection_glyph":{"type":"object","name":"Line","id":"p2451","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.1,"line_width":2,"line_dash":[6]}},"muted_glyph":{"type":"object","name":"Line","id":"p2452","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.2,"line_width":2,"line_dash":[6]}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p2413","attributes":{"tools":[{"type":"object","name":"HoverTool","id":"p2427","attributes":{"renderers":"auto","tooltips":[["topic","@metadata_values"],["Correctness","@correctness{0.00}"]]}}]}},"toolbar_location":null,"left":[{"type":"object","name":"CategoricalAxis","id":"p2422","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p2423"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p2424"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2425"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p2417","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p2418","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p2419"},"axis_label":"Correctness (%)","axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2420"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p2421","attributes":{"axis":{"id":"p2417"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p2426","attributes":{"dimension":1,"axis":{"id":"p2422"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Span","id":"p2446","attributes":{"location":52.0,"dimension":"height","line_color":"#EA3829","line_width":2,"line_dash":[6]}},{"type":"object","name":"Legend","id":"p2456","attributes":{"border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p2457","attributes":{"label":{"type":"value","value":"Correctness on the entire Testset"},"renderers":[{"id":"p2453"}]}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}]}}';
+        const render_items = [{"docid":"818650f8-a780-493b-938d-94d4cf9f08db","roots":{"p2405":"b4b0e2b8-c4d8-4f5a-b6ec-03c54ee09d52"},"root_ids":["p2405"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="b4b0e2b8-c4d8-4f5a-b6ec-03c54ee09d52" data-root-id="p2405" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">KNOWLEDGE BASE OVERVIEW</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"61ed465f-0b5c-4cfc-a88e-12383094b019":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Tabs","id":"p2336","attributes":{"sizing_mode":"stretch_width","tabs":[{"type":"object","name":"TabPanel","id":"p2266","attributes":{"title":"Topic exploration","child":{"type":"object","name":"Figure","id":"p2219","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p2228","attributes":{"start":19.498785400390624,"end":26.05580825805664}},"y_range":{"type":"object","name":"Range1d","id":"p2229","attributes":{"start":-2.8175244331359863,"end":5.461627125740051}},"x_scale":{"type":"object","name":"LinearScale","id":"p2230"},"y_scale":{"type":"object","name":"LinearScale","id":"p2231"},"title":{"type":"object","name":"Title","id":"p2226","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p2259","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p2216","attributes":{"selected":{"type":"object","name":"Selection","id":"p2217","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2218"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"YCesQdq3tUFnoahB5OerQSfSp0HKh7JBC7WyQdEut0H7hrlBjruwQXAwqUE/aq5BE8C0QdkuqEG5P6NBjWuhQSyDoEFAwq9BBmOrQfJAq0EaX71Bb4CzQf+tt0G4/rVBomq7QXJHvEEd2a9BJGOiQXKUnUFXH6RBHraoQb6MsEE="},"shape":[32],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"/Q4iP19tiz9+T0Y/JaFdvnnOR7/V3Mm+bwW4vzfGQL9j6LU+cP8GPwe6qr83/3G/seL9PTEmtT+Bu2e95G6cP+Ei8D6//sU/VroLQB+3NkBNpxtAVhYTQFt0NUB3XWxAe9nxP1mfV0BAuldAG8E/QFv+EkDPFRNAtkVpQNmdgkA="},"shape":[32],"dtype":"float32","order":"little"}],["topic",["Benzodiazepine Medication Risks","Others","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Others","Others","Others","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Benzodiazepine Medication Risks","Others","Others","Others","Others","Pharmaceutical Products","Pharmaceutical Products","Pharmaceutical Products","Others","Pharmaceutical Products","Pharmaceutical Products","Others","Pharmaceutical Products","Pharmaceutical Products","Others","Others","Others","Others","Pharmaceutical Products"]],["id",[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,26,27,28,29,30,31,32,33]],["content",["CHLORDIAZEPOXIDE HYDROCHLORIDE AND CLIDINIUM BROMIDE -\\nchlordiazepoxide hydrochloride and clidinium bromide capsule \\n \\nAlembic Pharmaceuticals Inc.\\n----------\\nChlordiazepoxide Hydrochloride and Clidinium Bromide Capsules, USP\\nfor oral use\\nWARNING: RISKS FROM CONCOMITANT USE WITH OPIOIDS; ABUSE,\\nMISUSE, AND ADDICTION; and DEPENDENCE AND WITHDRAWAL\\nREACTIONS\\n \\nConcomitant use of benzodiazepines and opioids may result in\\nprofound sedation, respiratory depression, coma, and death. Reserve\\nconcomitan...","Each chlordiazepoxide hydrochloride and clidinium bromide capsule, USP contains the\\nactive ingredients 5 mg chlordiazepoxide hydrochloride, USP and 2.5 mg clidinium\\nbromide, USP. Each capsule also contains the inactive ingredients lactose monohydrate,\\ncorn starch, talc, titanium dioxide, FD&amp;C Green 3, D&amp;C Yellow 10 and gelatin. The empty\\nhard gelatin capsule shells are printed with edible black ink containing shellac, propylene\\nglycol,  black iron oxide and potassium hydroxide.\\nChlordiazepoxide ...","the maximum recommended human dose of 40 mg/day, based on body surface area)\\nexhibited major skeletal defects.\\nTwo series of reproduction experiments with clidinium bromide were carried out in rats,\\nemploying dosages of 2.5 and 10 mg/kg daily (1.2 and 4.9 times, respectively, the\\nmaximum recommended clinical dose of 20 mg/day, based on body surface area) in\\neach experiment. In the first experiment, clidinium bromide was administered for a 9-\\nweek interval prior to mating; no untoward effect on f...","Risks From Concomitant Use with Opioids\\nConcomitant use of benzodiazepines, including chlordiazepoxide hydrochloride and\\nclidinium bromide and opioids may result in profound sedation, respiratory depression,\\ncoma, and death. Because of these risks, reserve concomitant prescribing of these\\ndrugs -in patients for whom alternative treatment options are inadequate.\\nObservational studies have demonstrated that concomitant use of opioid analgesics and\\nbenzodiazepines increases the risk of drug-related...","those who have had longer durations of use.\\nAcute Withdrawal Reactions\\nThe continued use of benzodiazepines, including chlordiazepoxide hydrochloride and\\nclidinium bromide capsules, may lead to clinically significant physical dependence. Abrupt\\ndiscontinuation or rapid dosage reduction of chlordiazepoxide hydrochloride and\\nclidinium bromide capsules after continued use, or administration of flumazenil (a\\nbenzodiazepine antagonist) may precipitate acute withdrawal reactions, which can be\\nlife-thr...","as the MAO inhibitors and phenothiazines are to be used. The usual precautions in\\ntreating patients with impaired renal or hepatic function should be observed.\\nParadoxical reactions to chlordiazepoxide hydrochloride, e.g., excitement, stimulation\\nand acute rage, have been reported in psychiatric patients and should be watched for\\nduring chlordiazepoxide hydrochloride and clidinium bromide capsules therapy. The\\nusual precautions are indicated when chlordiazepoxide hydrochloride is used in the\\ntre...","Pregnancy\\n). Instruct patients to inform their healthcare provider if they are pregnant.\\nNursing\\nInstruct patients to notify their healthcare provider if they are breastfeeding or intend to\\nbreastfeed (see \\nPRECAUTIONS, Nursing Mothers\\n).\\nDrug Interactions\\nOpioids\\n \\nThe concomitant use of benzodiazepines, including chlordiazepoxide hydrochloride, a\\ncomponent of chlordiazepoxide hydrochloride and clidinium bromide capsules and\\nopioids increases the risk of respiratory depression because of action...","defects and miscarriage in clinically recognized pregnancies is 2% to 4% and 15% to\\n20%, respectively.\\nClinical Considerations\\nFetal/Neonatal Adverse Reactions\\nBenzodiazepines cross the placenta and may produce respiratory depression, hypotonia\\nand sedation in neonates. Monitor neonates exposed to chlordiazepoxide hydrochloride\\nand clidinium bromide capsules, which contains a benzodiazepine (chlordiazepoxide\\nhydrochloride), during pregnancy or labor for signs of sedation, respiratory depression,...","Reproduction studies in rats fed chlordiazepoxide hydrochloride, 10, 20 and 80 mg/kg\\ndaily (2.4, 4.8 and 19.4 times respectively, the maximum recommended clinical dose of\\n40 mg/day, based on body surface area), and bred through one or two matings showed\\nno adverse effects on lactation of the dams.\\nClidinium Bromide\\nThere are no data on the presence of clidinium in either human or animal milk, the\\neffects on the breastfed infant, or the effects on milk production. As with other\\nanticholinergic dr...","instances syncope has been reported.\\nOther adverse reactions reported during therapy with chlordiazepoxide hydrochloride\\ninclude isolated instances of skin eruptions, edema, minor menstrual irregularities,\\nnausea and constipation, extrapyramidal symptoms, as well as increased and decreased\\nlibido. Such side effects have been infrequent and are generally controlled with reduction\\nof dosage. Changes in EEG patterns (low-voltage fast activity) have been observed in\\npatients during and after chlordi...","Abuse and misuse of benzodiazepines often (but not always) involve the use of doses\\ngreater than the maximum recommended dosage and commonly involve concomitant\\nuse of other medications, alcohol, and/or illicit substances, which is associated with an\\nincreased frequency of serious adverse outcomes, including respiratory depression,\\noverdose, or death. Benzodiazepines are often sought by individuals who abuse drugs\\nand other substances, and by individuals with addictive disorders (see \\nWARNINGS\\n)...","seizures and suicidality.\\nProtracted Withdrawal Syndrome\\nProtracted withdrawal syndrome associated with benzodiazepines is characterized by\\nanxiety, cognitive impairment, depression, insomnia, formication, motor symptoms (e.g.,\\nweakness, tremor, muscle twitches), paresthesia, and tinnitus that persists beyond 4 to\\n6 weeks after initial benzodiazepine withdrawal. Protracted withdrawal symptoms may\\nlast weeks to more than 12 months. As a result, there may be difficulty in differentiating\\nwithdrawa...","overdosage. Anticholinergic drugs usually increase heart rate and blood pressure. In\\nmanaging benzodiazepine overdosage, employ general supportive measures, including\\nintravenous fluids, and airway management.\\nFlumazenil, a specific benzodiazepine receptor antagonist is indicated for the complete\\nor partial reversal of the sedative effects of benzodiazepines in the management of\\nbenzodiazepine overdosage. Use of flumazenil may increase the risk of seizures in\\nmixed overdosage with drugs that may...","on cap and \\u201c333\\u201d on body with black ink, filled with white to off white powder.\\nBottle of 100 capsules with child resistant closure, NDC 62332-744-31\\nBottle of 1000 capsules, NDC 62332-744-91\\nStore at 25\\u00b0C (77\\u00b0F); excursions permitted to 15\\u00b0 to 30\\u00b0C (59\\u00b0 to 86\\u00b0F) [see USP\\nControlled Room Temperature]. Protect from light.\\nKeep out of reach of children.\\nDispense in tight, light-resistant container as defined in USP/NF.\\nMedication Guide available at \\nhttps://www.alembicusa.com/medicationguide.aspx ...","bromide capsules, which can lead to overdose or death. \\n        o \\nSerious side effects including coma and death have happened in people\\nwho have abused or misused benzodiazepines, including chlordiazepoxide\\nhydrochloride and clidinium bromide capsules. \\nThese serious side effects may also\\ninclude delirium, paranoia, suicidal thoughts or actions, seizures, and difficulty breathing.\\nCall your healthcare provider or go to the nearest hospital emergency room\\nright away if you get any of these serio...","clidinium bromide capsules may harm others. Tell your healthcare provider if you have\\nabused or been dependent on alcohol, prescription medicines or street drugs. \\n\\u2022 It is not known if chlordiazepoxide hydrochloride and clidinium bromide capsule is safe\\nand effective in children. \\n \\nDo not take chlordiazepoxide hydrochloride and clidinium bromide capsules if\\nyou: \\n\\u2022 have glaucoma \\n\\u2022 have an enlarged prostate \\n\\u2022 have a blockage of your bladder that causes problems with urination \\n\\u2022 are allergic t...","hydrochloride and clidinium bromide capsules or suddenly stop taking chlordiazepoxide\\nhydrochloride and clidinium bromide capsules without talking with your healthcare\\nprovider. \\n\\u2022 If you take too much chlordiazepoxide hydrochloride and clidinium bromide capsules,\\ncall your healthcare provider or go to the nearest hospital emergency room right away. \\nWhat are the possible side effects of chlordiazepoxide hydrochloride and\\nclidinium bromide capsules? \\nChlordiazepoxide hydrochloride and clidinium ...","that is written for health professionals.\\nWhat are the ingredients in chlordiazepoxide hydrochloride and clidinium\\nbromide capsules? \\nActive ingredients:\\n chlordiazepoxide hydrochloride and clidinium bromide \\nInactive ingredients: \\nlactose monohydrate, corn starch, talc, titanium dioxide, FD&amp;C\\nGreen 3, D&amp;C Yellow 10 and gelatin. The empty hard gelatin capsule shells are printed\\nwith edible black ink containing shellac, propylene glycol,  iron oxide and black iron oxide\\nand potassium hydroxide. \\n...","CHLORDIAZEPOXIDE HYDROCHLORIDE AND CLIDINIUM BROMIDE  \\nchlordiazepoxide hydrochloride and clidinium bromide capsule\\nProduct Information\\nProduct Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:62332-744\\nRoute of Administration\\nORAL\\nDEA Schedule\\nCIV    \\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nCHLORDIAZEPOXIDE HYDROCHLORIDE\\n (UNII: MFM6K1XWDK)\\n(CHLORDIAZEPOXIDE - UNII:6RZ6XEZ3CR)\\nCHLORDIAZEPOXIDE\\nHYDROCHLORIDE\\n5 mg\\nCLIDINIUM BROMIDE\\n (UNII: 91ZQW5JF1Z) \\n(CLIDI...","Alembic Pharmaceuticals Inc.\\nPOTASSIUM HYDROXIDE\\n (UNII: WZH3C48M4T)\\n \\nPROPYLENE GLYCOL\\n (UNII: 6DC9Q167V3)\\n \\nProduct Characteristics\\nColor\\nGREEN (Light green opaque cap) , GREEN (Light green opaque body)\\nScore\\nno score\\nShape\\nCAPSULE\\nSize\\n16mm\\nFlavor\\nImprint Code\\nA;333\\nContains\\n    \\nPackaging\\n#\\nItem Code\\nPackage Description\\nMarketing Start\\nDate\\nMarketing End\\nDate\\n1\\nNDC:62332-744-\\n31\\n100 \\nin 1 BOTTLE; Type 0: Not a Combination\\nProduct\\n10/04/2023\\n2\\nNDC:62332-744-\\n91\\n1000 \\nin 1 BOTTLE; Type 0: Not ...","IVERMECTIN- ivermectin lotion \\n \\nWalgreen Company\\n----------\\nIvermectin\\nDrug Facts\\nActive ingredient\\nIvermectin 0.5%\\nPurpose\\nLice treatment\\nUse\\ntreats head lice\\nWarnings\\nFor external use only. Use only on the scalp.\\nDo not use\\non children under 6 months of age\\nnear the eyes\\ninside the nose, ear, mouth, or vagina\\non lice in eyebrows or eyelashes. See a doctor if lice are present in these areas.\\nAsk a doctor before use if you\\nhave any skin conditions or sensitivities\\nare pregnant or plan to become...","If pregnant or breastfeeding,\\n ask a health professional before use.\\nKeep out of reach of children.\\nIf swallowed, get medical help or contact a Poison Control Center (1-800-222-1222)\\nright away.\\nDirections\\nImportant: Read warnings before use\\nchildren 6 months of age to under 12 years of age: an adult should\\nsupervise use\\nadults and children 6 months of age and over:\\nInspect\\nall household members should be checked by another person for lice and/or nits\\n(eggs)\\nuse a magnifying glass in bright ligh...","this is a single use product. Discard tube after use.\\ndo not use again on the same person and same lice infestation without talking to a\\nhealthcare provider first\\nif infestation continues, see a doctor for other treatments\\nmachine wash any bedding and clothing used by anyone having lice. Machine wash at\\nhigh temperatures (150\\u00b0F) and tumble in a hot dryer for 20 minutes.\\nafter finishing treatment with lice medicine, check everyone in your family for lice\\nafter one week. Consider treatment for tho...","1\\nTUBE\\nNET WT 4 OZ (117 g)","IVERMECTIN","ivermectin lotion\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:0363-4230\\nRoute of Administration\\nTOPICAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nIvermectin\\n (UNII: 8883YP2R6D) \\n(Ivermectin - UNII:8883YP2R6D)\\nIvermectin\\n5 mg  in 1 g\\nInactive Ingredients\\nIngredient Name\\nStrength\\nbutylated hydroxyanisole\\n (UNII: REK4960K2U)\\n \\ncastor oil\\n (UNII: D5340Y2I9G)\\n \\ncetyl alcohol\\n (UNII: 936JST6JCN)\\n \\nANHYDROUS CITRIC ACID\\n (UNII: XF417D3PSL)\\n \\nc...","Walgreen Company\\nMarketing Information\\nMarketing\\nCategory\\nApplication Number or Monograph\\nCitation\\nMarketing Start\\nDate\\nMarketing End\\nDate\\nANDA\\nANDA210720\\n05/06/2020\\nLabeler - \\nWalgreen Company \\n(008965063)\\n \\nRevised: 1/2022","NYQUIL SEVERE COLD AND FLU- acetaminophen, dextromethorphan hydrobromide,\\ndoxylamine succinate, phenylephrine hydrochloride tablet, coated \\n \\nSavings Distributors LLC\\nDisclaimer: Most OTC drugs are not reviewed and approved by FDA, however they may be marketed if they\\ncomply with applicable regulations and policies. FDA has not evaluated whether this product complies.\\n----------\\nNyQuil Severe Cold &amp; Flu\\nDrug Facts\\nActive ingredients (in each caplet)\\nAcetaminophen 325 mg\\nDextromethorphan HBr 10 m...","Sore throat warning:\\n If sore throat is severe, persists for more than 2 days, is accompanied or\\nfollowed by fever, headache, rash, nausea, or vomiting, consult a doctor promptly.\\nDo not use\\n\\u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure\\nwhether a drug contains acetaminophen, ask a doctor or pharmacist.\\n\\u2022 if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for\\ndepression, psychiatric or emotional conditions...","children under 4 yrs \\ndo not use\\nOther Information\\n\\u2022 do not exceed 25\\u00baC\\nInactive ingredients\\ncrospovidone, D&amp;C Yellow No.10 Aluminum Lake, \\nFD&amp;C Blue No.1 Aluminum Lake, FD&amp;C Blue\\nNo.2 Aluminum Lake,FD&amp;C Yellow No.6 Aluminum Lake, flavor, magnesium stearate, microcrystalline\\ncellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, silicon dioxide,\\nstearic acid, talc, titanium dioxide\\nQuestions?\\n1-800-362-1683\\nPackage Label\\nNYQUIL SEVERE COLD AND FLU","acetaminophen, dextromethorphan hydrobromide, doxylamine succinate, phenylephrine hydrochloride tablet, coated\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:73097-009(NDC:37000-813)\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nACETAMINOPHEN\\n (UNII: 362O9ITL9D) \\n(ACETAMINOPHEN - UNII:362O9ITL9D)\\nACETAMINOPHEN\\n325 mg\\nDEXTROMETHORPHAN HYDROBROMIDE\\n (UNII: 9D2RTI9KYH)\\n(DEXTROMETHORPHAN - UNII:7355X3ROTS)\\nDEXTROMETHOR...","Savings Distributors LLC\\n3\\nNDC:73097-009-20\\n40 \\nin 1 CARTON\\n07/08/2019\\n3\\n2 \\nin 1 POUCH; Type 0: Not a Combination Product\\nMarketing Information\\nMarketing Category\\nApplication Number or Monograph Citation\\nMarketing Start Date\\nMarketing End Date\\nOTC monograph final\\npart341\\n07/08/2019\\nLabeler - \\nSavings Distributors LLC \\n(010527359)\\n \\nRevised: 7/2019"]],["color",{"type":"ndarray","array":["#1f77b4","#999","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#999","#999","#999","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#999","#999","#999","#999","#aec7e8","#aec7e8","#aec7e8","#999","#aec7e8","#aec7e8","#999","#aec7e8","#aec7e8","#999","#999","#999","#999","#aec7e8"],"shape":[32],"dtype":"object","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p2260","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2261"}}},"glyph":{"type":"object","name":"Scatter","id":"p2256","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p2257","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p2258","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p2227","attributes":{"logo":"grey","tools":[{"type":"object","name":"HoverTool","id":"p2242","attributes":{"renderers":"auto","tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Document Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}},{"type":"object","name":"PanTool","id":"p2243"},{"type":"object","name":"WheelZoomTool","id":"p2244","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p2245","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p2246","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p2251"},{"type":"object","name":"SaveTool","id":"p2252"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p2237","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p2238","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p2239"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2240"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p2232","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p2233","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p2234"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2235"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p2236","attributes":{"axis":{"id":"p2232"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p2241","attributes":{"dimension":1,"axis":{"id":"p2237"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p2262","attributes":{"title":"Knowledge Base Tospics","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p2263","attributes":{"label":{"type":"value","value":"Benzodiazepine Medication Risks"},"renderers":[{"id":"p2259"}],"index":0}},{"type":"object","name":"LegendItem","id":"p2264","attributes":{"label":{"type":"value","value":"Others"},"renderers":[{"id":"p2259"}],"index":1}},{"type":"object","name":"LegendItem","id":"p2265","attributes":{"label":{"type":"value","value":"Pharmaceutical Products"},"renderers":[{"id":"p2259"}],"index":18}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}},{"type":"object","name":"TabPanel","id":"p2335","attributes":{"title":"Failures","child":{"type":"object","name":"Figure","id":"p2271","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p2280","attributes":{"start":19.498785400390624,"end":26.05580825805664}},"y_range":{"type":"object","name":"Range1d","id":"p2281","attributes":{"start":-2.8175244331359863,"end":5.461627125740051}},"x_scale":{"type":"object","name":"LinearScale","id":"p2282"},"y_scale":{"type":"object","name":"LinearScale","id":"p2283"},"title":{"type":"object","name":"Title","id":"p2278","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p2310","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p2267","attributes":{"selected":{"type":"object","name":"Selection","id":"p2268","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2269"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"2S6oQR3Zr0H7hrlBVx+kQQZjq0HRLrdB/623QeTnq0G5P6NBHraoQRPAtEFvgLNBjWuhQRpfvUEsg6BB8kCrQWAnrEEkY6JBvoywQXJHvEELtbJBZ6GoQSfSp0Hat7VByoeyQQ=="},"shape":[25],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"MSa1P0C6V0Bj6LU+zxUTQFa6C0A3xkC/W3Q1QCWhXb6Bu2e9tkVpQLHi/T1WFhNA5G6cP02nG0DhIvA+H7c2QP0OIj8bwT9A2Z2CQFmfV0BvBbi/fk9GP3nOR79fbYs/1dzJvg=="},"shape":[25],"dtype":"float32","order":"little"}],["topic",["Others","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Over-the-Counter and Prescription Drugs","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Others","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Over-the-Counter and Prescription Drugs","Others","Over-the-Counter and Prescription Drugs","Others","Over-the-Counter and Prescription Drugs","Over-the-Counter and Prescription Drugs","Over-the-Counter and Prescription Drugs","Benzodiazepine Risks and Effects","Benzodiazepine Risks and Effects","Benzodiazepine Risks and Effects","Benzodiazepine Risks and Effects","Benzodiazepine Risks and Effects"]],["correctness",[true,false,true,true,false,true,true,true,false,false,false,true,false,false,true,false,true,true,false,false,true,false,true,false,true]],["questions",["Considering the potential risks associated with central nervous system depressants, what are the specific dangers of combining chlordiazepoxide hydrochloride and clidinium bromide capsules with either opioids or alcohol, and under what circumstances should one seek emergency assistance?","Considering the application number ANDA210720, could you specify the exact date on which the marketing efforts for this product commenced, and ensure that your response is based solely on the information provided by Walgreen Company?","Considering the lack of data on clidinium presence in milk and potential anticholinergic effects, what adverse effects should be monitored in breastfed infants when the mother is taking chlordiazepoxide hydrochloride and clidinium bromide?","Considering the recommended storage conditions, what is the maximum temperature that should not be exceeded when storing Nyquil Severe Cold and Flu, especially if it is stored in a location prone to temperature fluctuations?","In the prescription medication chlordiazepoxide hydrochloride and clidinium bromide capsule, what are the active ingredients along with their respective strengths, and how do these strengths compare to the inactive ingredients listed?","Considering the clinical considerations and available data, what are the potential adverse effects or risks that neonates might face if exposed to chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy, and how should these neonates be monitored and managed?","If the lice infestation persists despite using the product as directed, including following all post-treatment steps like washing bedding and clothing at high temperatures, what is the recommended course of action before considering another application?","Considering the potential for profound sedation and respiratory depression, what are the specific dangers of using chlordiazepoxide hydrochloride and clidinium bromide together with opioids, and how should these risks be managed if alternative treatments are insufficient?","Under what circumstances might misuse or abuse of chlordiazepoxide hydrochloride and clidinium bromide capsules result in severe side effects, and what are these potential effects?","Could you detail the active ingredients along with their respective strengths in the coated tablet product, ensuring to include the exact milligram amounts for each component as specified in the product information?","Considering the increased sensitivity of elderly patients to medications, what is the advised starting dosage for chlordiazepoxide hydrochloride and clidinium bromide capsules, and how should the dosage be adjusted over time to avoid adverse effects such as ataxia or oversedation?","In the event that the product is accidentally ingested, what immediate actions should be taken, considering that the product is intended for treating lice and nits?","Under what specific health conditions or circumstances should one avoid taking chlordiazepoxide hydrochloride and clidinium bromide capsules, especially considering any potential allergic reactions or pre-existing medical issues?","Under what specific conditions and for which groups of individuals should the use of Ivermectin lotion be avoided or approached with caution, considering potential risks and warnings?","In the event of an overdose of chlordiazepoxide hydrochloride and clidinium bromide capsules, what immediate actions should you take, considering that you cannot drive or operate machinery due to the medication&#x27;s effects?","Under the condition that the capsules are light green with no score and measure 16mm, what is the specific imprint code found on the capsules produced by Alembic Pharmaceuticals Inc.?","Considering the potential for profound sedation and respiratory depression, what are the inherent dangers of using chlordiazepoxide hydrochloride and clidinium bromide capsules simultaneously with opioids, especially if alternative treatments are insufficient?","Could you enumerate the active ingredients in NyQuil Severe Cold &amp; Flu caplets, including their specific purposes, while also considering any warnings or restrictions related to their usage?","Under what specific conditions or regulatory category did Savings Distributors LLC initiate the marketing of their product, and what is the exact start date of this marketing phase?","In the context of the ivermectin lotion, could you identify the active ingredient and specify its concentration, considering the lotion is applied topically and is classified as a human OTC drug?","If a patient is either pregnant or breastfeeding while taking chlordiazepoxide hydrochloride and clidinium bromide capsules, what specific actions should they undertake, considering the potential risks and the lack of clear data on birth defects?","Under what specific medical conditions or patient sensitivities should one avoid taking chlordiazepoxide hydrochloride and clidinium bromide capsules, considering potential interactions with existing health issues?","Considering the documented effects on neonates, what are the specific risks and potential complications associated with the use of chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy, especially in the later stages?","In the formulation of each chlordiazepoxide hydrochloride and clidinium bromide capsule, can you specify the active ingredients and their respective quantities, while also considering any additional substances present in the capsule?","What critical information must be conveyed to patients regarding the potential risks and necessary precautions when using chlordiazepoxide hydrochloride and clidinium bromide capsules, especially concerning abuse, withdrawal, and interactions with opioids or other CNS depressants?"]],["agent_answer",["Combining chlordiazepoxide hydrochloride and clidinium bromide capsules with opioids or alcohol can lead to dangerous central nervous system depression. This can result in slowed breathing, dizziness, confusion, and extreme sedation, potentially leading to overdose or even death.\\n\\nSpecific dangers of combining these medications include an increased risk of respiratory depression, coma, and overdose. The combination can also increase the sedative effects of each medication, leading to a higher likelihood of accidents or injuries.\\n\\nIf someone is experiencing symptoms such as difficulty breathing, extreme drowsiness, confusion, or loss of consciousness after combining chlordiazepoxide hydrochloride and clidinium bromide capsules with opioids or alcohol, it is crucial to seek emergency assistance immediately. These symptoms may indicate a life-threatening overdose and require prompt medical attention.","I&#x27;m sorry, but as an AI language model, I do not have real-time access to specific information or databases such as Walgreen Company&#x27;s records. I recommend contacting Walgreen Company directly or referring to their official announcements for the most accurate and up-to-date information regarding the marketing efforts for the product associated with application number ANDA210720.","While there is limited data on the presence of clidinium in breast milk and its potential anticholinergic effects on breastfeeding infants, it is important to monitor for potential adverse effects in infants whose mothers are taking chlordiazepoxide hydrochloride and clidinium bromide. Some potential adverse effects to monitor for in breastfed infants include:\\n\\n1. Excessive drowsiness or sedation: Chlordiazepoxide is a sedative-hypnotic medication that can cause drowsiness and sedation. Monitoring for excessive drowsiness or difficulty waking the infant may be necessary.\\n\\n2. Changes in feeding patterns: Anticholinergic medications like clidinium can affect gastrointestinal motility and may lead to changes in the infant&#x27;s feeding patterns. Monitoring for changes in appetite, feeding difficulties, or gastrointestinal issues is important.\\n\\n3. Irritability or agitation: Anticholinergic medications can sometimes cause central nervous system side effects such as irritability or agitation in infants. Monitoring for changes in the infant&#x27;s mood or behavior is important.\\n\\n4. Constipation or dry mouth: Anticholinergic medications can cause side effects such as constipation and dry mouth. Monitoring for these symptoms in the infant&#x27;s gastrointestinal and oral health is important.\\n\\n5. Blurred vision or eye problems: Anticholinergic medications can affect vision and may cause blurred vision or other eye problems. Monitoring for changes in the infant&#x27;s eye health or visual behavior is important.\\n\\nIt is important for healthcare providers to closely monitor breastfeeding infants whose mothers are taking chlordiazepoxide and clidinium, and to promptly address any potential adverse effects that may arise.","The maximum temperature that should not be exceeded when storing Nyquil Severe Cold and Flu is typically around 25 degrees Celsius (77 degrees Fahrenheit). However, it is important to check the specific storage instructions on the product packaging for the most accurate information. Additionally, if the location where the Nyquil is being stored is prone to temperature fluctuations, it is advisable to try to keep the medication in a stable environment to maintain its effectiveness.","The active ingredients in the medication chlordiazepoxide hydrochloride and clidinium bromide capsule are:\\n\\n1. Chlordiazepoxide hydrochloride: Strength varies, typically between 5 mg to 25 mg per capsule\\n2. Clidinium bromide: Strength typically 2.5 mg per capsule\\n\\nThe strengths of the active ingredients are carefully measured to achieve the desired therapeutic effect while minimizing potential side effects. Inactive ingredients, on the other hand, serve as fillers, binders, and coatings for the medication and do not have any therapeutic effects. These inactive ingredients are usually listed in much smaller quantities compared to the active ingredients.","Neonates exposed to chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy may be at risk for potential adverse effects such as respiratory depression, central nervous system depression, sedation, hypotonia, and feeding difficulties. These medications can also cross the placental barrier and may lead to drug dependence and withdrawal symptoms in neonates.\\n\\nTo monitor and manage neonates exposed to these medications during pregnancy, healthcare providers should closely observe the newborns for signs of respiratory depression, hypotonia, poor feeding, and any other concerning symptoms. Neonates may require monitoring in a neonatal intensive care unit (NICU) and supportive care such as respiratory support, intravenous fluids, and monitoring of vital signs. In cases of drug dependence and withdrawal symptoms, gradual tapering of the medication may be necessary along with other medications to alleviate withdrawal symptoms.\\n\\nIt is essential for healthcare providers to communicate with parents about the potential risks and monitor neonates closely to ensure early detection and appropriate management of any adverse effects. Consulting with a neonatologist and other specialists may also be beneficial in managing neonates exposed to chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy.","If the lice infestation persists despite following all post-treatment steps as directed, the recommended course of action before considering another application would be to consult a healthcare professional, such as a doctor or pharmacist. They may be able to provide further guidance on alternative treatment options or suggest a stronger or different type of lice treatment. They can also help determine if there are any underlying issues contributing to the ongoing infestation.","When chlordiazepoxide hydrochloride and clidinium bromide are used together with opioids, there is an increased risk of profound sedation and respiratory depression. This can lead to dangerous levels of central nervous system depression, which can result in decreased heart rate, low blood pressure, and potentially fatal respiratory failure.\\n\\nTo manage these risks, it is important to closely monitor patients for signs of sedation and respiratory depression, such as slow or shallow breathing, confusion, or extreme drowsiness. Dose adjustments may be necessary to reduce the risk of these side effects, and patients should be counseled on the importance of not taking more opioids or sedatives than prescribed.\\n\\nIf alternative treatments are insufficient, it may be necessary to consider other options, such as non-opioid pain management techniques or different combinations of medications that do not carry the same risks of respiratory depression. In some cases, it may be necessary to consult with a pain management specialist or palliative care team to develop a safe and effective treatment plan for the patient.","Misuse or abuse of chlordiazepoxide hydrochloride and clidinium bromide capsules can result in severe side effects when taken in higher doses than prescribed or for longer periods of time than recommended. These potential effects include severe drowsiness, confusion, respiratory depression, overdose, and even death. Additionally, misuse or abuse of these capsules can lead to physical and psychological dependence, as well as withdrawal symptoms when trying to stop or reduce intake abruptly. It is important to always follow the prescribed dosage and duration of treatment to avoid these severe side effects.","I&#x27;m sorry, as an AI text-based assistant, I don&#x27;t have specific product information. Please refer to the product label or consult with a healthcare professional or pharmacist for detailed information on the active ingredients and their respective strengths in the coated tablet product, including the exact milligram amounts for each component.","The advised starting dosage for chlordiazepoxide hydrochloride and clidinium bromide capsules in elderly patients is typically lower than in younger adults. A common starting dose could be one capsule taken two to four times daily, but this should be determined by a healthcare provider based on the individual&#x27;s specific health conditions and needs.\\n\\nTo avoid adverse effects such as ataxia or oversedation, the dosage should be carefully monitored and adjusted over time. It is recommended to start with the lowest effective dose and gradually increase it as needed while closely monitoring for any signs of adverse effects. If ataxia or oversedation occurs, the dosage should be reduced or the medication may need to be discontinued.\\n\\nRegular follow-up appointments with a healthcare provider are essential to ensure that the medication is being well-tolerated and is effective in managing the symptoms. Adjustments to the dosage should always be made under the guidance of a healthcare professional to minimize the risk of adverse effects in elderly patients.","If the product intended for treating lice and nits is accidentally ingested, immediate actions should include:\\n- Contacting a healthcare professional or poison control center for guidance on potential risks and appropriate steps to take.\\n- Providing the healthcare professional or poison control center with as much information as possible about the product ingested, including its ingredients and strength.\\n- Monitoring for symptoms of poisoning such as nausea, vomiting, dizziness, or difficulty breathing.\\n- Do not induce vomiting unless directed by a healthcare professional.\\n- Keep the product container or packaging on hand for reference.\\n\\nIt is important to seek medical advice promptly in case of accidental ingestion of any product, especially one intended for external use such as lice and nit treatments.","One should avoid taking chlordiazepoxide hydrochloride and clidinium bromide capsules if they have a known allergy to either of the medications or to other benzodiazepines or anticholinergic medications. These capsules should also be avoided in individuals with a history of glaucoma, urinary retention, severe liver disease, severe respiratory insufficiency, or porphyria. Additionally, caution should be taken in individuals with a history of substance abuse, depression, or other mental health disorders, as these medications can exacerbate or interact with these conditions. It is important to consult with a healthcare provider before taking chlordiazepoxide hydrochloride and clidinium bromide capsules, especially if you have any pre-existing medical issues or are taking other medications.","The use of Ivermectin lotion should be avoided or approached with caution under the following specific conditions and for certain groups of individuals:\\n\\n1. Individuals with a known allergy or hypersensitivity to Ivermectin or any of the ingredients in the lotion should avoid its use to prevent allergic reactions.\\n\\n2. Pregnant or breastfeeding women should use Ivermectin lotion with caution, as its safety in these groups has not been well-studied and potential risks to the fetus or infant cannot be ruled out.\\n\\n3. Children under the age of five should generally avoid using Ivermectin lotion, as they may be more sensitive to its effects and at higher risk of adverse reactions.\\n\\n4. Individuals with compromised immune systems, such as those with HIV/AIDS or undergoing chemotherapy, should use Ivermectin lotion with caution, as they may be at higher risk of experiencing adverse effects due to their weakened immune response.\\n\\n5. Individuals with a history of neurological disorders or liver dysfunction should also approach the use of Ivermectin lotion with caution, as it may worsen these conditions or lead to additional complications.\\n\\nIt is important for individuals to discuss their medical history and any potential risks with their healthcare provider before using Ivermectin lotion to ensure safe and effective use of the medication.","If you suspect an overdose of chlordiazepoxide hydrochloride and clidinium bromide capsules and you are unable to drive or operate machinery due to the medication&#x27;s effects, you should immediately call emergency services for help. Do not attempt to treat the overdose on your own as it can be life-threatening. Stay calm and provide as much information as possible to the emergency services personnel. They will be able to provide you with guidance on how to proceed and ensure that you receive the necessary medical attention as quickly as possible.","Without specific information about the medication produced by Alembic Pharmaceuticals Inc., it is not possible to determine the specific imprint code found on their capsules. The imprint code on a medication is unique to that specific drug and dosage, so without further information, it is not possible to provide an answer.","Using chlordiazepoxide hydrochloride and clidinium bromide capsules simultaneously with opioids can greatly increase the risk of profound sedation and respiratory depression. These medications act on the central nervous system and can suppress breathing function, especially when taken together. \\n\\nThe dangers of combining these medications are magnified when alternative treatments are deemed insufficient because there may be limited options for managing pain or other symptoms. Additionally, the risk of overdose increases when opioids are combined with other central nervous system depressants like chlordiazepoxide. \\n\\nOverall, the inherent dangers of using these medications together include a higher likelihood of experiencing severe side effects, such as unconsciousness, difficulty breathing, or even death. It is crucial to speak with a healthcare provider before taking chlordiazepoxide and clidinium bromide capsules with opioids to ensure the safest and most effective treatment plan.","NyQuil Severe Cold &amp; Flu caplets contain the following active ingredients and their specific purposes:\\n\\n1. Acetaminophen: a pain reliever and fever reducer.\\n2. Dextromethorphan HBr: a cough suppressant.\\n3. Doxylamine succinate: an antihistamine to relieve sneezing, runny nose, and other cold symptoms.\\n4. Phenylephrine HCl: a decongestant to reduce nasal congestion.\\n\\nWarnings and restrictions related to the usage of NyQuil Severe Cold &amp; Flu caplets include:\\n- Do not take more than the recommended dose to avoid overdose.\\n- Do not use with other products containing acetaminophen to prevent liver damage.\\n- Individuals with certain medical conditions (such as liver disease, alcohol dependence, or glaucoma) should consult a doctor before using this medication.\\n- Use caution when driving or operating machinery as drowsiness may occur.\\n- Avoid consuming alcohol while taking this medication as it can increase the risk of liver damage and other side effects.","Savings Distributors LLC initiated the marketing of their product under the specific condition or regulatory category of a Partnership Agreement with a financial institution. The exact start date of this marketing phase was January 15, 2020.","The active ingredient in ivermectin lotion is, unsurprisingly, ivermectin. In a topical lotion form that is classified as a human OTC drug, the concentration of ivermectin typically ranges from 0.5% to 1%.","Patients who are pregnant or breastfeeding should consult with their healthcare provider before taking chlordiazepoxide hydrochloride and clidinium bromide capsules. It is important to weigh the potential risks to the fetus or infant against the benefits of taking the medication. If possible, alternative treatments should be considered.\\n\\nIf the healthcare provider determines that the benefits of taking the medication outweigh the risks, the patient should follow their provider&#x27;s instructions closely. They should also closely monitor themselves and their baby for any potential side effects or complications.\\n\\nOverall, pregnant or breastfeeding individuals should take caution when taking chlordiazepoxide hydrochloride and clidinium bromide capsules due to the lack of clear data on potential risks and birth defects. Consulting with a healthcare provider is essential in making informed decisions about the best course of action.","One should avoid taking chlordiazepoxide hydrochloride and clidinium bromide capsules in patients with the following medical conditions or sensitivities:\\n- Glaucoma: Chlordiazepoxide can increase intraocular pressure, which can worsen the symptoms of glaucoma.\\n- Myasthenia gravis: Chlordiazepoxide can exacerbate muscle weakness and respiratory depressant effects in patients with myasthenia gravis.\\n- Severe liver disease: Both chlordiazepoxide and clidinium are metabolized in the liver, so patients with severe liver disease may not be able to metabolize these drugs properly, leading to increased risk of toxicity.\\n- Severe kidney disease: Patients with severe kidney disease may not be able to excrete chlordiazepoxide and clidinium properly, leading to an increased risk of toxicity.\\n- Elderly patients: Elderly patients may be more sensitive to the sedative effects of chlordiazepoxide and may be at a higher risk of falls and cognitive impairment.\\n- Patients with a history of drug or alcohol abuse: Chlordiazepoxide is a benzodiazepine and can be addictive in patients with a history of substance abuse.\\n- Patients taking other central nervous system depressants: Chlordiazepoxide can enhance the effects of other central nervous system depressants, such as alcohol or opioids, increasing the risk of respiratory depression and overdose.","Chlordiazepoxide hydrochloride, a benzodiazepine, can lead to potential risks and complications when used during pregnancy, especially in the later stages. Some specific risks include:\\n\\n1. Birth defects: Studies have shown that benzodiazepines like chlordiazepoxide hydrochloride can increase the risk of congenital malformations in fetuses when taken during pregnancy, particularly in the first trimester.\\n\\n2. Neonatal withdrawal syndrome: Babies born to mothers who have been taking benzodiazepines during pregnancy can experience withdrawal symptoms such as irritability, feeding difficulties, and respiratory problems after birth.\\n\\n3. Decreased muscle tone: Neonates exposed to benzodiazepines in utero may have decreased muscle tone, which can affect their ability to breastfeed and thrive in the early days of life.\\n\\n4. Respiratory depression: Benzodiazepines can depress the respiratory system in both mothers and their unborn infants, leading to difficulties in breathing and oxygenation.\\n\\n5. Developmental delays: There is some evidence to suggest that exposure to benzodiazepines during pregnancy may be associated with developmental delays and cognitive impairments in children.\\n\\nTherefore, it is essential for pregnant women to consult with their healthcare providers before using chlordiazepoxide hydrochloride and clidinium bromide capsules to weigh the potential risks and benefits and explore alternative treatment options. It is crucial to closely monitor both the mother and the baby during pregnancy and after birth to ensure their health and well-being.","The active ingredients in each chlordiazepoxide hydrochloride and clidinium bromide capsule are chlordiazepoxide hydrochloride and clidinium bromide. The quantities of these active ingredients may vary depending on the specific formulation of the capsule.\\n\\nIn addition to the active ingredients, there may also be other substances present in the capsule. These may include inactive ingredients such as fillers, binders, disintegrants, lubricants, and colorants. The specific composition of these additional substances will depend on the formulation of the capsule and the manufacturer.","Patients must be informed about the potential risks associated with chlordiazepoxide hydrochloride and clidinium bromide capsules, particularly regarding abuse, withdrawal, and interactions with other central nervous system (CNS) depressants, such as opioids. It is crucial for patients to understand that these capsules can be habit-forming and should only be used as prescribed by a healthcare provider.\\n\\nPatients should be educated on the signs of abuse and dependence, such as increased tolerance, cravings, and withdrawal symptoms. It is important for patients to follow their healthcare provider&#x27;s instructions closely and not exceed the prescribed dosage.\\n\\nPatients should also be aware of the potential for withdrawal symptoms if they suddenly stop taking chlordiazepoxide hydrochloride and clidinium bromide capsules. It is recommended to gradually reduce the dosage under the supervision of a healthcare provider to minimize the risk of withdrawal symptoms.\\n\\nFurthermore, patients should be informed about the interactions between chlordiazepoxide hydrochloride and clidinium bromide capsules and other CNS depressants, especially opioids. Combining these medications can increase the risk of respiratory depression, sedation, and overdose. Patients should discuss any other medications they are taking with their healthcare provider to ensure there are no harmful interactions.\\n\\nOverall, patients should be educated on the proper use of chlordiazepoxide hydrochloride and clidinium bromide capsules, the potential risks involved, and the necessary precautions to take to ensure their safety and well-being."]],["reference_answer",["Taking chlordiazepoxide hydrochloride and clidinium bromide capsules with opioid medicines, alcohol, or other central nervous system (CNS) depressants can cause severe drowsiness, breathing problems (respiratory depression), coma, and death.","The marketing start date is 05/06/2020.","Infants exposed to chlordiazepoxide hydrochloride and clidinium bromide through breast milk should be monitored for sedation, poor feeding and poor weight gain.","Do not exceed 25\\u00baC.","The active ingredients are chlordiazepoxide hydrochloride with a strength of 5 mg and clidinium bromide with a strength of 2.5 mg.","Neonates exposed to chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy may experience respiratory depression, hypotonia, sedation, and feeding problems. They should be monitored for signs of sedation, respiratory depression, hypotonia, and feeding problems, as well as for signs of withdrawal.","If infestation continues, see a doctor for other treatments.","Concomitant use of benzodiazepines, including chlordiazepoxide hydrochloride and clidinium bromide and opioids may result in profound sedation, respiratory depression, coma, and death.","Serious side effects of abusing or misusing chlordiazepoxide hydrochloride and clidinium bromide capsules include coma, death, delirium, paranoia, suicidal thoughts or actions, seizures, and difficulty breathing.","The active ingredients and their strengths are: Acetaminophen 325 mg, Dextromethorphan Hydrobromide 10 mg, Doxylamine Succinate 6.25 mg, and Phenylephrine Hydrochloride 5 mg.","The initial dose should not exceed 2 chlordiazepoxide hydrochloride and clidinium bromide capsules per day, to be increased gradually as needed and tolerated.","If swallowed, get medical help or contact a Poison Control Center (1-800-222-1222) right away.","Do not take chlordiazepoxide hydrochloride and clidinium bromide capsules if you have glaucoma, have an enlarged prostate, have a blockage of your bladder that causes problems with urination, or are allergic to chlordiazepoxide hydrochloride or clidinium bromide.","For external use only. Use only on the scalp. Do not use on children under 6 months of age, near the eyes, inside the nose, ear, mouth, or vagina, or on lice in eyebrows or eyelashes. See a doctor if lice are present in these areas. Ask a doctor before use if you have any skin conditions or sensitivities, are pregnant or plan to become pregnant, or are currently or planning to breastfeed. Avoid getting product on your breast to help prevent contact by your baby.","If you take too much chlordiazepoxide hydrochloride and clidinium bromide capsules, call your healthcare provider or go to the nearest hospital emergency room right away.","The imprint code on the capsules is A;333.","Concomitant use of benzodiazepines and opioids may result in profound sedation, respiratory depression, coma, and death.","The active ingredients in NyQuil Severe Cold &amp; Flu caplets are Acetaminophen 325 mg (Pain reliever/fever reducer), Dextromethorphan HBr 10 mg (Cough suppressant), Doxylamine succinate 6.25 mg (Antihistamine), and Phenylephrine HCL 5 mg (Nasal decongestant).","The marketing start date is 07/08/2019.","The active ingredient in the ivermectin lotion is Ivermectin, with a strength of 5 mg in 1 g.","Patients should inform their healthcare provider if they are pregnant or intend to breastfeed while taking chlordiazepoxide hydrochloride and clidinium bromide capsules.","Chlordiazepoxide hydrochloride and clidinium bromide capsules are contraindicated in the presence of glaucoma, in patients with prostatic hypertrophy and benign bladder neck obstruction, and in patients with known hypersensitivity to chlordiazepoxide hydrochloride and/or clidinium bromide.","Use of benzodiazepines late in pregnancy can result in sedation (respiratory depression, lethargy, hypotonia) and/or withdrawal symptoms (hyperreflexia, irritability, restlessness, tremors, inconsolable crying, and feeding difficulties) in the neonate. Neonates exposed to chlordiazepoxide hydrochloride and clidinium bromide capsules during pregnancy should be monitored for signs of sedation and withdrawal.","Each capsule contains the active ingredients 5 mg chlordiazepoxide hydrochloride, USP and 2.5 mg clidinium bromide, USP.","Patients should be informed that the use of chlordiazepoxide hydrochloride and clidinium bromide capsules exposes them to risks of abuse, misuse, and addiction, which can lead to overdose and death, especially when used with other medications, alcohol, and/or illicit substances. They should also be informed about the signs and symptoms of benzodiazepine abuse, misuse, and addiction, and seek medical help if they develop these signs and/or symptoms. Additionally, they should be informed about the risk of withdrawal reactions, the potential for physical dependence, and the need for a slow taper when discontinuing the medication. Patients and caregivers should be warned about the potentially fatal additive effects if used with opioids or other CNS depressants. Pregnant females should be advised that use late in pregnancy can result in sedation and/or withdrawal symptoms in newborns."]],["id",[13,28,8,31,18,7,22,3,14,32,12,21,15,20,16,19,0,29,33,27,6,2,4,1,5]],["content",["on cap and \\u201c333\\u201d on body with black ink, filled with white to off white powder.\\nBottle of 100 capsules with child resistant closure, NDC 62332-744-31\\nBottle of 1000 capsules, NDC 62332-744-91\\nStore at 25\\u00b0C (77\\u00b0F); excursions permitted to 15\\u00b0 to 30\\u00b0C (59\\u00b0 to 86\\u00b0F) [see USP\\nControlled Room Temperature]. Protect from light.\\nKeep out of reach of children.\\nDispense in tight, light-resistant container as defined in USP/NF.\\nMedication Guide available at \\nhttps://www.alembicusa.com/medicationguide.aspx ...","Walgreen Company\\nMarketing Information\\nMarketing\\nCategory\\nApplication Number or Monograph\\nCitation\\nMarketing Start\\nDate\\nMarketing End\\nDate\\nANDA\\nANDA210720\\n05/06/2020\\nLabeler - \\nWalgreen Company \\n(008965063)\\n \\nRevised: 1/2022","Reproduction studies in rats fed chlordiazepoxide hydrochloride, 10, 20 and 80 mg/kg\\ndaily (2.4, 4.8 and 19.4 times respectively, the maximum recommended clinical dose of\\n40 mg/day, based on body surface area), and bred through one or two matings showed\\nno adverse effects on lactation of the dams.\\nClidinium Bromide\\nThere are no data on the presence of clidinium in either human or animal milk, the\\neffects on the breastfed infant, or the effects on milk production. As with other\\nanticholinergic dr...","children under 4 yrs \\ndo not use\\nOther Information\\n\\u2022 do not exceed 25\\u00baC\\nInactive ingredients\\ncrospovidone, D&amp;C Yellow No.10 Aluminum Lake, \\nFD&amp;C Blue No.1 Aluminum Lake, FD&amp;C Blue\\nNo.2 Aluminum Lake,FD&amp;C Yellow No.6 Aluminum Lake, flavor, magnesium stearate, microcrystalline\\ncellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, silicon dioxide,\\nstearic acid, talc, titanium dioxide\\nQuestions?\\n1-800-362-1683\\nPackage Label\\nNYQUIL SEVERE COLD AND FLU","CHLORDIAZEPOXIDE HYDROCHLORIDE AND CLIDINIUM BROMIDE  \\nchlordiazepoxide hydrochloride and clidinium bromide capsule\\nProduct Information\\nProduct Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:62332-744\\nRoute of Administration\\nORAL\\nDEA Schedule\\nCIV    \\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nCHLORDIAZEPOXIDE HYDROCHLORIDE\\n (UNII: MFM6K1XWDK)\\n(CHLORDIAZEPOXIDE - UNII:6RZ6XEZ3CR)\\nCHLORDIAZEPOXIDE\\nHYDROCHLORIDE\\n5 mg\\nCLIDINIUM BROMIDE\\n (UNII: 91ZQW5JF1Z) \\n(CLIDI...","defects and miscarriage in clinically recognized pregnancies is 2% to 4% and 15% to\\n20%, respectively.\\nClinical Considerations\\nFetal/Neonatal Adverse Reactions\\nBenzodiazepines cross the placenta and may produce respiratory depression, hypotonia\\nand sedation in neonates. Monitor neonates exposed to chlordiazepoxide hydrochloride\\nand clidinium bromide capsules, which contains a benzodiazepine (chlordiazepoxide\\nhydrochloride), during pregnancy or labor for signs of sedation, respiratory depression,...","this is a single use product. Discard tube after use.\\ndo not use again on the same person and same lice infestation without talking to a\\nhealthcare provider first\\nif infestation continues, see a doctor for other treatments\\nmachine wash any bedding and clothing used by anyone having lice. Machine wash at\\nhigh temperatures (150\\u00b0F) and tumble in a hot dryer for 20 minutes.\\nafter finishing treatment with lice medicine, check everyone in your family for lice\\nafter one week. Consider treatment for tho...","Risks From Concomitant Use with Opioids\\nConcomitant use of benzodiazepines, including chlordiazepoxide hydrochloride and\\nclidinium bromide and opioids may result in profound sedation, respiratory depression,\\ncoma, and death. Because of these risks, reserve concomitant prescribing of these\\ndrugs -in patients for whom alternative treatment options are inadequate.\\nObservational studies have demonstrated that concomitant use of opioid analgesics and\\nbenzodiazepines increases the risk of drug-related...","bromide capsules, which can lead to overdose or death. \\n        o \\nSerious side effects including coma and death have happened in people\\nwho have abused or misused benzodiazepines, including chlordiazepoxide\\nhydrochloride and clidinium bromide capsules. \\nThese serious side effects may also\\ninclude delirium, paranoia, suicidal thoughts or actions, seizures, and difficulty breathing.\\nCall your healthcare provider or go to the nearest hospital emergency room\\nright away if you get any of these serio...","acetaminophen, dextromethorphan hydrobromide, doxylamine succinate, phenylephrine hydrochloride tablet, coated\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:73097-009(NDC:37000-813)\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nACETAMINOPHEN\\n (UNII: 362O9ITL9D) \\n(ACETAMINOPHEN - UNII:362O9ITL9D)\\nACETAMINOPHEN\\n325 mg\\nDEXTROMETHORPHAN HYDROBROMIDE\\n (UNII: 9D2RTI9KYH)\\n(DEXTROMETHORPHAN - UNII:7355X3ROTS)\\nDEXTROMETHOR...","overdosage. Anticholinergic drugs usually increase heart rate and blood pressure. In\\nmanaging benzodiazepine overdosage, employ general supportive measures, including\\nintravenous fluids, and airway management.\\nFlumazenil, a specific benzodiazepine receptor antagonist is indicated for the complete\\nor partial reversal of the sedative effects of benzodiazepines in the management of\\nbenzodiazepine overdosage. Use of flumazenil may increase the risk of seizures in\\nmixed overdosage with drugs that may...","If pregnant or breastfeeding,\\n ask a health professional before use.\\nKeep out of reach of children.\\nIf swallowed, get medical help or contact a Poison Control Center (1-800-222-1222)\\nright away.\\nDirections\\nImportant: Read warnings before use\\nchildren 6 months of age to under 12 years of age: an adult should\\nsupervise use\\nadults and children 6 months of age and over:\\nInspect\\nall household members should be checked by another person for lice and/or nits\\n(eggs)\\nuse a magnifying glass in bright ligh...","clidinium bromide capsules may harm others. Tell your healthcare provider if you have\\nabused or been dependent on alcohol, prescription medicines or street drugs. \\n\\u2022 It is not known if chlordiazepoxide hydrochloride and clidinium bromide capsule is safe\\nand effective in children. \\n \\nDo not take chlordiazepoxide hydrochloride and clidinium bromide capsules if\\nyou: \\n\\u2022 have glaucoma \\n\\u2022 have an enlarged prostate \\n\\u2022 have a blockage of your bladder that causes problems with urination \\n\\u2022 are allergic t...","IVERMECTIN- ivermectin lotion \\n \\nWalgreen Company\\n----------\\nIvermectin\\nDrug Facts\\nActive ingredient\\nIvermectin 0.5%\\nPurpose\\nLice treatment\\nUse\\ntreats head lice\\nWarnings\\nFor external use only. Use only on the scalp.\\nDo not use\\non children under 6 months of age\\nnear the eyes\\ninside the nose, ear, mouth, or vagina\\non lice in eyebrows or eyelashes. See a doctor if lice are present in these areas.\\nAsk a doctor before use if you\\nhave any skin conditions or sensitivities\\nare pregnant or plan to become...","hydrochloride and clidinium bromide capsules or suddenly stop taking chlordiazepoxide\\nhydrochloride and clidinium bromide capsules without talking with your healthcare\\nprovider. \\n\\u2022 If you take too much chlordiazepoxide hydrochloride and clidinium bromide capsules,\\ncall your healthcare provider or go to the nearest hospital emergency room right away. \\nWhat are the possible side effects of chlordiazepoxide hydrochloride and\\nclidinium bromide capsules? \\nChlordiazepoxide hydrochloride and clidinium ...","Alembic Pharmaceuticals Inc.\\nPOTASSIUM HYDROXIDE\\n (UNII: WZH3C48M4T)\\n \\nPROPYLENE GLYCOL\\n (UNII: 6DC9Q167V3)\\n \\nProduct Characteristics\\nColor\\nGREEN (Light green opaque cap) , GREEN (Light green opaque body)\\nScore\\nno score\\nShape\\nCAPSULE\\nSize\\n16mm\\nFlavor\\nImprint Code\\nA;333\\nContains\\n    \\nPackaging\\n#\\nItem Code\\nPackage Description\\nMarketing Start\\nDate\\nMarketing End\\nDate\\n1\\nNDC:62332-744-\\n31\\n100 \\nin 1 BOTTLE; Type 0: Not a Combination\\nProduct\\n10/04/2023\\n2\\nNDC:62332-744-\\n91\\n1000 \\nin 1 BOTTLE; Type 0: Not ...","CHLORDIAZEPOXIDE HYDROCHLORIDE AND CLIDINIUM BROMIDE -\\nchlordiazepoxide hydrochloride and clidinium bromide capsule \\n \\nAlembic Pharmaceuticals Inc.\\n----------\\nChlordiazepoxide Hydrochloride and Clidinium Bromide Capsules, USP\\nfor oral use\\nWARNING: RISKS FROM CONCOMITANT USE WITH OPIOIDS; ABUSE,\\nMISUSE, AND ADDICTION; and DEPENDENCE AND WITHDRAWAL\\nREACTIONS\\n \\nConcomitant use of benzodiazepines and opioids may result in\\nprofound sedation, respiratory depression, coma, and death. Reserve\\nconcomitan...","NYQUIL SEVERE COLD AND FLU- acetaminophen, dextromethorphan hydrobromide,\\ndoxylamine succinate, phenylephrine hydrochloride tablet, coated \\n \\nSavings Distributors LLC\\nDisclaimer: Most OTC drugs are not reviewed and approved by FDA, however they may be marketed if they\\ncomply with applicable regulations and policies. FDA has not evaluated whether this product complies.\\n----------\\nNyQuil Severe Cold &amp; Flu\\nDrug Facts\\nActive ingredients (in each caplet)\\nAcetaminophen 325 mg\\nDextromethorphan HBr 10 m...","Savings Distributors LLC\\n3\\nNDC:73097-009-20\\n40 \\nin 1 CARTON\\n07/08/2019\\n3\\n2 \\nin 1 POUCH; Type 0: Not a Combination Product\\nMarketing Information\\nMarketing Category\\nApplication Number or Monograph Citation\\nMarketing Start Date\\nMarketing End Date\\nOTC monograph final\\npart341\\n07/08/2019\\nLabeler - \\nSavings Distributors LLC \\n(010527359)\\n \\nRevised: 7/2019","ivermectin lotion\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:0363-4230\\nRoute of Administration\\nTOPICAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nIvermectin\\n (UNII: 8883YP2R6D) \\n(Ivermectin - UNII:8883YP2R6D)\\nIvermectin\\n5 mg  in 1 g\\nInactive Ingredients\\nIngredient Name\\nStrength\\nbutylated hydroxyanisole\\n (UNII: REK4960K2U)\\n \\ncastor oil\\n (UNII: D5340Y2I9G)\\n \\ncetyl alcohol\\n (UNII: 936JST6JCN)\\n \\nANHYDROUS CITRIC ACID\\n (UNII: XF417D3PSL)\\n \\nc...","Pregnancy\\n). Instruct patients to inform their healthcare provider if they are pregnant.\\nNursing\\nInstruct patients to notify their healthcare provider if they are breastfeeding or intend to\\nbreastfeed (see \\nPRECAUTIONS, Nursing Mothers\\n).\\nDrug Interactions\\nOpioids\\n \\nThe concomitant use of benzodiazepines, including chlordiazepoxide hydrochloride, a\\ncomponent of chlordiazepoxide hydrochloride and clidinium bromide capsules and\\nopioids increases the risk of respiratory depression because of action...","the maximum recommended human dose of 40 mg/day, based on body surface area)\\nexhibited major skeletal defects.\\nTwo series of reproduction experiments with clidinium bromide were carried out in rats,\\nemploying dosages of 2.5 and 10 mg/kg daily (1.2 and 4.9 times, respectively, the\\nmaximum recommended clinical dose of 20 mg/day, based on body surface area) in\\neach experiment. In the first experiment, clidinium bromide was administered for a 9-\\nweek interval prior to mating; no untoward effect on f...","those who have had longer durations of use.\\nAcute Withdrawal Reactions\\nThe continued use of benzodiazepines, including chlordiazepoxide hydrochloride and\\nclidinium bromide capsules, may lead to clinically significant physical dependence. Abrupt\\ndiscontinuation or rapid dosage reduction of chlordiazepoxide hydrochloride and\\nclidinium bromide capsules after continued use, or administration of flumazenil (a\\nbenzodiazepine antagonist) may precipitate acute withdrawal reactions, which can be\\nlife-thr...","Each chlordiazepoxide hydrochloride and clidinium bromide capsule, USP contains the\\nactive ingredients 5 mg chlordiazepoxide hydrochloride, USP and 2.5 mg clidinium\\nbromide, USP. Each capsule also contains the inactive ingredients lactose monohydrate,\\ncorn starch, talc, titanium dioxide, FD&amp;C Green 3, D&amp;C Yellow 10 and gelatin. The empty\\nhard gelatin capsule shells are printed with edible black ink containing shellac, propylene\\nglycol,  black iron oxide and potassium hydroxide.\\nChlordiazepoxide ...","as the MAO inhibitors and phenothiazines are to be used. The usual precautions in\\ntreating patients with impaired renal or hepatic function should be observed.\\nParadoxical reactions to chlordiazepoxide hydrochloride, e.g., excitement, stimulation\\nand acute rage, have been reported in psychiatric patients and should be watched for\\nduring chlordiazepoxide hydrochloride and clidinium bromide capsules therapy. The\\nusual precautions are indicated when chlordiazepoxide hydrochloride is used in the\\ntre..."]],["color",["#0a980a","#ba0e0e","#0a980a","#0a980a","#ba0e0e","#0a980a","#0a980a","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#0a980a","#0a980a","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#0a980a","#ba0e0e","#0a980a"]]]}}},"view":{"type":"object","name":"CDSView","id":"p2311","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2312"}}},"glyph":{"type":"object","name":"Scatter","id":"p2307","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p2308","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p2309","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p2325","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p2316","attributes":{"selected":{"type":"object","name":"Selection","id":"p2317","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2318"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"YCesQdq3tUFnoahB5OerQSfSp0HKh7JBC7WyQdEut0H7hrlBjruwQXAwqUE/aq5BE8C0QdkuqEG5P6NBjWuhQSyDoEFAwq9BBmOrQfJAq0EaX71Bb4CzQf+tt0G4/rVBomq7QXJHvEEd2a9BJGOiQXKUnUFXH6RBHraoQb6MsEE="},"shape":[32],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"/Q4iP19tiz9+T0Y/JaFdvnnOR7/V3Mm+bwW4vzfGQL9j6LU+cP8GPwe6qr83/3G/seL9PTEmtT+Bu2e95G6cP+Ei8D6//sU/VroLQB+3NkBNpxtAVhYTQFt0NUB3XWxAe9nxP1mfV0BAuldAG8E/QFv+EkDPFRNAtkVpQNmdgkA="},"shape":[32],"dtype":"float32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p2326","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p2327"}}},"glyph":{"type":"object","name":"Scatter","id":"p2322","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p2323","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p2324","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p2279","attributes":{"logo":"grey","tools":[{"type":"object","name":"PanTool","id":"p2294"},{"type":"object","name":"WheelZoomTool","id":"p2295","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p2296","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p2297","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p2302"},{"type":"object","name":"SaveTool","id":"p2303"},{"type":"object","name":"HoverTool","id":"p2270","attributes":{"renderers":[{"id":"p2310"}],"tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Question:&lt;/b&gt; @questions &lt;br&gt;\\n    &lt;b&gt;agent Answer:&lt;/b&gt; @agent_answer &lt;br&gt;\\n    &lt;b&gt;Reference Answer:&lt;/b&gt; @reference_answer &lt;br&gt;\\n    &lt;b&gt;Correctness:&lt;/b&gt; @correctness &lt;br&gt;\\n    &lt;b&gt;Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}}]}},"left":[{"type":"object","name":"LinearAxis","id":"p2289","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p2290","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p2291"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2292"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p2284","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p2285","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p2286"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p2287"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p2288","attributes":{"axis":{"id":"p2284"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p2293","attributes":{"dimension":1,"axis":{"id":"p2289"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p2313","attributes":{"title":"Question Correctness","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p2314","attributes":{"label":{"type":"value","value":"False"},"renderers":[{"id":"p2310"}],"index":1}},{"type":"object","name":"LegendItem","id":"p2315","attributes":{"label":{"type":"value","value":"True"},"renderers":[{"id":"p2310"}],"index":0}}]}},{"type":"object","name":"LabelSet","id":"p2331","attributes":{"level":"glyph","source":{"type":"object","name":"ColumnDataSource","id":"p2328","attributes":{"selected":{"type":"object","name":"Selection","id":"p2329","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p2330"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"x9SsQaPLs0E="},"shape":[2],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"Zp+gvPyPRkA="},"shape":[2],"dtype":"float32","order":"little"}],["topic",["Benzodiazepine Medication Risks","Pharmaceutical Products"]]]}}},"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"topic"},"text_color":{"type":"value","value":"#B1B1B1"},"text_font_size":{"type":"value","value":"12pt"},"text_font_style":{"type":"value","value":"bold"},"text_align":{"type":"value","value":"center"}}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}}],"tabs_location":"below"}}]}}';
+        const render_items = [{"docid":"61ed465f-0b5c-4cfc-a88e-12383094b019","roots":{"p2336":"d792d507-f969-49ef-90d7-605bf7d5898d"},"root_ids":["p2336"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="d792d507-f969-49ef-90d7-605bf7d5898d" data-root-id="p2336" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+
+                <div class="section-title">SELECTED METRICS</div>
+
+                
+
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function opentab(evt, name) {
+    // Declare all variables
+    let i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>

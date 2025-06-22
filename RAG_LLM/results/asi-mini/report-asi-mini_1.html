@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+
+<style>
+    body{
+  background: #18181B;
+}
+
+.main{
+  font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #FDFDFD;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+h3 {
+  font-size: 1.5rem;
+  background: #0c087c;
+  padding: 10px;
+  margin: 0px;
+  border: 1px solid #6b7280;}
+
+.extended-title{
+  width:100%;
+}
+
+#gsk-overview{
+  display:flex;
+}
+
+h4 {
+  font-size: 1rem;
+  background: #27272A;
+  padding: 10px;
+  margin: 0px;
+  border-bottom: 1px solid #6b7280;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3px;
+  color:#000000;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header > * {
+  margin-inline: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  padding:10px;
+  border: 1px solid #27272A;
+}
+
+.flex-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+progress[value] {
+  --background: #6D6D6D;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4px;
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin: 20px 0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #27272A;
+  background-color: #27272A;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size:1.2rem;
+}
+
+.tab div {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.tab button:hover {
+  background-color: #18181B;
+}
+
+.tab-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom:-5px;
+}
+
+.tab button.active {
+  background-color: #18181B;
+  border-top: 1px solid #6b7280;
+  border-bottom: 1px solid #18181B;
+  border-left: 1px solid #6b7280;
+  border-right: 1px solid #6b7280;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  background: #18181B;
+  border: 1px solid #27272A;
+  border-top: 1px solid #6b7280;
+  margin-top: -2px;
+}
+
+#gsk-advice {
+  display: flex;
+  justify-content: center;
+}
+
+#gsk-metrics{
+  width:100%;
+}
+
+#recommendation {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e1ce86;
+  color: #27272A;
+  width:95%;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  font-size: 12pt;
+}
+
+.separator {
+  margin: 20px 0;
+}
+
+.separator-border {
+  margin: 20px 0;
+  border-bottom: 1px solid #6b7280;
+}
+
+#gsk-rag{
+  margin: 32px 28px;
+  padding: 12px 24px;
+  background-color: #111516;
+}
+
+.section-container {
+  margin-bottom: 32px;
+}
+
+  .components-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 0 32px;
+  }
+
+    .component-card {
+      background-color: #14191B;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+
+    .component-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #B1B1B1;
+      padding-bottom: 8px;
+    }
+
+    .component-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+    }
+      
+      .text-green {
+        color: #04B543;
+      }
+      
+      .text-orange {
+        color: #E76E0F;
+      }
+      
+      .text-red {
+        color: #EA3829;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #464646;
+        color: #E6E6E6;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 150%;
+        left: 50%;
+        margin-left: -60px;
+        font-size: 12px;
+        padding: 12px;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+    .overall-card {
+      background-color: #026836;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+  
+    .overall-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #E6E6E6;
+      padding: 14px 0 8px 0;
+      text-transform: uppercase;
+     }
+  
+    .overall-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+      color: #E6E6E6;
+    }
+
+.section-title {
+  font-size: 12px;
+  color: #B1B1B1;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.section-content {
+  color: #E6E6E6;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.section-card {
+  background-color: #14191B;
+  border-radius: 16px;
+  padding: 28px 32px 32px 32px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.correctness-indicator{
+  padding: 20px;
+  border-radius: 50px;
+  font-size: 16pt;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  text-align: center;
+}
+
+.metric-title{
+  margin: -2px;
+  border-bottom: none;
+}
+
+.hist-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-around;
+  width: 85%;
+}
+
+.hist-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.tab-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#component-table{
+  width:50%;
+  margin-top: 10px;
+}
+
+.green{
+  background-color: #0a980a;
+}
+
+.orange {
+  background-color: #e5b62a;
+}
+
+.red {
+  background-color: #ba0e0e;
+}
+
+.progress-green {
+  --color: #04B543;
+}
+
+.progress-orange {
+  --color: #E76E0F;
+}
+
+.progress-red {
+  --color: #EA3829;
+}
+
+.corr-plot{
+  flex: 1;
+  padding-left: 2%;
+}
+
+.tooltip-text {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  background-color: #2d3d4c;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+#fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+#delay {
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 1s;
+}
+
+td {
+  position: relative;
+}
+
+tr:hover .tooltip-text {
+  display: block;
+  visibility: visible;
+}
+
+.tr:hover #fade {
+  opacity: 1;
+}
+
+.tr:hover #delay {
+  opacity: 1;
+}
+
+.callout {
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  background: #D9EDF9;
+  border: 3px solid #0088D1;
+  color: #272eb5;
+  position: relative;
+  max-width: 40rem;
+  border-radius: 10px;
+  margin-top: 10%;
+  font-size: 11pt;
+}
+
+.callout-icon {
+  content: "";
+
+  /* SVG via a data URI! */
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  position: absolute;
+  left: 0.9rem;
+  top: 1.1rem;
+}
+
+.callout-icon svg{
+  fill: #016ca7;
+}
+.callout p+p {
+  margin-top: 1em;
+}
+
+.callout a {
+  color: #272eb5;
+  font-weight: bold;
+}
+
+#gsk-logo {
+  padding-top: 10px;
+}
+</style>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.3.4.min.js" integrity="sha384-5QIrjQuyo4I/x6DK/Sau33lcA3hT2TCZGr9vbk+2ebd7Da6FnR1amdM+9B5xOrSf" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.4.min.js" integrity="sha384-tXTWPp/bAKa+K9RPuXh7DNvye0Mv+P+6y4rAMVy+pWapsnXg9UG7g20WZ0N4i28A" crossorigin="anonymous"></script>
+
+
+
+
+
+<div class="main">
+    <div id="gsk-rag" class="dark:text-white dark:bg-zinc-800 rounded border border-gray-500">
+        <div class="header border-b border-b-gray-500">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 30 15" fill="none" id="gsk-logo">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M22.504 1.549a4.196 4.196 0 0 1 2.573-.887v.002a3.783 3.783 0 0 1 2.706 1.086 3.783 3.783 0 0 1 1.126 2.69 3.771 3.771 0 0 1-1.126 2.69 3.77 3.77 0 0 1-2.706 1.085l-4.794.011-2.533 3.467L8.203 15l2.881-3.335a9.829 9.829 0 0 1-4.663-1.68H3.185L0 7.163h3.934C4.263 3.165 8.187 0 12.96 0c2.24 0 4.489.696 6.175 1.909a7.423 7.423 0 0 1 1.882 1.919 4.194 4.194 0 0 1 1.487-2.28ZM7.05 3.249l3.91 3.915h1.505L7.89 2.584a7.773 7.773 0 0 0-.84.665Zm4.079-2.008 5.923 5.923h1.503l-6.086-6.087c-.45.023-.898.078-1.34.164ZM4.574 8.226h-1.77l.784.693h1.584a8.454 8.454 0 0 1-.598-.693Zm9.479 0H5.984c1.469 1.477 3.656 2.377 5.977 2.422l2.092-2.422Zm-2.458 4.472 5.492-1.902 1.878-2.569h-3.508l-3.862 4.47Zm10.361-5.552h3.265a2.714 2.714 0 0 0 1.747-4.648 2.711 2.711 0 0 0-1.888-.773 3.127 3.127 0 0 0-3.123 3.124v2.297Zm3.659-3.73a.677.677 0 1 1-.134 1.348.677.677 0 0 1 .134-1.348Z"
+                        clip-rule="evenodd" />
+                </svg>
+            <h1>RAG Evaluation Toolkit</h1>
+        </div>
+        
+        <div class="section-container">
+            <div class="components-container">
+                
+                <div class="component-card">
+                    <div class="component-title">GENERATOR</div>
+                    <div class="component-value tooltip  text-red ">
+                        12.0%
+                            <span class="tooltiptext" id="fade">The Generator is the LLM inside the RAG to generate the answers.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=12.0 class=" progress-red ">12.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">RETRIEVER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Retriever fetches relevant documents from the knowledge base according to a user query.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">REWRITER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Rewriter modifies the user query to match a predefined format or to include the context from the chat history.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">ROUTING</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Router filters the query of the user based on his intentions (intentions detection).</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">KNOWLEDGE_BASE</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The knowledge base is the set of documents given to the RAG to generate the answers. Its scores is computed differently from the other components: it is the difference between the maximum and minimum correctness score across all the topics of the knowledge base.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="overall-card">
+                    <div class="overall-title">Overall Correctness Score</div>
+                    <div class="overall-value">12%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">RECOMMENDATION</div>
+                <span class="section-content">Based on the scores provided, it is crucial to enhance the performance of the RAG system on complex questions by improving the Generator component. Consider fine-tuning the Generator model specifically for handling complex question structures to boost overall system performance.</span>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">CORRECTNESS BY TOPIC</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"fe01e467-ea3a-44fb-a8e7-b78d818fc355":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1411","attributes":{"height":350,"width_policy":"max","x_range":{"type":"object","name":"DataRange1d","id":"p1413","attributes":{"start":0}},"y_range":{"type":"object","name":"FactorRange","id":"p1420","attributes":{"factors":["Others"]}},"x_scale":{"type":"object","name":"LinearScale","id":"p1421"},"y_scale":{"type":"object","name":"CategoricalScale","id":"p1422"},"title":{"type":"object","name":"Title","id":"p1418","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1440","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1408","attributes":{"selected":{"type":"object","name":"Selection","id":"p1409","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1410"},"data":{"type":"map","entries":[["correctness",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAKEA="},"shape":[1],"dtype":"float64","order":"little"}],["metadata_values",["Others"]],["colors",["#a50026"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1441","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1442"}}},"glyph":{"type":"object","name":"HBar","id":"p1437","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#14191B"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1438","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1439","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1449","attributes":{"data_source":{"id":"p1408"},"view":{"type":"object","name":"CDSView","id":"p1450","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1451"}}},"glyph":{"type":"object","name":"HBar","id":"p1446","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1447","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1448","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1459","attributes":{"visible":false,"data_source":{"type":"object","name":"ColumnDataSource","id":"p1453","attributes":{"selected":{"type":"object","name":"Selection","id":"p1454","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1455"},"data":{"type":"map","entries":[["x",[0]],["y",[0]]]}}},"view":{"type":"object","name":"CDSView","id":"p1460","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1461"}}},"glyph":{"type":"object","name":"Line","id":"p1456","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_width":2,"line_dash":[6]}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1457","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.1,"line_width":2,"line_dash":[6]}},"muted_glyph":{"type":"object","name":"Line","id":"p1458","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.2,"line_width":2,"line_dash":[6]}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1419","attributes":{"tools":[{"type":"object","name":"HoverTool","id":"p1433","attributes":{"renderers":"auto","tooltips":[["topic","@metadata_values"],["Correctness","@correctness{0.00}"]]}}]}},"toolbar_location":null,"left":[{"type":"object","name":"CategoricalAxis","id":"p1428","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1429"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1430"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1431"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p1423","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1424","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1425"},"axis_label":"Correctness (%)","axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1426"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p1427","attributes":{"axis":{"id":"p1423"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p1432","attributes":{"dimension":1,"axis":{"id":"p1428"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Span","id":"p1452","attributes":{"location":12.0,"dimension":"height","line_color":"#EA3829","line_width":2,"line_dash":[6]}},{"type":"object","name":"Legend","id":"p1462","attributes":{"border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p1463","attributes":{"label":{"type":"value","value":"Correctness on the entire Testset"},"renderers":[{"id":"p1459"}]}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}]}}';
+        const render_items = [{"docid":"fe01e467-ea3a-44fb-a8e7-b78d818fc355","roots":{"p1411":"dd420ff8-9242-448f-8aeb-76d645a6fb56"},"root_ids":["p1411"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="dd420ff8-9242-448f-8aeb-76d645a6fb56" data-root-id="p1411" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">KNOWLEDGE BASE OVERVIEW</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"2eb6d45e-70ef-4787-9019-a6e8b2204441":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Tabs","id":"p1344","attributes":{"sizing_mode":"stretch_width","tabs":[{"type":"object","name":"TabPanel","id":"p1281","attributes":{"title":"Topic exploration","child":{"type":"object","name":"Figure","id":"p1236","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p1245","attributes":{"start":-7.287436580657959,"end":-0.1960790634155276}},"y_range":{"type":"object","name":"Range1d","id":"p1246","attributes":{"start":14.178556680679321,"end":20.183607816696167}},"x_scale":{"type":"object","name":"LinearScale","id":"p1247"},"y_scale":{"type":"object","name":"LinearScale","id":"p1248"},"title":{"type":"object","name":"Title","id":"p1243","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1276","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1233","attributes":{"selected":{"type":"object","name":"Selection","id":"p1234","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1235"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"PI24wCSHpsCIScTATlLiwNU44sDktN/A4kzDwGTaw8B2n2fAWi2LwPKiosCtt6PAtuSewKn5sMDOzIXAf8HPwNYw0cACf4zAlJUxwCuuXsAYkGTA"},"shape":[21],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"CZKRQQZvl0G9toVBDAmFQWohjUF8lZdBhP6KQU52mUG5Y4NB5l+EQYNJhkFu+YxB0d5yQYWBekEWHHxBbDJ8Qf9VkUH6gpFBrjCRQcMklkEOQ45B"},"shape":[21],"dtype":"float32","order":"little"}],["topic",["Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others"]],["id",[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]],["content",["LOPRESSOR- metoprolol tartrate tablet \\n \\nValidus Pharmaceuticals LLC\\n----------\\nHIGHLIGHTS OF PRESCRIBING INFORMATION\\nThese highlights do not include all the information needed to use \\nLOPRESSOR\\n safely and\\neffectively. See full prescribing information for \\nLOPRESSOR\\n. \\n      \\n \\nLOPRESSOR\\n (metoprolol \\ntart\\nr\\nate\\n) \\nt\\nablet\\ns\\n,\\n for \\no\\nral \\nu\\nse\\n \\nInitial U.S. Approval: \\n1992\\n \\nINDICATIONS AND USAGE\\nLOPRESSOR is a beta-adrenergic blocker indicated for the treatment of:\\nHypertension, to lower blo...","CYP2D6 Inhibitors are likely to increase metoprolol concentration. (\\n7.3\\n)\\nConcomitant use of glycosides, clonidine, and diltiazem and verapamil with beta-blockers can increase\\nthe risk of bradycardia. (\\n7.4\\n)\\nBeta-blockers including metoprolol, may exacerbate the rebound hypertension that can follow the\\nwithdrawal of clonidine. (\\n7.4\\n)\\nUSE IN SPECIFIC POPULATIONS\\nHepatic Impairment: Consider initiating LOPRESSOR therapy at low doses and gradually increase\\ndosage to optimize therapy, while monit...","8.6 \\n  \\nHepatic Impairment\\n8.7 \\n  \\nRenal Impairment\\n10 \\n     \\nOVERDOSAGE\\n11 \\n     \\nDESCRIPTION\\n12 \\n      \\nCLINICAL PHARMACOLOGY\\n12.1 \\n   \\nMechanism of Action\\n12.2 \\n  \\nPharmacodynamics\\n12.3 \\n  \\nPharmacokinetics\\n12.5 \\n  \\nPharmacogenomics\\n13 \\n     \\nNONCLINICAL TOXICOLOGY\\n13.1 \\n  \\nCarcinogenesis, Mutagenesis, Impairment of Fertility\\n14 \\n     \\nCLINICAL STUDIES\\n14.1 \\n  \\nHypertension\\n14.2 \\n  \\nAngina Pectoris\\n14.3 \\n  \\nMyocardial Infarction\\n16 \\n     \\nHOW SUPPLIED/STORAGE AND HANDLING\\n17 \\n     \\nPATIENT CO...","absolute risk increase per mmHg is greater at higher blood pressures, so that even\\nmodest reductions of severe hypertension can provide substantial benefit. Relative risk\\nreduction from blood pressure reduction is similar across populations with varying\\nabsolute risk, so the absolute benefit is greater in patients who are at higher risk\\nindependent of their hypertension (for example, patients with diabetes or\\nhyperlipidemia), and such patients would be expected to benefit from more aggressive\\ntr...","been studied. If treatment is to be discontinued, reduce the dosage gradually over a\\nperiod of 1 - 2 weeks \\n[see \\nWarnings and Precautions (\\n5.1\\n)\\n].\\n2.3 \\n  \\nMyocardial Infarction\\nSee prescribing information of intravenous metoprolol for dosage instructions for\\nintravenous therapy.\\nIn patients who tolerate the full intravenous dose, initiate Lopressor tablets, 50 mg every\\n6 hours, 15 minutes after the last intravenous dose of metoprolol and continue for\\n48 hours. In the case of intolerance, redu...","dose of LOPRESSOR \\n[see \\nDosage and Administration (\\n2\\n)].\\n \\nIt may be necessary to lower\\nthe dose of LOPRESSOR or temporarily discontinue it. Such episodes do not preclude\\nsubsequent successful titration of LOPRESSOR.\\n5.3 \\n  \\nBronchospastic Disease\\nPatients with bronchospastic disease, should in general, not receive beta-blockers,\\nincluding Lopressor. Because of its relative beta\\n cardio-selectivity, however,\\nLOPRESSOR may be used in patients with bronchospastic disease who do not respond\\nto, o...","5.\\n9\\n \\n  \\nPeripheral Vascular Disease\\nBeta-blockers can precipitate or aggravate symptoms of arterial insufficiency in patients\\nwith peripheral vascular disease.\\n6 \\n     \\nADVERSE REACTIONS\\nThe following adverse reactions are described elsewhere in labeling:\\nWorsening angina or myocardial infarction \\n[see \\nWarnings and Precautions (\\n5\\n)]\\n \\n \\nWorsening heart failure \\n[see \\nWarnings and Precautions (\\n5\\n)\\n]\\n.\\n \\nWorsening AV block \\n[see \\nContraindications (\\n4\\n)\\n]\\n.\\n6.1 \\n  \\nClinical Trials Experience\\n...","Lopressor\\nPlacebo\\nHypotension (systolic BP &lt; 90 mm\\nHg)\\n27.4%\\n23.2%\\nBradycardia (heart rate &lt;\\n40 beats/min)\\n15.9%\\n6.7%\\nSecond- or third-degree heart block\\n4.7%\\n4.7%\\nFirst-degree heart block (P-R \\u2265\\n0.26 sec)\\n5.3%\\n1.9%\\nHeart failure\\n27.5%\\n29.6%\\n6.2 \\n  \\nPost-Marketing Experience\\nThe following adverse reactions have been identified during post approval use of\\nLOPRESSOR. Because these reactions are reported voluntarily from a population of\\nuncertain size, it is not always possible to reliably estimate...","and propafenone were shown to double metoprolol concentrations. While there is no\\ninformation about moderate or weak inhibitors, these too are likely to increase\\nmetoprolol concentration. Increases in plasma concentration decrease the\\ncardioselectivity of metoprolol \\n[see Clinical Pharmacology (\\n12.3\\n)]. \\nMonitor patients\\nclosely, when the combination cannot be avoided.\\n7.\\n4\\n \\n  \\nNegative Chronotropes\\nDigitalis glycosides, clonidine, diltiazem and verapamil slow atrioventricular conduction\\nand d...","Data\\nHuman Data\\nData from published observational studies did not demonstrate an association of major\\ncongenital malformations and use of metoprolol in pregnancy. The published literature\\nhas reported inconsistent findings of intrauterine growth retardation, preterm birth and\\nperinatal mortality with maternal use of metoprolol during pregnancy; however, these\\nstudies have methodological limitations hindering interpretation. Methodological\\nlimitations include retrospective design, concomitant use...","(range 17.0 to 158.7). The average relative infant dosage was 0.5% of the mother&#x27;s\\nweight-adjusted dosage.\\n8.\\n3 \\n \\nFemales and Males of Reproductive Potential\\nRisk Summary\\nBased on the published literature, beta-blockers (including metoprolol) may cause\\nerectile dysfunction and inhibit sperm motility. In animal fertility studies, metoprolol has\\nbeen associated with reversible adverse effects on spermatogenesis starting at oral\\ndose level of 3.5 mg/kg in rats, which would correspond to a dose of ...","Signs and Symptoms - Overdosage of LOPRESSOR may lead to severe bradycardia,\\nhypotension, and cardiogenic shock. Clinical presentation can also include:\\natrioventricular block, heart failure, bronchospasm, hypoxia, impairment of\\nconsciousness/coma, nausea and vomiting.\\nTreatment \\u2013 Consider treating the patient with intensive care. Patients with myocardial\\ninfarction or heart failure may be prone to significant hemodynamic instability. Beta-\\nblocker overdose may result in significant resistance t...","Metoprolol is a beta\\n-selective (cardioselective) adrenergic receptor blocking agent. This\\npreferential effect is not absolute, however, and at higher plasma concentrations,\\nmetoprolol also inhibits beta\\n-adrenoreceptors, chiefly located in the bronchial and\\nvascular musculature.\\nMetoprolol has no intrinsic sympathomimetic activity, and membrane-stabilizing activity is\\ndetectable only at plasma concentrations much greater than required for beta-blockade.\\nAnimal and human experiments indicate tha...","the ratio of approximately 2.5:1.\\nThere is a linear relationship between the log of plasma levels and reduction of exercise\\nheart rate. \\nHowever, antihypertensive activity does not appear to be related to plasma\\nlevels. Because of variable plasma levels attained with a given dose and lack of a\\nconsistent relationship of antihypertensive activity to dose, selection of proper dosage\\nrequires individual titration.\\nIn several studies of patients with acute myocardial infarction, intravenous followed...","Renal\\n \\nimpairment\\n: The systemic availability and half-life of Lopressor in patients with\\nrenal failure do not differ to a clinically significant degree from those in normal subjects.\\nHepatic Impairment:\\n Since the drug is primarily eliminated by hepatic metabolism,\\nhepatic impairment may impact the pharmacokinetics of metoprolol.\\nDrug Interactions\\nMetoprolol is metabolized predominantly by CYP2D6. In healthy subjects with CYP2D6\\nextensive metabolizer phenotype, coadministration of quinidine 10...","mg in a 60-kg patient.\\n14 \\n     \\nCLINICAL STUDIES\\n14.1 \\n  \\nHypertension\\nIn controlled clinical studies, Lopressor has been shown to be an effective\\nantihypertensive agent when used alone or as concomitant therapy with thiazide-type\\ndiuretics, at dosages of 100 mg to 450 mg daily. In controlled, comparative, clinical\\nstudies, Lopressor has been shown to be as effective an antihypertensive agent as\\npropranolol, methyldopa, and thiazide-type diuretics, to be equally effective in supine and\\nstanding...","however, it is also reasonable to administer the drug orally to patients at a later time as\\nis recommended for certain other beta-blockers.\\n16 \\n     \\nHOW SUPPLIED/STORAGE AND HANDLING\\nLopressor \\n(\\nmetoprolol tartrate\\n)\\n \\nt\\nablets\\nTablets 50 mg \\n\\u2013 capsule-shaped, biconvex, pink, scored (imprinted LOPRESSOR on\\none side and 458 twice on the scored side)\\n      \\nBottles of 100\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026.\\u2026\\u2026\\u2026NDC 30698-458-01\\nTablets 100 mg \\n\\u2013 capsule-shaped, biconvex, light blue, scored (imprinted LOPRESSOR\\non on...","NDC 30698-458-01\\nLopressor\\n(metoprolol tartrate USP) Tablets\\n50 mg\\n100 Tablets\\nRx Only\\nPRINCIPAL DISPLAY PANEL\\nNDC 30698-459-01\\nLopressor\\n(metoprolol tartrate USP) Tablets\\n100 mg\\n100 Tablets\\nRx Only\\nLOPRESSOR  \\nmetoprolol tartrate tablet\\nProduct Information","Product Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:30698-458\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nMETOPROLOL TARTRATE\\n (UNII: W5S57Y3A5L) \\n(METOPROLOL -\\nUNII:GEB06NHM23)\\nMETOPROLOL\\nTARTRATE\\n50 mg\\nInactive Ingredients\\nIngredient Name\\nStrength\\nCELLULOSE, MICROCRYSTALLINE\\n (UNII: OP1R32D61U)\\n \\nSILICON DIOXIDE\\n (UNII: ETJ7Z6XBU4)\\n \\nD&amp;C RED NO. 30\\n (UNII: 2S42T2808B)\\n \\nLACTOSE, UNSPECIFIED FORM\\n (UNII: J2B2A4N98G)\\n \\nMAGNESIUM...","Product Information\\nProduct Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:30698-459\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nMETOPROLOL TARTRATE\\n (UNII: W5S57Y3A5L) \\n(METOPROLOL -\\nUNII:GEB06NHM23)\\nMETOPROLOL\\nTARTRATE\\n100 mg\\nInactive Ingredients\\nIngredient Name\\nStrength\\nCELLULOSE, MICROCRYSTALLINE\\n (UNII: OP1R32D61U)\\n \\nSILICON DIOXIDE\\n (UNII: ETJ7Z6XBU4)\\n \\nFD&amp;C BLUE NO. 2\\n (UNII: L06K8R7DQK)\\n \\nLACTOSE, UNSPECIFIED FORM\\n (UNII: J...","Validus Pharmaceuticals LLC\\n \\nRevised: 9/2023"]],["color",{"type":"ndarray","array":["#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999","#999"],"shape":[21],"dtype":"object","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1277","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1278"}}},"glyph":{"type":"object","name":"Scatter","id":"p1273","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1274","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1275","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1244","attributes":{"logo":"grey","tools":[{"type":"object","name":"HoverTool","id":"p1259","attributes":{"renderers":"auto","tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Document Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}},{"type":"object","name":"PanTool","id":"p1260"},{"type":"object","name":"WheelZoomTool","id":"p1261","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1262","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1263","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p1268"},{"type":"object","name":"SaveTool","id":"p1269"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1254","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1255","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1256"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1257"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p1249","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1250","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1251"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1252"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p1253","attributes":{"axis":{"id":"p1249"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p1258","attributes":{"dimension":1,"axis":{"id":"p1254"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p1279","attributes":{"title":"Knowledge Base Tospics","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p1280","attributes":{"label":{"type":"value","value":"Others"},"renderers":[{"id":"p1276"}],"index":0}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}},{"type":"object","name":"TabPanel","id":"p1343","attributes":{"title":"Failures","child":{"type":"object","name":"Figure","id":"p1286","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p1295","attributes":{"start":-7.287436580657959,"end":-0.1960790634155276}},"y_range":{"type":"object","name":"Range1d","id":"p1296","attributes":{"start":14.178556680679321,"end":20.183607816696167}},"x_scale":{"type":"object","name":"LinearScale","id":"p1297"},"y_scale":{"type":"object","name":"LinearScale","id":"p1298"},"title":{"type":"object","name":"Title","id":"p1293","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1325","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1282","attributes":{"selected":{"type":"object","name":"Selection","id":"p1283","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1284"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"K65ewHafZ8CUlTHA4kzDwIhJxMAkh6bAPI24wOS038ACf4zAZNrDwBiQZMBOUuLAtuSewFoti8Cp+bDAf8HPwM7MhcCtt6PA1TjiwNYw0cDyoqLAlJUxwLbknsCIScTAWi2LwA=="},"shape":[25],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"wySWQbljg0GuMJFBhP6KQb22hUEGb5dBCZKRQXyVl0H6gpFBTnaZQQ5DjkEMCYVB0d5yQeZfhEGFgXpBbDJ8QRYcfEFu+YxBaiGNQf9VkUGDSYZBrjCRQdHeckG9toVB5l+EQQ=="},"shape":[25],"dtype":"float32","order":"little"}],["topic",["Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others","Others"]],["correctness",[false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false]],["questions",["What are the specific inactive ingredients present in the 100 mg Metoprolol Tartrate tablet besides cellulose, microcrystalline and magnesium stearate?","What potential adverse reactions should be monitored in neonates born to mothers who have been taking metoprolol during pregnancy, and how should healthcare providers manage these reactions?","What are the strengths available for the drug LOPRESSOR that contains metoprolol tartrate and what are the inactive ingredients included in each strength?","What adverse reactions related to the cardiovascular system have been reported in patients taking beta-blockers, specifically in terms of shortness of breath, bradycardia, cold extremities, arterial insufficiency, palpitations, heart failure exacerbations, peripheral edema, and hypotension?","What is the specific indication of LOPRESSOR in adult patients for which it is prescribed, and what is the primary purpose of using this medication?","In patients with hepatic impairment, what is the recommended approach for initiating LOPRESSOR therapy in terms of dosage and monitoring?","In which year did LOPRESSOR (metoprolol tartrate) tablets receive their initial approval in the United States?","Under what circumstance should patients with bronchospastic disease generally avoid receiving Lopressor, and what precautions should be taken if it is necessary to use Lopressor in such patients?","What are the different strengths of Lopressor tablets available and how many tablets are included in each package?","What are some of the adverse reactions that have been reported during post approval use of Lopressor, including effects on the central nervous system, cardiovascular system, and hematologic system?","What is the specific company name of the pharmaceutical company referenced in the provided document, dated 9/2023?","What is the recommended initial daily dosage of Lopressor tablets for the treatment of hypertension, and how should the dosage be adjusted to achieve optimal blood pressure reduction?","What are the proposed mechanisms for the antihypertensive effects of beta-blocking agents like metoprolol, and how do these mechanisms contribute to the treatment of hypertension?","What is the range of estimated daily infant dose of metoprolol received from breastmilk according to limited available data from published literature?","What is the primary metabolic pathway for Lopressor in the body and which enzyme is responsible for this process?","What is the dosage range of Lopressor that has been utilized in controlled clinical studies for hypertension, either as a standalone treatment or in combination with thiazide-type diuretics?","How does hepatic impairment affect the pharmacokinetics of metoprolol, considering that the drug is primarily metabolized by the liver?","What are the potential clinical manifestations associated with an overdose of Lopressor, and what treatment measures should be considered in such cases?","What steps should be followed to safely discontinue therapy with Lopressor, especially in patients with ischemic heart disease, and what precautions should be taken to avoid exacerbations of angina pectoris or myocardial infarction?","What are the specific storage instructions for Lopressor tablets, including the recommended temperature range, protection measures, and container type?","What reversible adverse effects on spermatogenesis have been associated with metoprolol in animal fertility studies, starting at a specific oral dose level in rats?","What are the inactive ingredients present in the 100 mg Metoprolol Tartrate tablet besides cellulose, microcrystalline, silicon dioxide, lactose, magnesium stearate, polyethylene glycol, propylene glycol, povidone, sodium starch glycolate type A potato, talc, and titanium dioxide?","What are the proposed mechanisms for the antihypertensive effects of beta-blocking agents like metoprolol, according to the provided document?","What is the specific medical condition in adult patients for which LOPRESSOR is recommended as a treatment option to lower the risk of cardiovascular events?","What is the range of the estimated daily infant dose of metoprolol received from breastmilk according to limited available data from published literature?"]],["agent_answer",["The 100 mg Metoprolol Tartrate tablet contains several inactive ingredients beyond **cellulose, microcrystalline** and **magnesium stearate**. Based on standard formulations, here are the additional excipients typically found:  \\n\\n### **Other Inactive Ingredients in 100 mg Metoprolol Tartrate Tablet:**  \\n1. **Lactose Monohydrate** \\u2013 Often used as a filler/binder.  \\n2. **Colloidal Silicon Dioxide** \\u2013 Acts as a glidant to improve powder flow.  \\n3. **Sodium Starch Glycolate** \\u2013 A disintegrant that helps break apart the tablet in the digestive system.  \\n4. **Hypromellose (Hydroxypropyl Methylcellulose, HPMC)** \\u2013 May be used in film-coating.  \\n5. **Titanium Dioxide** \\u2013 A colorant for coating (if the tablet is coated).  \\n6. **Polyethylene Glycol (PEG)** \\u2013 Often part of the coating material.  \\n7. **Dye Additives (e.g., FD&amp;C Yellow #6, Red #40, or others depending on brand)** \\u2013 Some formulations include colorants.  \\n\\nExact composition can vary slightly by manufacturer (e.g., generics vs. brand-name **Lopressor**), but these are the most common additional inactive ingredients. If you need the exact list for a **specific brand**, checking the drug\\u2019s official **prescribing information (PI) sheet** will confirm.  \\n\\nWould you like help finding a particular brand\\u2019s formulation?","**Potential Adverse Reactions in Neonates After Maternal Metoprolol Use During Pregnancy**  \\n\\nMetoprolol, a selective \\u03b21-adrenergic blocker, crosses the placental barrier and may cause adverse effects in neonates. Healthcare providers should monitor for:  \\n\\n1. **Cardiovascular Effects**  \\n   - **Bradycardia**: Due to \\u03b2-blockade, neonates may exhibit a slow heart rate (&lt;100 bpm).  \\n   - **Hypotension**: Reduced cardiac output may lead to low blood pressure.  \\n   - **Hypoglycemia**: \\u03b2-blockers can mask symptoms of hypoglycemia while also impairing glycogenolysis.  \\n\\n2. **Respiratory Effects**  \\n   - **Respiratory depression** (rare but possible due to \\u03b2-blockade-induced reduction in pulmonary surfactant).  \\n\\n3. **Metabolic Effects**  \\n   - **Hypoglycemia**: Newborns are at higher risk due to limited glycogen stores.  \\n   - **Electrolyte imbalances** (rare).  \\n\\n4. **Other Effects**  \\n   - **Lethargy, poor feeding** (may indicate hypotension or hypoglycemia).  \\n   - **Acidosis** (metabolic derangement from decreased perfusion).  \\n\\n### **Management Strategies**  \\n1. **Immediate Postnatal Monitoring**  \\n   - **Continuous cardiorespiratory monitoring** for at least 24\\u201348 hours.  \\n   - **Frequent blood glucose checks** (e.g., every 2\\u20134 hours in the first 24 hours).  \\n   - **Blood pressure monitoring** (if hypotension is suspected).  \\n\\n2. **Symptom-Specific Interventions**  \\n   - **Bradycardia/Hypotension**:  \\n     - Consider **IV fluid resuscitation** if perfusion is poor.  \\n     - **Atropine (0.02 mg/kg IV)** may be used for severe bradycardia.  \\n     - In refractory cases, **isoproterenol (a \\u03b2-agonist)** may be needed under specialist guidance.  \\n   - **Hypoglycemia**:  \\n     - Early **IV dextrose (10%) bolus (2\\u20134 mL/kg)** followed by maintenance infusion as needed.  \\n     - **Frequent feeds or IV glucose** if oral intake is insufficient.  \\n\\n3. **Supportive Care**  \\n   - **Thermoregulation** (prevent cold stress, which exacerbates metabolic demands).  \\n   - **Close observation for withdrawal symptoms** (if metoprolol was used long-term in late pregnancy).  \\n\\n4. **Longer-term Follow-up**  \\n   - If significant adverse effects occur, **pediatric cardiology evaluation** may be warranted.  \\n\\n### **Conclusion**  \\nNeonates exposed to metoprolol in utero require vigilant monitoring for **bradycardia, hypotension, and hypoglycemia**, with prompt intervention if complications arise. Most effects resolve within 48\\u201372 hours as the drug is metabolized, but severe cases necessitate **neonatal intensive care support**.  \\n\\nWould you like additional details on specific dosages or emergency scenarios?","**Answer:**  \\n\\nLopressor (metoprolol tartrate) is available in the following strengths, along with their respective inactive ingredients:  \\n\\n### **Available Strengths &amp; Inactive Ingredients:**  \\n1. **25 mg Tablet:**  \\n   - **Inactive Ingredients:**  \\n     - Hydroxypropyl methylcellulose  \\n     - Lactose monohydrate  \\n     - Magnesium stearate  \\n     - Microcrystalline cellulose  \\n     - Polyethylene glycol  \\n     - Polysorbate 80  \\n     - Sodium starch glycolate  \\n     - Titanium dioxide  \\n\\n2. **50 mg Tablet:**  \\n   - **Inactive Ingredients:**  \\n     - Same as 25 mg tablet:  \\n       - Hydroxypropyl methylcellulose  \\n       - Lactose monohydrate  \\n       - Magnesium stearate  \\n       - Microcrystalline cellulose  \\n       - Polyethylene glycol  \\n       - Polysorbate 80  \\n       - Sodium starch glycolate  \\n       - Titanium dioxide  \\n\\n3. **100 mg Tablet:**  \\n   - **Inactive Ingredients:**  \\n     - Same as above (50 mg &amp; 25 mg formulations).  \\n\\n### **Key Notes:**  \\n- Lopressor is **not** currently available in other strengths (e.g., 12.5 mg, 200 mg).  \\n- Metoprolol **succinate** (Toprol XL) is a different salt with extended-release properties and differing inactive ingredients, while Lopressor (tartrate) is immediate-release.  \\n\\nLet me know if you&#x27;d like additional details on formulations!","Here\\u2019s a detailed breakdown of the cardiovascular adverse reactions associated with beta-blockers, organized by the specific symptoms you mentioned:  \\n\\n### **1. Shortness of Breath (Dyspnea)**  \\n- **Cause:** Beta-blockers can induce bronchoconstriction (especially non-selective ones like propranolol) by blocking \\u03b2\\u2082-adrenergic receptors in the lungs.  \\n- **Effect:** May worsen symptoms in patients with pre-existing asthma/COPD.  \\n- **Agents of Concern:** Non-selective beta-blockers (e.g., propranolol, nadolol).  \\n\\n### **2. Bradycardia**  \\n- **Cause:** Beta-blockers reduce heart rate by blocking \\u03b2\\u2081-adrenergic receptors in the sinoatrial (SA) node.  \\n- **Effect:** Severe cases (heart rate &lt; 50 bpm) may lead to dizziness, fatigue, or syncope.  \\n- **Agents of Concern:** All beta-blockers (especially those with strong SA node suppression, like atenolol and bisoprolol).  \\n\\n### **3. Cold Extremities**  \\n- **Cause:** Reduced peripheral blood flow due to \\u03b2\\u2082-blockade (vascular vasoconstriction).  \\n- **Effect:** Raynaud\\u2019s-like symptoms, especially in cold environments.  \\n- **Agents of Concern:** Non-selective beta-blockers (e.g., propranolol, carvedilol).  \\n\\n### **4. Arterial Insufficiency**  \\n- **Cause:** Vasoconstriction due to unopposed \\u03b1-adrenergic activity (with non-selective/vasodilating beta-blockers failing to offset this).  \\n- **Effect:** Can worsen peripheral vascular disease, leading to claudication or critical limb ischemia.  \\n\\n### **5. Palpitations**  \\n- **Cause:** Paradoxical in some cases due to compensatory sympathetic overactivity (esp. if beta-blocker dose is insufficient or abruptly stopped).  \\n- **Effect:** May be transient but can cause discomfort.  \\n\\n### **6. Heart Failure Exacerbation**  \\n- **Cause:** **Initial** use (especially high doses) may depress myocardial contractility (negative inotropy).  \\n- **Effect:** Worsens HF in decompensated patients (though chronic use *improves* survival in stable HFrEF with carvedilol, bisoprolol, or metoprolol succinate).  \\n\\n### **7. Peripheral Edema**  \\n- **Cause:** Reduced cardiac output and arteriolar constriction (\\u2191 hydrostatic pressure).  \\n- **Effect:** Mild swelling (ankles/feet), though less common than with calcium channel blockers.  \\n\\n### **8. Hypotension**  \\n- **Cause:** Reduced cardiac output (\\u03b2\\u2081-blockade) and, in some cases, vasodilation (e.g., nebivolol, carvedilol).  \\n- **Effect:** Dizziness, orthostatic hypotension, syncope (esp. in elderly or volume-depleted patients).  \\n\\n### **Key Recommendations:**  \\n- **Monitoring:** ECG (for bradycardia), BP, and signs of HF/worsening PVD.  \\n- **High-Risk Groups:**  \\n  - Avoid non-selective beta-blockers in **asthma/COPD**.  \\n  - Caution in **PVD/Raynaud\\u2019s** (use vasodilating \\u03b2-blockers like nebivolol if needed).  \\n  - Titrate **slowly in HF** to avoid acute decompensation.  \\n\\nLet me know if you&#x27;d like further details on specific drugs or clinical scenarios!","LOPRESSOR (generic name: metoprolol tartrate) is a beta-blocker medication primarily prescribed for adult patients with the following specific indications:  \\n\\n### **Primary Indications:**  \\n1. **Hypertension (High Blood Pressure):**  \\n   - Used as a first-line or adjunctive therapy to lower blood pressure, reducing the risk of cardiovascular complications.  \\n\\n2. **Angina Pectoris (Chest Pain due to Coronary Artery Disease):**  \\n   - Helps manage chronic stable angina by decreasing heart workload and oxygen demand.  \\n\\n3. **Heart Failure (in combination with other treatments):**  \\n   - Used in certain cases (particularly with reduced ejection fraction) to improve survival and symptoms.  \\n\\n4. **Post-Myocardial Infarction (After a Heart Attack):**  \\n   - Prescribed to improve survival and reduce the risk of recurrent heart attacks.  \\n\\n### **Primary Purpose of Use:**  \\n- **Beta-1 Adrenergic Blockade:** Selectively inhibits beta-1 receptors in the heart, leading to:  \\n  - Reduced heart rate (negative chronotropic effect).  \\n  - Decreased myocardial contractility (negative inotropic effect).  \\n  - Lowered blood pressure by reducing cardiac output.  \\n- **Protective Cardiac Effects:** Helps prevent arrhythmias, myocardial remodeling, and excessive sympathetic nervous system activation.  \\n\\nLOPRESSOR is **not** used for asthma, severe bradycardia, or decompensated heart failure without careful monitoring. Always follow the prescribing physician&#x27;s dosage and instructions.  \\n\\nWould you like details on dosing or side effects? I\\u2019d be happy to elaborate further!","For patients with hepatic impairment, the initiation of **LOPRESSOR (metoprolol tartrate or succinate)** therapy requires careful dosage adjustment and monitoring due to decreased hepatic metabolism, which can increase drug exposure. Here\\u2019s the recommended approach:  \\n\\n### **1. Dosage Recommendations:**  \\n- **Initial Dose:** Start with a **reduced dose** (e.g., **25\\u201350 mg/day for metoprolol tartrate** or half the usual starting dose for metoprolol succinate).  \\n- **Titration:** Gradually adjust the dose based on therapeutic response and tolerability, as hepatic impairment slows drug clearance.  \\n\\n### **2. Monitoring Requirements:**  \\n- **Liver Function Tests (LFTs):** Assess baseline and periodic LFTs (ALT, AST, bilirubin).  \\n- **Blood Pressure &amp; Heart Rate:** Monitor closely for excessive beta-blockade (e.g., bradycardia, hypotension).  \\n- **Signs of Toxicity:** Watch for fatigue, dizziness, or worsening hepatic encephalopathy (due to reduced drug metabolism).  \\n\\n### **3. Additional Considerations:**  \\n- **Severe Cirrhosis/Decompensated Liver Disease:** Avoid or use only under strict supervision due to unpredictable pharmacokinetics.  \\n- **Extended-Release (Succinate) vs. Immediate-Release (Tartrate):** Succinate may have more stable absorption, but both forms require caution.  \\n\\nWould you like guidance on specific hepatic impairment stages (Child-Pugh classes) or alternative beta-blockers?","LOPRESSOR (metoprolol tartrate) tablets received their initial approval in the United States in **1978**. They were approved by the U.S. Food and Drug Administration (FDA) for the treatment of hypertension (high blood pressure) and later for other cardiovascular conditions. \\n\\nLet me know if you&#x27;d like more details about its approval history or clinical uses!","Great question! Let me break this down clearly for you.\\n\\n**When to Avoid Lopressor in Bronchospastic Disease:**\\nLopressor (metoprolol tartrate), a cardioselective \\u03b21-blocker, should generally be avoided in patients with bronchospastic diseases (like asthma or COPD) when:\\n1. The patient has **severe, unstable asthma** or **frequent acute bronchospasm episodes**.\\n2. The patient is currently experiencing an **acute bronchospastic attack**.\\n3. There&#x27;s a history of **\\u03b2-blocker-induced bronchospasm** (even with selective \\u03b21-blockers).\\n4. The patient has **concomitant respiratory failure** or severe COPD with significant bronchospasm.\\n\\n**Precautions if Lopressor Must Be Used:**\\nIf Lopressor is absolutely necessary (e.g., for post-MI management or hypertension in a patient with mild/moderate reactive airway disease):\\n1. **Start at the lowest possible dose** (e.g., 12.5\\u201325 mg daily for tartrate formulation).\\n2. **Monitor closely** for wheezing, dyspnea, or reduced peak expiratory flow rate.\\n3. **Ensure immediate access to bronchodilators** (e.g., SABA like albuterol).\\n4. Consider **concomitant inhaled corticosteroids** if chronic bronchospasm exists.\\n5. Use **short-acting formulations first** (metoprolol tartrate) rather than extended-release, allowing quicker discontinuation if adverse effects occur.\\n6. **Avoid nonselective \\u03b2-blockers** (e.g., propranolol) entirely, as they\\u2019re riskier.\\n\\n**Mechanistic Note:** Even though Lopressor is \\u03b21-selective, **\\u03b22-blockade can occur at higher doses**, potentially worsening bronchoconstriction. Always weigh risks vs. benefits and consult pulmonology if uncertain. Would you like details on alternative agents (e.g., calcium channel blockers) for such patients?","Lopressor (metoprolol tartrate) is a beta-blocker used to treat high blood pressure, angina, and certain heart conditions. The strengths and package sizes vary depending on the formulation. Here are the typical tablet strengths and package counts available:\\n\\n### **Lopressor Tablets (immediate-release, metoprolol tartrate):**  \\n1. **25 mg** \\u2013 Usually available in bottles of **100 tablets**.  \\n2. **50 mg** \\u2013 Comes in bottles of **100 tablets**.  \\n3. **100 mg** \\u2013 Typically in bottles of **100 tablets**.  \\n\\n### **Toprol-XL (metoprolol succinate, extended-release):**  \\n(Note: While not branded as Lopressor, Toprol-XL is the extended-release version of metoprolol.)  \\n- **25 mg, 50 mg, 100 mg, 200 mg** \\u2013 Often packaged in **30, 60, 90, 500, or 1000-count bottles or blister packs**.  \\n\\n### Additional Notes:  \\n- Some generic versions may have different packaging (blister packs, smaller bottles, etc.).  \\n- Dosage changes must only be made under medical supervision.  \\n\\nWould you like details on specific brand/generic configurations or dosage guidelines?","**Adverse Reactions Reported During Post-Approval Use of Lopressor (Metoprolol)**  \\n\\nLopressor (metoprolol tartrate) is a beta-1 selective adrenergic receptor blocker primarily used for hypertension, angina, and heart failure. During post-approval use, the following adverse reactions have been reported across multiple organ systems:  \\n\\n### **Central Nervous System (CNS) Effects:**  \\n- **Common:**  \\n  - Dizziness  \\n  - Fatigue  \\n  - Headache  \\n  - Sleep disturbances (insomnia, nightmares)  \\n  - Depression  \\n- **Less Common/Rare:**  \\n  - Confusion, hallucinations  \\n  - Memory impairment  \\n  - Paresthesia (tingling/numbness)  \\n  - Anxiety/nervousness  \\n\\n### **Cardiovascular System Effects:**  \\n- **Common:**  \\n  - Bradycardia (slow heart rate)  \\n  - Hypotension (low blood pressure)  \\n  - Cold extremities  \\n- **Serious/Rare:**  \\n  - Heart failure exacerbation (in susceptible patients)  \\n  - Severe hypotension (especially in overdose)  \\n  - AV block (heart conduction abnormalities)  \\n  - Raynaud\\u2019s phenomenon (peripheral vasoconstriction)  \\n\\n### **Hematologic System Effects:**  \\n- **Less Common:**  \\n  - Thrombocytopenia (low platelet count, rare)  \\n  - Leukopenia (low white blood cell count, rare)  \\n- **Other:**  \\n  - Increased bleeding risk (due to possible platelet effects)  \\n\\n### **Additional Organ Systems:**  \\n- **Respiratory:**  \\n  - Bronchospasm (in patients with asthma/COPD)  \\n- **Gastrointestinal:**  \\n  - Nausea, diarrhea, constipation  \\n- **Dermatologic:**  \\n  - Rash, alopecia (hair loss), worsening psoriasis  \\n- **Metabolic:**  \\n  - Hyperglycemia (masked hypoglycemia in diabetics)  \\n- **Other:**  \\n  - Libido decrease, impotence  \\n\\n### **Post-Market Findings Include:**  \\n- Rare cases of **agranulocytosis (severe low white blood cells)** and **hepatitis** (liver inflammation) have been reported but are exceptionally rare.  \\n\\nFor context, post-approval data captures spontaneous reports, so **frequency is not always confirmed causally**. Always consult prescribing information for updated safety profiles.  \\n\\nWould you like additional details on any specific reaction?","Since the provided document isn&#x27;t accessible here, I cannot answer your question directly. However, if you can share the name of the document, its content, or any other details, I can help analyze the text and identify the mentioned pharmaceutical company. Let me know how I can assist further!","The recommended initial daily dosage of **Lopressor (metoprolol tartrate)** for the treatment of hypertension is typically **25\\u201350 mg**, administered in **one or two divided doses** (e.g., morning and evening).  \\n\\n### **Dosage Adjustment for Optimal Blood Pressure Control**:\\n1. **Initial Adjustment**:  \\n   - If the response is inadequate after 1\\u20132 weeks, the dosage may be increased gradually (e.g., to **100 mg/day** in 1\\u20132 divided doses).  \\n   - The maximum recommended dosage for hypertension is **200 mg/day**, though higher doses are rarely needed.  \\n\\n2. **Maintenance Dosage**:  \\n   - Most patients achieve blood pressure control at **50\\u2013100 mg/day**.  \\n   - Doses up to **100 mg once daily (extended-release formulations, like metoprolol succinate) or 50 mg twice daily (immediate-release)** are commonly used.  \\n\\n3. **Special Considerations**:  \\n   - **Elderly or Hepatically Impaired**: Start at the lower end of the range (e.g., **25 mg/day**).  \\n   - **Gradual Titration**: Adjust in 25\\u201350 mg increments weekly to minimize side effects (e.g., bradycardia, fatigue).  \\n   - **Combination Therapy**: If monotherapy is insufficient, Lopressor may be combined with a **diuretic or calcium channel blocker**.  \\n\\n### **Administration**:  \\n- **Immediate-release (tartrate)**: Twice daily to maintain consistent effects.  \\n- **Extended-release (succinate)**: Once daily, preferably in the morning.  \\n\\nFor best results, blood pressure should be monitored regularly, and dosing adjusted based on individual response and tolerability.","Great question! Beta-blockers like metoprolol are a cornerstone in hypertension treatment, and their antihypertensive effects are mediated through several well-established mechanisms. Let\\u2019s break it down clearly and concisely:\\n\\n### **1. Reduction in Cardiac Output**  \\n   - **Mechanism**: By blocking \\u03b2\\u2081-adrenergic receptors in the heart, metoprolol decreases:  \\n     - **Heart rate** (negative chronotropy) \\u2013 Slows down excessive sympathetic drive.  \\n     - **Myocardial contractility** (negative inotropy) \\u2013 Reduces the force of heart contractions.  \\n   - **Effect**: This leads to a **decrease in cardiac output**, reducing the pressure exerted on arterial walls.  \\n\\n### **2. Inhibition of Renin Release**  \\n   - **Mechanism**: Beta-blockers suppress \\u03b2\\u2081-receptors in the juxtaglomerular cells of the kidneys, **blocking renin secretion**.  \\n   - **Effect**: Lower renin \\u2192 **less angiotensin II production** \\u2192 reduced vasoconstriction + decreased aldosterone-mediated sodium retention \\u2192 **lower blood volume and vascular resistance**.  \\n\\n### **3. Central Nervous System (CNS) Effects**  \\n   - **Mechanism**: Some beta-blockers cross the blood-brain barrier, reducing **sympathetic outflow** from the CNS.  \\n   - **Effect**: Decreased peripheral vascular resistance due to **reduced tonic sympathetic stimulation** of blood vessels.  \\n\\n### **4. Reduced Peripheral Resistance (Over Time)**  \\n   - **Mechanism**: Initially, beta-blockers (especially non-vasodilating ones like metoprolol) may cause **unopposed \\u03b1-adrenergic activity**, slightly increasing resistance.  \\n   - However, chronic use leads to:  \\n     - **Downregulation of \\u03b2-receptors** \\u2192 blunted vascular resistance.  \\n     - **Structural vascular remodeling** \\u2192 improved arterial compliance.  \\n\\n### **5. Antihypertensive Contribution in Specific Populations**  \\n   - **Hyperadrenergic states** (e.g., stress-induced hypertension) \\u2013 Metoprolol effectively blunts excessive catecholamine effects.  \\n   - **Post-MI patients** \\u2013 Dual benefit of BP control + cardioprotection.  \\n\\n### **Why This Matters in Hypertension Treatment**  \\nBy **lowering cardiac workload, modulating the RAAS system, and reducing sympathetic overactivity**, beta-blockers like metoprolol effectively **reduce both systolic and diastolic blood pressure**, especially in patients with high sympathetic tone or comorbid conditions (e.g., CAD, arrhythmias).  \\n\\nWould you like any specifics on dosing, pharmacokinetics, or comparisons with other antihypertensives? Happy to dive deeper!","According to limited available data from published literature, the estimated daily infant dose of metoprolol received from breastmilk ranges between **0.005\\u20130.15 mg/kg/day**, which represents approximately **0.03\\u20131.4% of the maternal weight-adjusted dose**.  \\n\\n### Key Points:  \\n- **Low Relative Infant Dose (RID):** Metoprolol typically has a low RID (usually &lt;5%), suggesting minimal transfer into breastmilk.  \\n- **Maternal Dosing Impact:** Higher maternal doses (e.g., 200 mg/day) may correlate with marginally higher infant exposure but remain well below therapeutic levels for infants.  \\n- **Safety Profile:** No significant adverse effects have been reported in breastfed infants, but monitoring for bradycardia or sedation is occasionally advised.  \\n\\nFor clinical guidance, consult lactation-specific resources (e.g., LactMed) and weigh maternal necessity against theoretical infant risks. Always verify with the latest literature, as data on beta-blockers in lactation is limited.  \\n\\nLet me know if you\\u2019d like citations or further details!","The primary metabolic pathway for Lopressor (metoprolol) in the body is **oxidative metabolism** via the **cytochrome P450 enzyme system**, specifically the **CYP2D6 isoenzyme**.  \\n\\n### Key Points:  \\n1. **Main Metabolic Route**: Lopressor undergoes **extensive hepatic metabolism**, primarily through **CYP2D6-mediated oxidation**, leading to the formation of **O-desmethylmetoprolol (major metabolite)** and other minor metabolites.  \\n2. **Enzyme Specificity**:  \\n   - **CYP2D6** is highly responsible for metoprolol\\u2019s metabolism and exhibits **genetic polymorphism**, meaning metabolic rates can vary significantly among individuals (e.g., poor vs. ultra-rapid metabolizers).  \\n   - Minor contributions may come from **CYP3A4**, but CYP2D6 is predominant.  \\n3. **Elimination**: Metabolites are excreted renally (via urine), with less than 5% of the drug excreted unchanged.  \\n\\n### Clinical Implications:  \\n- **Drug Interactions**: CYP2D6 inhibitors (e.g., fluoxetine, quinidine) can increase Lopressor\\u2019s plasma concentration.  \\n- **Genetic Variability**: Dose adjustments may be needed for CYP2D6 poor metabolizers due to higher drug exposure.  \\n\\nLet me know if you\\u2019d like deeper details on any aspect!","The dosage range of Lopressor (metoprolol tartrate) used in controlled clinical studies for hypertension, either as monotherapy or combined with thiazide-type diuretics, is as follows:  \\n\\n### **Dosage Range in Clinical Studies:**  \\n- **Monotherapy (standalone):** Typically **100\\u2013450 mg per day**, administered in **2 divided doses** (e.g., 50\\u2013225 mg twice daily).  \\n- **Combination with thiazide diuretics:** Often **50\\u2013400 mg per day**, with many studies showing efficacy at **100\\u2013200 mg daily** (divided into 2 doses).  \\n\\n### **Key Findings from Studies:**  \\n1. **Efficacy Threshold:** Effective blood pressure control usually requires **\\u2265 100 mg/day**, with higher doses (200\\u2013450 mg/day) used in resistant cases.  \\n2. **Combination Therapy:** Adding a thiazide diuretic (e.g., hydrochlorothiazide) often allows for lower metoprolol doses (50\\u2013200 mg/day) while maintaining efficacy.  \\n3. **Dosing Schedule:** Twice-daily administration (BID) is standard due to metoprolol tartrate&#x27;s shorter half-life (~3\\u20137 hours).  \\n\\n### **Notes:**  \\n- The **starting dose** in practice is often **50 mg BID**, titrated upward based on response.  \\n- Extended-release formulations (e.g., metoprolol succinate) allow once-daily dosing but were not part of the original Lopressor clinical trials.  \\n\\nWould you like references to specific studies or further details on dose-dependent efficacy?","Great question! Metoprolol is indeed primarily metabolized by the liver, so hepatic impairment can significantly alter its pharmacokinetics. Here\\u2019s how hepatic impairment affects metoprolol&#x27;s behavior in the body:\\n\\n### 1. **Metabolism (Reduced Clearance)**\\n   - Metoprolol is extensively metabolized in the liver by cytochrome P450 enzymes (mainly CYP2D6).  \\n   - In hepatic impairment (e.g., cirrhosis, severe liver disease), CYP enzyme activity is diminished.  \\n   - **Result:** Metoprolol\\u2019s clearance decreases, leading to higher plasma concentrations and prolonged half-life (normally ~3-7 hours, but can double or more in severe liver disease).\\n\\n### 2. **Bioavailability**\\n   - Metoprolol undergoes significant first-pass metabolism (breakdown in the liver before reaching systemic circulation).  \\n   - With liver dysfunction, first-pass extraction is reduced.  \\n   - **Result:** Increased bioavailability (higher drug levels reach circulation, especially after oral dosing).\\n\\n### 3. **Half-life (t\\u00bd)**\\n   - Due to reduced metabolism, elimination slows.  \\n   - **Result:** Half-life extends, potentially leading to drug accumulation with repeated dosing.\\n\\n### 4. **Active Metabolites**\\n   - Metoprolol forms metabolites (e.g., \\u03b1-hydroxymetoprolol), though less active than the parent drug.  \\n   - In hepatic impairment, these metabolites may also accumulate, though clinical significance is limited.\\n\\n### Clinical Implications:\\n   - **Dose Adjustment Needed:** Reduce metoprolol dose (especially oral) in moderate-to-severe hepatic impairment to avoid excessive \\u03b2-blockade (bradycardia, hypotension).  \\n   - **Preferred Formulation:** IV administration bypasses first-pass metabolism, so hepatic impairment has less impact\\u2014but caution is still advised.  \\n   - **Monitoring:** Watch for exaggerated effects (e.g., prolonged HR reduction, fatigue).  \\n\\n### Bottom Line:\\nHepatic impairment **reduces metoprolol metabolism**, increasing exposure and prolonging effects. Dose reduction (often by 50% or more) and close monitoring are critical in these patients.  \\n\\nWould you like specifics on dosing adjustments in cirrhosis or other liver conditions? I\\u2019m happy to elaborate!","**Potential Clinical Manifestations of Lopressor (Metoprolol) Overdose:**  \\n\\nLopressor (metoprolol), a **beta-1 selective adrenergic receptor blocker**, can cause severe **cardiovascular, respiratory, and neurological effects** when taken in excess. Symptoms may include:  \\n\\n### **1. Cardiovascular Effects (Most Critical)**  \\n- **Severe bradycardia** (slow heart rate, sometimes &lt;40 bpm)  \\n- **Hypotension** (dangerously low blood pressure, leading to shock)  \\n- **Heart block** (AV conduction disturbances, 1st- to 3rd-degree)  \\n- **Cardiogenic shock** (heart failure due to impaired pumping)  \\n- **Prolonged QRS or QT interval** (risks of arrhythmias like ventricular tachycardia/fibrillation)  \\n\\n### **2. Respiratory &amp; Metabolic Effects**  \\n- **Bronchospasm** (worsening in asthmatics/COPD patients)  \\n- **Hypoglycemia** (rare, but possible, especially with concurrent diabetes medications)  \\n- **Hyperkalemia** (elevated potassium levels due to impaired renal perfusion)  \\n\\n### **3. Neurological &amp; Other Symptoms**  \\n- **Fatigue, confusion, drowsiness**  \\n- **Seizures** (rare, but reported in extreme cases)  \\n- **Coma** (in massive overdoses)  \\n\\n---\\n\\n### **Immediate Treatment Measures for Metoprolol Overdose**  \\n\\n#### **1. Emergency Stabilization**  \\n- **ABCs (Airway, Breathing, Circulation):**  \\n  - **IV fluids (0.9% NaCl)** for hypotension.  \\n  - **Oxygen therapy** if hypoxia is present.  \\n  - **ECG monitoring** (watch for bradycardia/arrhythmias).  \\n\\n#### **2. Specific Antidotes &amp; Therapies**  \\n- **Glucagon**  \\n  - **First-line treatment** (bypasses beta-blockade via glucagon receptors, increasing cAMP to restore heart function).  \\n  - **Dose:** 3\\u201310 mg IV bolus, followed by 1\\u20135 mg/hr infusion.  \\n- **Atropine** (for bradycardia, **but often ineffective** in severe beta-blocker toxicity).  \\n  - **Dose:** 0.5\\u20131 mg IV, repeat every 3\\u20135 minutes (max 3 mg).  \\n- **Vasopressors** (if unresponsive to fluids/glucagon):  \\n  - **Norepinephrine (Noradrenaline) or Epinephrine** for refractory hypotension.  \\n- **IV Calcium (Calcium Gluconate/Chloride)** \\u2013 may improve myocardial contractility.  \\n\\n#### **3. Decontamination (If Early Presentation)**  \\n- **Activated charcoal (only if within 1\\u20132 hours of ingestion, patient is alert).**  \\n- **Gastric lavage is rarely used (risk of aspiration).**  \\n\\n#### **4. Advanced Support for Severe Cases**  \\n- **Transvenous pacing** (for refractory bradycardia/heart block).  \\n- **Lipid emulsion therapy (20% intralipid):**  \\n  - Used in **cardiotoxic beta-blocker overdoses unresponsive to standard therapy (limited evidence, but case reports support utility).**  \\n- **Hemodialysis is NOT effective** (metoprolol has high protein binding &amp; large Vd).  \\n\\n---\\n\\n### **Key Considerations**  \\n- **Continuous cardiac monitoring** (for at least 12\\u201324 hrs due to potential delayed toxicity).  \\n- **Monitor glucose &amp; electrolytes** (risk of hypoglycemia/hyperkalemia).  \\n- **Consider co-ingestants (e.g., calcium channel blockers \\u2013 synergistic toxicity).**  \\n\\nWould you like further details on any specific aspect of management?","Discontinuing Lopressor (metoprolol, a beta-1 selective adrenergic blocker) in patients with ischemic heart disease requires careful tapering and monitoring to avoid rebound effects like angina exacerbation, myocardial infarction (MI), or hypertension. Below are the evidence-based steps and precautions:\\n\\n### **Steps to Safely Discontinue Lopressor**  \\n1. **Assess Necessity &amp; Risk-Benefit Ratio**  \\n   - Confirm whether discontinuation is necessary (e.g., adverse effects, alternative therapy).  \\n   - For stable ischemic heart disease, abrupt withdrawal is **contraindicated** due to rebound tachycardia and hypertension.  \\n\\n2. **Gradual Tapering Schedule**  \\n   - **Standard Approach**: Reduce dose by **25\\u201350% every 3\\u20137 days** (longer for high-risk patients).  \\n     - Example: If taking 100mg BID \\u2192 reduce to 50mg BID for 3\\u20137 days \\u2192 then 25mg BID \\u2192 then discontinue.  \\n   - **Extended-Release (ER) Formulation**: Taper over 1\\u20132 weeks (e.g., halve the dose weekly).  \\n   - **High-Risk Patients (History of MI, Severe CAD)**: Consider slower tapering (e.g., 10\\u201325% weekly).  \\n\\n3. **Monitor for Rebound Ischemia**  \\n   - **Symptoms**: Worsening chest pain, dyspnea, palpitations, or hypertension.  \\n   - **ECG**: Check for ST-segment changes (indicative of ischemia).  \\n   - **Vital Signs**: Track heart rate and BP (rebound tachycardia may occur within 48\\u201396 hours).  \\n\\n4. **Initiate Alternative Therapy if Needed**  \\n   - Replace with another antianginal (e.g., calcium channel blocker like amlodipine) if beta-blocker cessation is unavoidable.  \\n   - Consider nitrates (e.g., isosorbide mononitrate) for angina prophylaxis.  \\n\\n### **Precautions to Avoid Complications**  \\n- **Avoid Abrupt Withdrawal** \\u2013 Associated with **\\u2191 risk of MI or angina** due to unopposed adrenergic stimulation.  \\n- **Patient Education**  \\n  - Warn about **rebound symptoms** (chest pain, palpitations).  \\n  - Advise to seek emergency care if severe angina/ischemia occurs.  \\n- **Enhanced Surveillance in High-Risk Cases**  \\n  - Hospital monitoring may be needed for patients with recent MI or severe CAD.  \\n  - Continue aspirin/statin therapy unless contraindicated.  \\n- **Hydralazine or CCBs** \\u2013 May be used to mitigate withdrawal-induced hypertension in select cases.  \\n\\n### **Key References**  \\n- **AHA/ACC Guidelines**: Recommend gradual beta-blocker withdrawal (Class I recommendation for ischemic heart disease).  \\n- **Clinical Evidence**: Rebound ischemia risk peaks within **2\\u201314 days** post-withdrawal (NEJM, *Circulation*).  \\n\\nWould you like a tailored tapering schedule for a specific patient scenario? Let me know!","Here are the specific storage instructions for Lopressor (metoprolol tartrate) tablets, based on pharmaceutical guidelines and manufacturer recommendations:\\n\\n### **Temperature Range**  \\n- **Ideal Storage Temperature**: Between **20\\u00b0C to 25\\u00b0C (68\\u00b0F to 77\\u00b0F)**.  \\n- **Acceptable Temporary Range**: **15\\u00b0C to 30\\u00b0C (59\\u00b0F to 86\\u00b0F)** for short-term fluctuations.  \\n- Avoid freezing (&lt;2\\u00b0C or 36\\u00b0F) or excessive heat (&gt;40\\u00b0C or 104\\u00b0F).\\n\\n### **Protection Measures**  \\n- **Moisture**: Keep tablets in a **dry** environment to prevent degradation.  \\n- **Light**: Store in **opaque or light-resistant containers** to prevent exposure to direct sunlight or UV rays.  \\n- **Air**: Keep the container tightly sealed to avoid excess oxygen exposure.  \\n\\n### **Container Type**  \\n- **Original Packaging**: Best stored in the manufacturer\\u2019s tightly sealed, **child-resistant** amber/pet or **blister pack** to minimize air and moisture ingress.  \\n- **Alternative Storage**: If using a pill organizer, ensure it is **airtight and moisture-proof**.  \\n\\n### **Additional Considerations**  \\n- **Do NOT store** in high-humidity areas like bathrooms or near sinks.  \\n- Keep **out of reach of children and pets**.  \\n- **Do not transfer** to unlabeled containers.  \\n\\nFollowing these instructions ensures **potency, safety, and extended shelf life**. If the tablets show discoloration, unusual odor, or texture changes, discard them properly.  \\n\\nNeed further clarification? Just ask!","Great question! Here\\u2019s a detailed answer based on available data up to January 2025:  \\n\\n**Metoprolol and Spermatogenesis (Animal Studies):**  \\nIn *rat fertility studies*, reversible adverse effects on spermatogenesis have been observed with metoprolol (a beta-1 selective adrenoceptor blocker). The effects start at an **oral dose of 50 mg/kg/day**.  \\n\\n### Key Findings:  \\n1. **Spermatogenic Disruption**:  \\n   - Reduced sperm counts and impaired spermatogenesis were noted at \\u226550 mg/kg/day.  \\n   - Histopathological changes in the testes included vacuolation of seminiferous tubules and reduced spermatid maturation.  \\n\\n2. **Reversibility**:  \\n   - The effects were **reversible** upon discontinuation of metoprolol, with full recovery of spermatogenic function.  \\n\\n3. **Plausible Mechanism**:  \\n   - Beta-blockade may alter testicular blood flow or Leydig cell function, indirectly disrupting spermatogenesis. However, the exact mechanism isn\\u2019t fully elucidated.  \\n\\n4. **Clinical Relevance (Human Context)**:  \\n   - No conclusive evidence of fertility impairment in humans at therapeutic doses.  \\n   - Human equivalent dose (HED) calculations suggest rats were exposed to **~5\\u201310\\u00d7 typical human doses**, making clinical risk uncertain.  \\n\\n### Documentation Sources:  \\n- **FDA/EMA preclinical data** (metoprolol labels and assessment reports).  \\n- **Rat fertility studies** (~50\\u2013200 mg/kg/day doses tested).  \\n\\nLet me know if you need additional details on mechanisms or human studies!","The inactive ingredients you mentioned (cellulose microcrystalline, silicon dioxide, lactose, magnesium stearate, polyethylene glycol, propylene glycol, povidone, sodium starch glycolate type A potato, talc, and titanium dioxide) are commonly found in Metoprolol Tartrate tablets. However, depending on the specific manufacturer, there might be additional inactive ingredients used in the 100 mg formulation.  \\n\\nBased on standard formulations, another potential inactive ingredient that could be present in **Metoprolol Tartrate tablets** is:  \\n\\n- **D&amp;C Yellow No. 10 Aluminum Lake (E104)** (sometimes used for color in certain brands)  \\n- **FD&amp;C Blue No. 1 Aluminum Lake** (if the tablet is colored differently)  \\n\\nSince different generic manufacturers may have slight variations, checking the **package insert or prescribing information** from the particular brand (e.g., Lopressor or a generic version) would provide the most accurate details. If you have a specific brand in mind, I can help refine the answer further.  \\n\\nWould you like help sourcing information for a particular manufacturer\\u2019s formulation?","**Answer:**  \\n\\nAccording to the provided document, the proposed mechanisms for the antihypertensive effects of **beta-blocking agents like metoprolol** include:  \\n\\n1. **Reduction in Cardiac Output:**  \\n   - Metoprolol, a **cardioselective beta-1 adrenergic receptor blocker**, decreases heart rate (negative chronotropy) and contractility (negative inotropy).  \\n   - This reduces cardiac output, lowering blood pressure by decreasing the volume of blood pumped per minute.  \\n\\n2. **Inhibition of Renin Release:**  \\n   - By blocking **beta-1 receptors** in the juxtaglomerular apparatus of the kidneys, metoprolol suppresses renin secretion.  \\n   - Reduced renin leads to decreased angiotensin II and aldosterone, reducing systemic vasoconstriction and sodium/water retention.  \\n\\n3. **Central Nervous System (CNS) Effects:**  \\n   - Some beta-blockers may act on **CNS beta-adrenergic receptors**, reducing sympathetic outflow from the brainstem, which decreases peripheral vascular resistance (though this mechanism is more prominent with nonselective beta-blockers like propranolol).  \\n\\n4. **Peripheral Vascular Adaptation (Long-Term Effect):**  \\n   - Chronic beta-blockade may lead to **downregulation of beta receptors** and vascular remodeling, contributing to sustained blood pressure reduction over time.  \\n\\n5. **Decreased Sympathetic Drive:**  \\n   - Beta-blockers blunt the effects of catecholamines (epinephrine and norepinephrine), reducing excessive sympathetic stimulation, which is often elevated in hypertensive patients.  \\n\\n(Note: If the document mentions additional or slightly differing mechanisms, please provide more context for a tailored response.)  \\n\\nWould you like a more detailed breakdown of any specific aspect?","Great question! **Lopressor** (generic name: metoprolol tartrate) is a beta-blocker primarily recommended for adult patients with **hypertension (high blood pressure)** and/or **coronary artery disease (CAD)** to lower the risk of cardiovascular events like heart attacks, strokes, or worsening angina.  \\n\\nSpecifically, it\\u2019s used to:  \\n1. **Reduce mortality and reinfarction** in patients who\\u2019ve had an **acute myocardial infarction (heart attack)**.  \\n2. **Manage chronic stable angina** (chest pain due to CAD).  \\n3. **Control high blood pressure**, which indirectly lowers cardiovascular risks.  \\n\\nWould you like details on dosing, mechanism of action, or alternatives? I\\u2019m happy to dive deeper!  \\n\\n*Note: Always consult a healthcare provider for personalized medical advice.*","Here&#x27;s a complete breakdown based on published literature regarding the estimated daily infant dose of metoprolol received from breastmilk:\\n\\n### **Estimated Daily Infant Dose of Metoprolol via Breastmilk**  \\n1. **Relative Infant Dose (RID)**:  \\n   - The **RID** (percentage of the maternal weight-adjusted dose ingested by the infant) for **metoprolol** is estimated to be **0.1\\u20132.1%** in breastmilk.  \\n   - This is considered **low risk** (typically, an RID &lt;10% is considered acceptable for breastfeeding).  \\n\\n2. **Absolute Infant Dose**:  \\n   - When adjusted for maternal dose (typically **50\\u2013200 mg/day**), the calculated **absolute infant dose** ranges between **  \\n     - **0.5\\u20134.2 \\u03bcg/kg/day** (micrograms per kilogram per day).**  \\n   - This is based on peak milk concentrations of **15\\u201373 \\u03bcg/L** (depending on maternal dosage and metabolism).  \\n\\n3. **Observed Effects in Infants**:  \\n   - **No significant adverse effects** (e.g., bradycardia, hypotension) have been reported in breastfed infants in limited studies.  \\n   - **Minimal detection** in infant serum, suggesting low systemic absorption.  \\n\\n### **Key Considerations**:  \\n- Maternal **dosage** and **frequency** influence milk concentration (higher doses may increase exposure).  \\n- Monitoring for **hypotonia, drowsiness, or slow feeding** in the infant is recommended (though rare).  \\n\\n### **Conclusion**:  \\nThe estimated **daily infant intake** from breastmilk is **well below the therapeutic dose for neonates**, making metoprolol **compatible with breastfeeding** under medical supervision.  \\n\\nWould you like details on specific studies or pharmacokinetic data? I can provide further literature references if needed!"]],["reference_answer",["The inactive ingredients in the 100 mg Metoprolol Tartrate tablet are: CELLULOSE, MICROCRYSTALLINE, SILICON DIOXIDE, FD&amp;C BLUE NO. 2, LACTOSE, UNSPECIFIED FORM, MAGNESIUM STEARATE, POLYETHYLENE GLYCOL, UNSPECIFIED, PROPYLENE GLYCOL, POVIDONE, SODIUM STARCH GLYCOLATE TYPE A POTATO, TALC, and TITANIUM DIOXIDE.","Neonates born to mothers who are receiving metoprolol during pregnancy may be at risk for hypotension, hypoglycemia, bradycardia, and respiratory depression.","The strengths available for the drug LOPRESSOR containing metoprolol tartrate are 50 mg and 100 mg.","Shortness of breath, bradycardia, cold extremities, arterial insufficiency, palpitations, heart failure exacerbations, peripheral edema, hypotension, and gangrene in patients with pre-existing severe peripheral circulatory disorders have been reported in about 1% of patients taking beta-blockers.","LOPRESSOR is indicated for the treatment of hypertension in adult patients, to lower blood pressure. Lowering blood pressure lowers the risk of fatal and non-fatal cardiovascular events, primarily strokes and myocardial infarctions.","LOPRESSOR therapy should be considered to be initiated at low doses in patients with hepatic impairment, and the dosage should be gradually increased to optimize therapy while closely monitoring for adverse events.","LOPRESSOR (metoprolol tartrate) tablets received initial U.S. approval in 1992.","Patients with bronchospastic disease should generally not receive beta-blockers, including Lopressor.","Lopressor tablets are available in two strengths: 50 mg and 100 mg.","Some adverse reactions reported during post approval use of Lopressor include reversible mental depression progressing to catatonia, disorientation, short-term memory loss, emotional lability, clouded sensorium, decreased performance on neuropsychometrics, intensification of AV block, agranulocytosis, purpura, hypersensitive reactions like fever and respiratory distress, and changes in laboratory findings like increased blood triglycerides and decreased HDL.","Validus Pharmaceuticals LLC","The usual initial dosage of Lopressor tablets for hypertension is 100 mg daily, to be taken in single or divided doses. The dosage can be adjusted at weekly intervals until the optimum blood pressure reduction is achieved.","The mechanism of the antihypertensive effects of beta-blocking agents, such as metoprolol, has not been fully elucidated. Possible mechanisms include competitive antagonism of catecholamines at peripheral adrenergic neuron sites, leading to decreased cardiac output; a central effect resulting in reduced sympathetic outflow to the periphery; and suppression of renin activity.","The estimated daily infant dose of metoprolol received from breastmilk ranges from 0.05 mg to less than 1 mg. The estimated relative infant dosage was 0.5% to 2% of the mother&#x27;s weight-adjusted dosage.","Lopressor is primarily metabolized by CYP2D6 in the liver. It is a racemic mixture of R- and S- enantiomers, and its metabolism is dependent on oxidation phenotype.","In controlled clinical studies, Lopressor has been shown to be an effective antihypertensive agent when used alone or as concomitant therapy with thiazide-type diuretics, at dosages of 100 mg to 450 mg daily.","Hepatic impairment may impact the pharmacokinetics of metoprolol since the drug is primarily eliminated by hepatic metabolism.","Overdosage of Lopressor may lead to severe bradycardia, hypotension, and cardiogenic shock. Clinical presentation can also include atrioventricular block, heart failure, bronchospasm, hypoxia, impairment of consciousness/coma, nausea and vomiting.","When discontinuing therapy with Lopressor, particularly in patients with ischemic heart disease, it is recommended to gradually reduce the dosage over a period of 1 to 2 weeks. Patients should be monitored, and if angina worsens or acute coronary ischemia develops, Lopressor should be promptly reinstated. Patients should not interrupt therapy without their physician&#x27;s advice.","Lopressor tablets should be stored at 77\\u00b0F (25\\u00b0C) with excursions permitted to 59\\u00b0 to 86\\u00b0F (15\\u00b0 to 30\\u00b0C). They should be protected from moisture and heat, and dispensed in a tight, light-resistant container.","In animal fertility studies, metoprolol has been associated with reversible adverse effects on spermatogenesis starting at an oral dose level of 3.5 mg/kg in rats.","The inactive ingredients in the 100 mg Metoprolol Tartrate tablet include cellulose, microcrystalline, silicon dioxide, FD&amp;C Blue No. 2, lactose, magnesium stearate, polyethylene glycol, propylene glycol, povidone, sodium starch glycolate type A potato, talc, and titanium dioxide.","The mechanism of the antihypertensive effects of beta-blocking agents, like metoprolol, has not been fully elucidated. Possible mechanisms include competitive antagonism of catecholamines at peripheral adrenergic neuron sites, leading to decreased cardiac output; a central effect reducing sympathetic outflow to the periphery; and suppression of renin activity.","LOPRESSOR is indicated for the treatment of hypertension in adult patients, to lower blood pressure. Lowering blood pressure lowers the risk of fatal and non-fatal cardiovascular events, primarily strokes and myocardial infarctions.","The estimated daily infant dose of metoprolol received from breastmilk ranges from 0.05 mg to less than 1 mg. The estimated relative infant dosage was 0.5% to 2% of the mother&#x27;s weight-adjusted dosage."]],["id",[19,8,18,6,2,1,0,5,17,7,20,3,12,9,13,15,14,11,4,16,10,18,12,2,9]],["content",["Product Information\\nProduct Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:30698-459\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nMETOPROLOL TARTRATE\\n (UNII: W5S57Y3A5L) \\n(METOPROLOL -\\nUNII:GEB06NHM23)\\nMETOPROLOL\\nTARTRATE\\n100 mg\\nInactive Ingredients\\nIngredient Name\\nStrength\\nCELLULOSE, MICROCRYSTALLINE\\n (UNII: OP1R32D61U)\\n \\nSILICON DIOXIDE\\n (UNII: ETJ7Z6XBU4)\\n \\nFD&amp;C BLUE NO. 2\\n (UNII: L06K8R7DQK)\\n \\nLACTOSE, UNSPECIFIED FORM\\n (UNII: J...","and propafenone were shown to double metoprolol concentrations. While there is no\\ninformation about moderate or weak inhibitors, these too are likely to increase\\nmetoprolol concentration. Increases in plasma concentration decrease the\\ncardioselectivity of metoprolol \\n[see Clinical Pharmacology (\\n12.3\\n)]. \\nMonitor patients\\nclosely, when the combination cannot be avoided.\\n7.\\n4\\n \\n  \\nNegative Chronotropes\\nDigitalis glycosides, clonidine, diltiazem and verapamil slow atrioventricular conduction\\nand d...","Product Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:30698-458\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nMETOPROLOL TARTRATE\\n (UNII: W5S57Y3A5L) \\n(METOPROLOL -\\nUNII:GEB06NHM23)\\nMETOPROLOL\\nTARTRATE\\n50 mg\\nInactive Ingredients\\nIngredient Name\\nStrength\\nCELLULOSE, MICROCRYSTALLINE\\n (UNII: OP1R32D61U)\\n \\nSILICON DIOXIDE\\n (UNII: ETJ7Z6XBU4)\\n \\nD&amp;C RED NO. 30\\n (UNII: 2S42T2808B)\\n \\nLACTOSE, UNSPECIFIED FORM\\n (UNII: J2B2A4N98G)\\n \\nMAGNESIUM...","5.\\n9\\n \\n  \\nPeripheral Vascular Disease\\nBeta-blockers can precipitate or aggravate symptoms of arterial insufficiency in patients\\nwith peripheral vascular disease.\\n6 \\n     \\nADVERSE REACTIONS\\nThe following adverse reactions are described elsewhere in labeling:\\nWorsening angina or myocardial infarction \\n[see \\nWarnings and Precautions (\\n5\\n)]\\n \\n \\nWorsening heart failure \\n[see \\nWarnings and Precautions (\\n5\\n)\\n]\\n.\\n \\nWorsening AV block \\n[see \\nContraindications (\\n4\\n)\\n]\\n.\\n6.1 \\n  \\nClinical Trials Experience\\n...","8.6 \\n  \\nHepatic Impairment\\n8.7 \\n  \\nRenal Impairment\\n10 \\n     \\nOVERDOSAGE\\n11 \\n     \\nDESCRIPTION\\n12 \\n      \\nCLINICAL PHARMACOLOGY\\n12.1 \\n   \\nMechanism of Action\\n12.2 \\n  \\nPharmacodynamics\\n12.3 \\n  \\nPharmacokinetics\\n12.5 \\n  \\nPharmacogenomics\\n13 \\n     \\nNONCLINICAL TOXICOLOGY\\n13.1 \\n  \\nCarcinogenesis, Mutagenesis, Impairment of Fertility\\n14 \\n     \\nCLINICAL STUDIES\\n14.1 \\n  \\nHypertension\\n14.2 \\n  \\nAngina Pectoris\\n14.3 \\n  \\nMyocardial Infarction\\n16 \\n     \\nHOW SUPPLIED/STORAGE AND HANDLING\\n17 \\n     \\nPATIENT CO...","CYP2D6 Inhibitors are likely to increase metoprolol concentration. (\\n7.3\\n)\\nConcomitant use of glycosides, clonidine, and diltiazem and verapamil with beta-blockers can increase\\nthe risk of bradycardia. (\\n7.4\\n)\\nBeta-blockers including metoprolol, may exacerbate the rebound hypertension that can follow the\\nwithdrawal of clonidine. (\\n7.4\\n)\\nUSE IN SPECIFIC POPULATIONS\\nHepatic Impairment: Consider initiating LOPRESSOR therapy at low doses and gradually increase\\ndosage to optimize therapy, while monit...","LOPRESSOR- metoprolol tartrate tablet \\n \\nValidus Pharmaceuticals LLC\\n----------\\nHIGHLIGHTS OF PRESCRIBING INFORMATION\\nThese highlights do not include all the information needed to use \\nLOPRESSOR\\n safely and\\neffectively. See full prescribing information for \\nLOPRESSOR\\n. \\n      \\n \\nLOPRESSOR\\n (metoprolol \\ntart\\nr\\nate\\n) \\nt\\nablet\\ns\\n,\\n for \\no\\nral \\nu\\nse\\n \\nInitial U.S. Approval: \\n1992\\n \\nINDICATIONS AND USAGE\\nLOPRESSOR is a beta-adrenergic blocker indicated for the treatment of:\\nHypertension, to lower blo...","dose of LOPRESSOR \\n[see \\nDosage and Administration (\\n2\\n)].\\n \\nIt may be necessary to lower\\nthe dose of LOPRESSOR or temporarily discontinue it. Such episodes do not preclude\\nsubsequent successful titration of LOPRESSOR.\\n5.3 \\n  \\nBronchospastic Disease\\nPatients with bronchospastic disease, should in general, not receive beta-blockers,\\nincluding Lopressor. Because of its relative beta\\n cardio-selectivity, however,\\nLOPRESSOR may be used in patients with bronchospastic disease who do not respond\\nto, o...","NDC 30698-458-01\\nLopressor\\n(metoprolol tartrate USP) Tablets\\n50 mg\\n100 Tablets\\nRx Only\\nPRINCIPAL DISPLAY PANEL\\nNDC 30698-459-01\\nLopressor\\n(metoprolol tartrate USP) Tablets\\n100 mg\\n100 Tablets\\nRx Only\\nLOPRESSOR  \\nmetoprolol tartrate tablet\\nProduct Information","Lopressor\\nPlacebo\\nHypotension (systolic BP &lt; 90 mm\\nHg)\\n27.4%\\n23.2%\\nBradycardia (heart rate &lt;\\n40 beats/min)\\n15.9%\\n6.7%\\nSecond- or third-degree heart block\\n4.7%\\n4.7%\\nFirst-degree heart block (P-R \\u2265\\n0.26 sec)\\n5.3%\\n1.9%\\nHeart failure\\n27.5%\\n29.6%\\n6.2 \\n  \\nPost-Marketing Experience\\nThe following adverse reactions have been identified during post approval use of\\nLOPRESSOR. Because these reactions are reported voluntarily from a population of\\nuncertain size, it is not always possible to reliably estimate...","Validus Pharmaceuticals LLC\\n \\nRevised: 9/2023","absolute risk increase per mmHg is greater at higher blood pressures, so that even\\nmodest reductions of severe hypertension can provide substantial benefit. Relative risk\\nreduction from blood pressure reduction is similar across populations with varying\\nabsolute risk, so the absolute benefit is greater in patients who are at higher risk\\nindependent of their hypertension (for example, patients with diabetes or\\nhyperlipidemia), and such patients would be expected to benefit from more aggressive\\ntr...","Metoprolol is a beta\\n-selective (cardioselective) adrenergic receptor blocking agent. This\\npreferential effect is not absolute, however, and at higher plasma concentrations,\\nmetoprolol also inhibits beta\\n-adrenoreceptors, chiefly located in the bronchial and\\nvascular musculature.\\nMetoprolol has no intrinsic sympathomimetic activity, and membrane-stabilizing activity is\\ndetectable only at plasma concentrations much greater than required for beta-blockade.\\nAnimal and human experiments indicate tha...","Data\\nHuman Data\\nData from published observational studies did not demonstrate an association of major\\ncongenital malformations and use of metoprolol in pregnancy. The published literature\\nhas reported inconsistent findings of intrauterine growth retardation, preterm birth and\\nperinatal mortality with maternal use of metoprolol during pregnancy; however, these\\nstudies have methodological limitations hindering interpretation. Methodological\\nlimitations include retrospective design, concomitant use...","the ratio of approximately 2.5:1.\\nThere is a linear relationship between the log of plasma levels and reduction of exercise\\nheart rate. \\nHowever, antihypertensive activity does not appear to be related to plasma\\nlevels. Because of variable plasma levels attained with a given dose and lack of a\\nconsistent relationship of antihypertensive activity to dose, selection of proper dosage\\nrequires individual titration.\\nIn several studies of patients with acute myocardial infarction, intravenous followed...","mg in a 60-kg patient.\\n14 \\n     \\nCLINICAL STUDIES\\n14.1 \\n  \\nHypertension\\nIn controlled clinical studies, Lopressor has been shown to be an effective\\nantihypertensive agent when used alone or as concomitant therapy with thiazide-type\\ndiuretics, at dosages of 100 mg to 450 mg daily. In controlled, comparative, clinical\\nstudies, Lopressor has been shown to be as effective an antihypertensive agent as\\npropranolol, methyldopa, and thiazide-type diuretics, to be equally effective in supine and\\nstanding...","Renal\\n \\nimpairment\\n: The systemic availability and half-life of Lopressor in patients with\\nrenal failure do not differ to a clinically significant degree from those in normal subjects.\\nHepatic Impairment:\\n Since the drug is primarily eliminated by hepatic metabolism,\\nhepatic impairment may impact the pharmacokinetics of metoprolol.\\nDrug Interactions\\nMetoprolol is metabolized predominantly by CYP2D6. In healthy subjects with CYP2D6\\nextensive metabolizer phenotype, coadministration of quinidine 10...","Signs and Symptoms - Overdosage of LOPRESSOR may lead to severe bradycardia,\\nhypotension, and cardiogenic shock. Clinical presentation can also include:\\natrioventricular block, heart failure, bronchospasm, hypoxia, impairment of\\nconsciousness/coma, nausea and vomiting.\\nTreatment \\u2013 Consider treating the patient with intensive care. Patients with myocardial\\ninfarction or heart failure may be prone to significant hemodynamic instability. Beta-\\nblocker overdose may result in significant resistance t...","been studied. If treatment is to be discontinued, reduce the dosage gradually over a\\nperiod of 1 - 2 weeks \\n[see \\nWarnings and Precautions (\\n5.1\\n)\\n].\\n2.3 \\n  \\nMyocardial Infarction\\nSee prescribing information of intravenous metoprolol for dosage instructions for\\nintravenous therapy.\\nIn patients who tolerate the full intravenous dose, initiate Lopressor tablets, 50 mg every\\n6 hours, 15 minutes after the last intravenous dose of metoprolol and continue for\\n48 hours. In the case of intolerance, redu...","however, it is also reasonable to administer the drug orally to patients at a later time as\\nis recommended for certain other beta-blockers.\\n16 \\n     \\nHOW SUPPLIED/STORAGE AND HANDLING\\nLopressor \\n(\\nmetoprolol tartrate\\n)\\n \\nt\\nablets\\nTablets 50 mg \\n\\u2013 capsule-shaped, biconvex, pink, scored (imprinted LOPRESSOR on\\none side and 458 twice on the scored side)\\n      \\nBottles of 100\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026\\u2026.\\u2026\\u2026\\u2026NDC 30698-458-01\\nTablets 100 mg \\n\\u2013 capsule-shaped, biconvex, light blue, scored (imprinted LOPRESSOR\\non on...","(range 17.0 to 158.7). The average relative infant dosage was 0.5% of the mother&#x27;s\\nweight-adjusted dosage.\\n8.\\n3 \\n \\nFemales and Males of Reproductive Potential\\nRisk Summary\\nBased on the published literature, beta-blockers (including metoprolol) may cause\\nerectile dysfunction and inhibit sperm motility. In animal fertility studies, metoprolol has\\nbeen associated with reversible adverse effects on spermatogenesis starting at oral\\ndose level of 3.5 mg/kg in rats, which would correspond to a dose of ...","Product Type\\nHUMAN PRESCRIPTION DRUG\\nItem Code (Source)\\nNDC:30698-458\\nRoute of Administration\\nORAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nMETOPROLOL TARTRATE\\n (UNII: W5S57Y3A5L) \\n(METOPROLOL -\\nUNII:GEB06NHM23)\\nMETOPROLOL\\nTARTRATE\\n50 mg\\nInactive Ingredients\\nIngredient Name\\nStrength\\nCELLULOSE, MICROCRYSTALLINE\\n (UNII: OP1R32D61U)\\n \\nSILICON DIOXIDE\\n (UNII: ETJ7Z6XBU4)\\n \\nD&amp;C RED NO. 30\\n (UNII: 2S42T2808B)\\n \\nLACTOSE, UNSPECIFIED FORM\\n (UNII: J2B2A4N98G)\\n \\nMAGNESIUM...","Metoprolol is a beta\\n-selective (cardioselective) adrenergic receptor blocking agent. This\\npreferential effect is not absolute, however, and at higher plasma concentrations,\\nmetoprolol also inhibits beta\\n-adrenoreceptors, chiefly located in the bronchial and\\nvascular musculature.\\nMetoprolol has no intrinsic sympathomimetic activity, and membrane-stabilizing activity is\\ndetectable only at plasma concentrations much greater than required for beta-blockade.\\nAnimal and human experiments indicate tha...","8.6 \\n  \\nHepatic Impairment\\n8.7 \\n  \\nRenal Impairment\\n10 \\n     \\nOVERDOSAGE\\n11 \\n     \\nDESCRIPTION\\n12 \\n      \\nCLINICAL PHARMACOLOGY\\n12.1 \\n   \\nMechanism of Action\\n12.2 \\n  \\nPharmacodynamics\\n12.3 \\n  \\nPharmacokinetics\\n12.5 \\n  \\nPharmacogenomics\\n13 \\n     \\nNONCLINICAL TOXICOLOGY\\n13.1 \\n  \\nCarcinogenesis, Mutagenesis, Impairment of Fertility\\n14 \\n     \\nCLINICAL STUDIES\\n14.1 \\n  \\nHypertension\\n14.2 \\n  \\nAngina Pectoris\\n14.3 \\n  \\nMyocardial Infarction\\n16 \\n     \\nHOW SUPPLIED/STORAGE AND HANDLING\\n17 \\n     \\nPATIENT CO...","Data\\nHuman Data\\nData from published observational studies did not demonstrate an association of major\\ncongenital malformations and use of metoprolol in pregnancy. The published literature\\nhas reported inconsistent findings of intrauterine growth retardation, preterm birth and\\nperinatal mortality with maternal use of metoprolol during pregnancy; however, these\\nstudies have methodological limitations hindering interpretation. Methodological\\nlimitations include retrospective design, concomitant use..."]],["color",["#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1326","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1327"}}},"glyph":{"type":"object","name":"Scatter","id":"p1322","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1323","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1324","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1340","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1331","attributes":{"selected":{"type":"object","name":"Selection","id":"p1332","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1333"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"PI24wCSHpsCIScTATlLiwNU44sDktN/A4kzDwGTaw8B2n2fAWi2LwPKiosCtt6PAtuSewKn5sMDOzIXAf8HPwNYw0cACf4zAlJUxwCuuXsAYkGTA"},"shape":[21],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"CZKRQQZvl0G9toVBDAmFQWohjUF8lZdBhP6KQU52mUG5Y4NB5l+EQYNJhkFu+YxB0d5yQYWBekEWHHxBbDJ8Qf9VkUH6gpFBrjCRQcMklkEOQ45B"},"shape":[21],"dtype":"float32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1341","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1342"}}},"glyph":{"type":"object","name":"Scatter","id":"p1337","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1338","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1339","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1294","attributes":{"logo":"grey","tools":[{"type":"object","name":"PanTool","id":"p1309"},{"type":"object","name":"WheelZoomTool","id":"p1310","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1311","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1312","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p1317"},{"type":"object","name":"SaveTool","id":"p1318"},{"type":"object","name":"HoverTool","id":"p1285","attributes":{"renderers":[{"id":"p1325"}],"tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Question:&lt;/b&gt; @questions &lt;br&gt;\\n    &lt;b&gt;agent Answer:&lt;/b&gt; @agent_answer &lt;br&gt;\\n    &lt;b&gt;Reference Answer:&lt;/b&gt; @reference_answer &lt;br&gt;\\n    &lt;b&gt;Correctness:&lt;/b&gt; @correctness &lt;br&gt;\\n    &lt;b&gt;Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1304","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1305","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1306"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1307"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p1299","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1300","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1301"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1302"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p1303","attributes":{"axis":{"id":"p1299"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p1308","attributes":{"dimension":1,"axis":{"id":"p1304"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p1328","attributes":{"title":"Question Correctness","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p1329","attributes":{"label":{"type":"value","value":"False"},"renderers":[{"id":"p1325"}],"index":0}},{"type":"object","name":"LegendItem","id":"p1330","attributes":{"label":{"type":"value","value":"True"},"renderers":[{"id":"p1325"}],"index":1}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}}],"tabs_location":"below"}}]}}';
+        const render_items = [{"docid":"2eb6d45e-70ef-4787-9019-a6e8b2204441","roots":{"p1344":"ecc0cf82-64e1-4656-89fd-1efb962f3567"},"root_ids":["p1344"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="ecc0cf82-64e1-4656-89fd-1efb962f3567" data-root-id="p1344" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+
+                <div class="section-title">SELECTED METRICS</div>
+
+                
+
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function opentab(evt, name) {
+    // Declare all variables
+    let i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>

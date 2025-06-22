@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+
+<style>
+    body{
+  background: #18181B;
+}
+
+.main{
+  font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #FDFDFD;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+h3 {
+  font-size: 1.5rem;
+  background: #0c087c;
+  padding: 10px;
+  margin: 0px;
+  border: 1px solid #6b7280;}
+
+.extended-title{
+  width:100%;
+}
+
+#gsk-overview{
+  display:flex;
+}
+
+h4 {
+  font-size: 1rem;
+  background: #27272A;
+  padding: 10px;
+  margin: 0px;
+  border-bottom: 1px solid #6b7280;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3px;
+  color:#000000;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header > * {
+  margin-inline: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  padding:10px;
+  border: 1px solid #27272A;
+}
+
+.flex-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+progress[value] {
+  --background: #6D6D6D;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4px;
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin: 20px 0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #27272A;
+  background-color: #27272A;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size:1.2rem;
+}
+
+.tab div {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.tab button:hover {
+  background-color: #18181B;
+}
+
+.tab-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom:-5px;
+}
+
+.tab button.active {
+  background-color: #18181B;
+  border-top: 1px solid #6b7280;
+  border-bottom: 1px solid #18181B;
+  border-left: 1px solid #6b7280;
+  border-right: 1px solid #6b7280;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  background: #18181B;
+  border: 1px solid #27272A;
+  border-top: 1px solid #6b7280;
+  margin-top: -2px;
+}
+
+#gsk-advice {
+  display: flex;
+  justify-content: center;
+}
+
+#gsk-metrics{
+  width:100%;
+}
+
+#recommendation {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e1ce86;
+  color: #27272A;
+  width:95%;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  font-size: 12pt;
+}
+
+.separator {
+  margin: 20px 0;
+}
+
+.separator-border {
+  margin: 20px 0;
+  border-bottom: 1px solid #6b7280;
+}
+
+#gsk-rag{
+  margin: 32px 28px;
+  padding: 12px 24px;
+  background-color: #111516;
+}
+
+.section-container {
+  margin-bottom: 32px;
+}
+
+  .components-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 0 32px;
+  }
+
+    .component-card {
+      background-color: #14191B;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+
+    .component-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #B1B1B1;
+      padding-bottom: 8px;
+    }
+
+    .component-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+    }
+      
+      .text-green {
+        color: #04B543;
+      }
+      
+      .text-orange {
+        color: #E76E0F;
+      }
+      
+      .text-red {
+        color: #EA3829;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #464646;
+        color: #E6E6E6;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 150%;
+        left: 50%;
+        margin-left: -60px;
+        font-size: 12px;
+        padding: 12px;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+    .overall-card {
+      background-color: #026836;
+      border-radius: 16px;
+      padding: 28px 32px 32px 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+      flex-grow: 1;
+    }
+  
+    .overall-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #E6E6E6;
+      padding: 14px 0 8px 0;
+      text-transform: uppercase;
+     }
+  
+    .overall-value {
+      font-size: 32px;
+      font-weight: 500;
+      padding-bottom: 12px;
+      color: #E6E6E6;
+    }
+
+.section-title {
+  font-size: 12px;
+  color: #B1B1B1;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.section-content {
+  color: #E6E6E6;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.section-card {
+  background-color: #14191B;
+  border-radius: 16px;
+  padding: 28px 32px 32px 32px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.correctness-indicator{
+  padding: 20px;
+  border-radius: 50px;
+  font-size: 16pt;
+  box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+  text-align: center;
+}
+
+.metric-title{
+  margin: -2px;
+  border-bottom: none;
+}
+
+.hist-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-around;
+  width: 85%;
+}
+
+.hist-row>div {
+  flex: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.tab-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#component-table{
+  width:50%;
+  margin-top: 10px;
+}
+
+.green{
+  background-color: #0a980a;
+}
+
+.orange {
+  background-color: #e5b62a;
+}
+
+.red {
+  background-color: #ba0e0e;
+}
+
+.progress-green {
+  --color: #04B543;
+}
+
+.progress-orange {
+  --color: #E76E0F;
+}
+
+.progress-red {
+  --color: #EA3829;
+}
+
+.corr-plot{
+  flex: 1;
+  padding-left: 2%;
+}
+
+.tooltip-text {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  background-color: #2d3d4c;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+#fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+#delay {
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 1s;
+}
+
+td {
+  position: relative;
+}
+
+tr:hover .tooltip-text {
+  display: block;
+  visibility: visible;
+}
+
+.tr:hover #fade {
+  opacity: 1;
+}
+
+.tr:hover #delay {
+  opacity: 1;
+}
+
+.callout {
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  background: #D9EDF9;
+  border: 3px solid #0088D1;
+  color: #272eb5;
+  position: relative;
+  max-width: 40rem;
+  border-radius: 10px;
+  margin-top: 10%;
+  font-size: 11pt;
+}
+
+.callout-icon {
+  content: "";
+
+  /* SVG via a data URI! */
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  position: absolute;
+  left: 0.9rem;
+  top: 1.1rem;
+}
+
+.callout-icon svg{
+  fill: #016ca7;
+}
+.callout p+p {
+  margin-top: 1em;
+}
+
+.callout a {
+  color: #272eb5;
+  font-weight: bold;
+}
+
+#gsk-logo {
+  padding-top: 10px;
+}
+</style>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.3.4.min.js" integrity="sha384-5QIrjQuyo4I/x6DK/Sau33lcA3hT2TCZGr9vbk+2ebd7Da6FnR1amdM+9B5xOrSf" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.4.min.js" integrity="sha384-tXTWPp/bAKa+K9RPuXh7DNvye0Mv+P+6y4rAMVy+pWapsnXg9UG7g20WZ0N4i28A" crossorigin="anonymous"></script>
+
+
+
+
+
+<div class="main">
+    <div id="gsk-rag" class="dark:text-white dark:bg-zinc-800 rounded border border-gray-500">
+        <div class="header border-b border-b-gray-500">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 30 15" fill="none" id="gsk-logo">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M22.504 1.549a4.196 4.196 0 0 1 2.573-.887v.002a3.783 3.783 0 0 1 2.706 1.086 3.783 3.783 0 0 1 1.126 2.69 3.771 3.771 0 0 1-1.126 2.69 3.77 3.77 0 0 1-2.706 1.085l-4.794.011-2.533 3.467L8.203 15l2.881-3.335a9.829 9.829 0 0 1-4.663-1.68H3.185L0 7.163h3.934C4.263 3.165 8.187 0 12.96 0c2.24 0 4.489.696 6.175 1.909a7.423 7.423 0 0 1 1.882 1.919 4.194 4.194 0 0 1 1.487-2.28ZM7.05 3.249l3.91 3.915h1.505L7.89 2.584a7.773 7.773 0 0 0-.84.665Zm4.079-2.008 5.923 5.923h1.503l-6.086-6.087c-.45.023-.898.078-1.34.164ZM4.574 8.226h-1.77l.784.693h1.584a8.454 8.454 0 0 1-.598-.693Zm9.479 0H5.984c1.469 1.477 3.656 2.377 5.977 2.422l2.092-2.422Zm-2.458 4.472 5.492-1.902 1.878-2.569h-3.508l-3.862 4.47Zm10.361-5.552h3.265a2.714 2.714 0 0 0 1.747-4.648 2.711 2.711 0 0 0-1.888-.773 3.127 3.127 0 0 0-3.123 3.124v2.297Zm3.659-3.73a.677.677 0 1 1-.134 1.348.677.677 0 0 1 .134-1.348Z"
+                        clip-rule="evenodd" />
+                </svg>
+            <h1>RAG Evaluation Toolkit</h1>
+        </div>
+        
+        <div class="section-container">
+            <div class="components-container">
+                
+                <div class="component-card">
+                    <div class="component-title">GENERATOR</div>
+                    <div class="component-value tooltip  text-orange ">
+                        32.0%
+                            <span class="tooltiptext" id="fade">The Generator is the LLM inside the RAG to generate the answers.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=32.0 class=" progress-orange ">32.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">RETRIEVER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Retriever fetches relevant documents from the knowledge base according to a user query.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">REWRITER</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Rewriter modifies the user query to match a predefined format or to include the context from the chat history.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">ROUTING</div>
+                    <div class="component-value tooltip  text-green ">
+                        100.0%
+                            <span class="tooltiptext" id="fade">The Router filters the query of the user based on his intentions (intentions detection).</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=100.0 class=" progress-green ">100.0%</progress>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-title">KNOWLEDGE_BASE</div>
+                    <div class="component-value tooltip  text-orange ">
+                        62.5%
+                            <span class="tooltiptext" id="fade">The knowledge base is the set of documents given to the RAG to generate the answers. Its scores is computed differently from the other components: it is the difference between the maximum and minimum correctness score across all the topics of the knowledge base.</span>
+                    </div>
+                    <div class="component-bar">
+                        <progress max="100" value=62.5 class=" progress-orange ">62.5%</progress>
+                    </div>
+                </div>
+                
+                <div class="overall-card">
+                    <div class="overall-title">Overall Correctness Score</div>
+                    <div class="overall-value">32%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">RECOMMENDATION</div>
+                <span class="section-content">Focus on improving the performance on complex questions, as they have the lowest score. Additionally, ensure the RAG system is equally effective across all topics in the knowledge base to enhance overall performance.</span>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">CORRECTNESS BY TOPIC</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"e88ff92b-0fb7-40fc-bf6d-d6bcdc7182e8":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p3381","attributes":{"height":350,"width_policy":"max","x_range":{"type":"object","name":"DataRange1d","id":"p3383","attributes":{"start":0}},"y_range":{"type":"object","name":"FactorRange","id":"p3390","attributes":{"factors":["Medical Products","Others","PROVENGE Treatment"]}},"x_scale":{"type":"object","name":"LinearScale","id":"p3391"},"y_scale":{"type":"object","name":"CategoricalScale","id":"p3392"},"title":{"type":"object","name":"Title","id":"p3388","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p3410","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p3378","attributes":{"selected":{"type":"object","name":"Selection","id":"p3379","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3380"},"data":{"type":"map","entries":[["correctness",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAKUAkSZIkSZI8QAAAAAAAAElA"},"shape":[3],"dtype":"float64","order":"little"}],["metadata_values",["Medical Products","Others","PROVENGE Treatment"]],["colors",["#a50026","#fee899","#006837"]]]}}},"view":{"type":"object","name":"CDSView","id":"p3411","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3412"}}},"glyph":{"type":"object","name":"HBar","id":"p3407","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#14191B"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p3408","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p3409","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#14191B"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p3419","attributes":{"data_source":{"id":"p3378"},"view":{"type":"object","name":"CDSView","id":"p3420","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3421"}}},"glyph":{"type":"object","name":"HBar","id":"p3416","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p3417","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p3418","attributes":{"y":{"type":"field","field":"metadata_values"},"height":{"type":"value","value":0.85},"right":{"type":"field","field":"correctness"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#78BBFA"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p3429","attributes":{"visible":false,"data_source":{"type":"object","name":"ColumnDataSource","id":"p3423","attributes":{"selected":{"type":"object","name":"Selection","id":"p3424","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3425"},"data":{"type":"map","entries":[["x",[0]],["y",[0]]]}}},"view":{"type":"object","name":"CDSView","id":"p3430","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3431"}}},"glyph":{"type":"object","name":"Line","id":"p3426","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_width":2,"line_dash":[6]}},"nonselection_glyph":{"type":"object","name":"Line","id":"p3427","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.1,"line_width":2,"line_dash":[6]}},"muted_glyph":{"type":"object","name":"Line","id":"p3428","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#EA3829","line_alpha":0.2,"line_width":2,"line_dash":[6]}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p3389","attributes":{"tools":[{"type":"object","name":"HoverTool","id":"p3403","attributes":{"renderers":"auto","tooltips":[["topic","@metadata_values"],["Correctness","@correctness{0.00}"]]}}]}},"toolbar_location":null,"left":[{"type":"object","name":"CategoricalAxis","id":"p3398","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p3399"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p3400"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3401"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p3393","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p3394","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p3395"},"axis_label":"Correctness (%)","axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3396"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p3397","attributes":{"axis":{"id":"p3393"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p3402","attributes":{"dimension":1,"axis":{"id":"p3398"},"grid_line_color":"#E0E0E0","grid_line_alpha":0.25}},{"type":"object","name":"Span","id":"p3422","attributes":{"location":32.0,"dimension":"height","line_color":"#EA3829","line_width":2,"line_dash":[6]}},{"type":"object","name":"Legend","id":"p3432","attributes":{"border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p3433","attributes":{"label":{"type":"value","value":"Correctness on the entire Testset"},"renderers":[{"id":"p3429"}]}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}]}}';
+        const render_items = [{"docid":"e88ff92b-0fb7-40fc-bf6d-d6bcdc7182e8","roots":{"p3381":"b6a2546a-4400-4fb0-bc5e-73bc9f25a00a"},"root_ids":["p3381"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="b6a2546a-4400-4fb0-bc5e-73bc9f25a00a" data-root-id="p3381" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+                <div class="section-title">KNOWLEDGE BASE OVERVIEW</div>
+                    <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"0b58d779-3794-4175-aa1c-3d6f813add7c":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Tabs","id":"p3312","attributes":{"sizing_mode":"stretch_width","tabs":[{"type":"object","name":"TabPanel","id":"p3242","attributes":{"title":"Topic exploration","child":{"type":"object","name":"Figure","id":"p3195","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p3204","attributes":{"start":3.2193270683288575,"end":11.019717979431153}},"y_range":{"type":"object","name":"Range1d","id":"p3205","attributes":{"start":10.767590999603271,"end":16.885708332061768}},"x_scale":{"type":"object","name":"LinearScale","id":"p3206"},"y_scale":{"type":"object","name":"LinearScale","id":"p3207"},"title":{"type":"object","name":"Title","id":"p3202","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p3235","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p3192","attributes":{"selected":{"type":"object","name":"Selection","id":"p3193","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3194"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"WPjrQJ2f2EBw7gJBvMP6QGQ52ED366tA0Ty4QM04xEATJ5RAbKVwQDsVl0CbF3hASdaZQHfjkkDUMZ5AlHN9QDsqXUDJ3r5AXBmrQFUeyUALMuVAstD4QKMI40BRJOpA"},"shape":[24],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"A/p8QRqvdkE6231BCNVvQbTiakGEO1RBB/BqQWC5QkE7qlxB6hNqQTThZkGzwF9BljB2QTjFTUGwmDxBIoRFQZrTUUE1mFlBjKBGQbB+TkElckdB68tQQf5pWUGtQWJB"},"shape":[24],"dtype":"float32","order":"little"}],["topic",["Pharmaceutical Product Information","Pharmaceutical Product Information","Pharmaceutical Product Information","Pharmaceutical Product Information","Pharmaceutical Product Information","PROVENGE Treatment","Others","PROVENGE Treatment","PROVENGE Treatment","Others","PROVENGE Treatment","PROVENGE Treatment","Others","PROVENGE Treatment","Others","PROVENGE Treatment","PROVENGE Treatment","PROVENGE Treatment","PROVENGE Treatment","PROVENGE Treatment","Pharmaceutical Product Information","Pharmaceutical Product Information","Pharmaceutical Product Information","Pharmaceutical Product Information"]],["id",[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]],["content",["AFRIN NODRIP ALLERGY SINUS NIGHT- oxymetazoline hydrochloride spray \\n \\nBayer HealthCare LLC.\\n----------\\nAfrin NoDrip Allergy Sinus Night UI1612461\\nDrug Facts\\nActive ingredient \\nPurpose\\nOxymetazoline hydrochloride 0.05%\\u2026\\u2026.\\u2026....Nasal decongestant\\nUses\\n\\u25aa \\ntemporarily relieves nasal congestion due to:\\n\\u25aa \\ncommon cold \\n\\u25aahay fever\\n\\u25aa \\nupper respiratory allergies\\n\\u25aa \\nreduces swelling of nasal passages so you can breathe more freely\\n\\u25aa \\ntemporarily relieves sinus congestion and pressure\\nWarnings\\n\\u25aa \\nAsk a do...","supervision): 2 or 3 sprays in each nostril not more often than\\nevery 10 to 12 hours. Do not exceed 2 doses in any 24-hour\\nperiod.\\n\\u25aa children under 6 years of age: ask a doctor\\nTo Use: Shake well before use. Hold white tabs, press grooved area of cap firmly and\\nturn counter clockwise. Before using the first time, prime metered pump by depressing\\npump firmly several times. To spray, hold bottle with thumb at base and nozzle between\\nfirst and second fingers. Without tilting head, insert nozzle int...","Oxymetazoline HCl\\nNasal Solution-Nasal Decongestant\\nAFRIN\\nNODRIP\\nWont drive from nose or down throat\\nAllergy Sinus\\nNight\\nwith soothing chamomile scent\\nPUMP MIST\\nInstant Congestion","Relief from Allergies\\nfor a More Restful Night\\nReduces\\nSwelling of\\nNasal\\nPassages\\n1/2 FL OZ (15mL)\\nAFRIN NODRIP ALLERGY SINUS NIGHT  \\noxymetazoline hydrochloride spray\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:11523-0034\\nRoute of Administration\\nNASAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nOXYMETAZOLINE HYDROCHLORIDE\\n (UNII: K89MJ0S5VY) \\n(OXYMETAZOLINE\\n- UNII:8VLN5B44ZY)\\nOXYMETAZOLINE\\nHYDROCHLORIDE\\n0.5 mg\\n in 1 mL\\nInactive Ingredien...","Bayer HealthCare LLC.\\nMarketing Information\\nMarketing\\nCategory\\nApplication Number or Monograph\\nCitation\\nMarketing Start\\nDate\\nMarketing End\\nDate\\nOTC Monograph Drug\\nM012\\n11/09/2020\\nLabeler - \\nBayer HealthCare LLC. \\n(112117283)\\n \\nRevised: 12/2024","PROVENGE- sipuleucel-t injection \\n \\nDendreon Pharmaceuticals LLC\\n----------\\nHIGHLIGHTS OF PRESCRIBING INFORMATION\\nThese highlights do not include all the information needed to use PROVENGE \\n (sipuleucel-\\nT) safely and effectively. See full prescribing information for PROVENGE. \\nPROVENGE \\n (sipuleucel-T) \\nSuspension for Intravenous Infusion \\nInitial U.S. Approval: 2010\\nRECENT MAJOR CHANGES\\nDosage and Administration\\n     Administration ( \\n2.2\\n)\\n9/2014\\nWarnings and Precautions\\n     Acute Infusion R...","ADVERSE REACTIONS\\nThe most common adverse reactions (incidence \\u2265 15%) are chills, fatigue, fever, back pain, nausea, joint\\nache, and headache. ( \\n6\\n)\\nTo report SUSPECTED ADVERSE REACTIONS, contact Dendreon Pharmaceuticals LLC at 1-\\n877-336-3736 or FDA at 1-800-FDA-1088 or \\nwww.fda.gov/medwatch\\n.\\nSee 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling.\\nRevised: 7/2017\\nFULL PRESCRIBING INFORMATION: CONTENTS\\n*\\n1 INDICATIONS AND USAGE\\n2 DOSAGE AND ADMINISTRATION\\n2.1 Dose\\n2.2 Admi...","PROVENGE \\n (sipuleucel-T) is an autologous cellular immunotherapy indicated for the\\ntreatment of asymptomatic or minimally symptomatic metastatic castrate-resistant\\n(hormone-refractory) prostate cancer.\\n2 DOSAGE AND ADMINISTRATION\\nFor autologous use only.\\nFor intravenous use only.\\n2.1 Dose\\nEach dose of PROVENGE contains a minimum of 50 million autologous CD54 \\n cells\\nactivated with PAP-GM-CSF [ \\nsee Description ( \\n11\\n) \\n].\\nThe recommended course of therapy for PROVENGE is 3 complete doses, given...","3\\n. \\nMatch the patient&#x27;s identity with the patient identifiers on the Final\\nProduct Disposition Notification form and the PROVENGE infusion bag.\\n4\\n. \\nInfuse the entire volume of the PROVENGE infusion bag intravenously over\\napproximately 60 minutes. \\nDo not use a cell filter.\\n5\\n. \\nObserve the patient for acute infusion reactions for at least 30 minutes following\\neach infusion.\\nIf acute infusion reactions occur, such as chills, fatigue, fever, nausea, and joint\\nache, interrupt or slow the infusion...","ache, nausea, and vomiting. The incidence of severe events was greater following the\\nsecond infusion (2.1% vs. 0.8% following the first infusion), and decreased to 1.3%\\nfollowing the third infusion. Some (1.2%) patients in the PROVENGE group were\\nhospitalized within 1 day of infusion for management of acute infusion reactions. No\\nGrade 4 or 5 acute infusion reactions were reported in patients in the PROVENGE group.\\nIn controlled clinical trials, severe (Grade 3) acute infusion reactions were rep...","Provenge. The clinical significance and causal relationship are uncertain. Most patients\\nhad multiple risk factors for these events. \\nCardiovascular disorders\\n:  In controlled clinical\\ntrials, myocardial infarctions were observed in 0.8% of patients in the PROVENGE group\\ncompared with 0.3% of patients in the control group.  In the postmarketing setting,\\nmyocardial infarctions have been observed following infusion of Provenge. The clinical\\nsignificance and causal relationship are uncertain. Most ...","PROVENGE group who underwent at least 1 leukapheresis procedure in four\\nrandomized, controlled clinical trials. The control group (n = 303) received non-activated\\nautologous peripheral blood mononuclear cells. Patients received 3 infusions of\\nPROVENGE or control every other week over a period of 4 weeks.\\nAlmost all (98.3%) patients in the PROVENGE group and 96% in the control group\\nreported an adverse event. In 67.4% of patients in the PROVENGE group, these adverse\\nevents were mild or moderate i...","Control group received non-activated autologous peripheral blood mononuclear cells.\\nNausea\\n129 (21.5)\\n3 (0.5)\\n45 (14.9)\\n0 (0.0)\\nJoint ache\\n118 (19.6)\\n11 (1.8)\\n62 (20.5)\\n5 (1.7)\\nHeadache\\n109 (18.1)\\n4 (0.7)\\n20 (6.6)\\n0 (0.0)\\nCitrate toxicity\\n89 (14.8)\\n0 (0.0)\\n43 (14.2)\\n0 (0.0)\\nParesthesia\\n85 (14.1)\\n1 (0.2)\\n43 (14.2)\\n0 (0.0)\\nVomiting\\n80 (13.3)\\n2 (0.3)\\n23 (7.6)\\n0 (0.0)\\nAnemia\\n75 (12.5)\\n11 (1.8)\\n34 (11.2)\\n7 (2.3)\\nConstipation\\n74 (12.3)\\n1 (0.2)\\n40 (13.2)\\n3 (1.0)\\nPain\\n74 (12.3)\\n7 (1.2)\\n20 (6.6)\\n3 (1.0)\\n...","The following adverse reactions have been identified during post-approval use of\\nPROVENGE. Because these reactions are reported voluntarily from a population of\\nuncertain size, it is not always possible to reliably estimate their frequency or establish a\\ncausal relationship to drug exposure.\\nNervous system disorders\\n:\\n syncope, transient ischemic attack, strokes [see\\nWarnings and Precautions ( \\n5.1\\n, \\n5.3\\n)]\\nVascular disorders\\n:\\n hypotension [see \\nWarnings and Precautions ( \\n5.1\\n)]\\nCardiovascula...","CSF, consisting of prostatic acid phosphatase (PAP), an antigen expressed in prostate\\ncancer tissue, linked to granulocyte-macrophage colony-stimulating factor (GM-CSF), an\\nimmune cell activator. Each dose of PROVENGE contains a minimum of 50 million\\nautologous CD54 \\n cells activated with PAP-GM-CSF, suspended in 250 mL of Lactated\\nRinger&#x27;s Injection, USP.\\nThe active components of PROVENGE are autologous APCs and PAP-GM-CSF. During\\nculture, the recombinant antigen can bind to and be processed by...","13 NONCLINICAL TOXICOLOGY\\n14 CLINICAL STUDIES\\nThe effect of PROVENGE on patients with metastatic castrate-resistant (hormone-\\nrefractory) prostate cancer was studied in three similar randomized, double-blind,\\nplacebo-controlled, multicenter trials. Following randomization, patients from both\\ntreatment groups underwent a series of 3 leukapheresis procedures (at approximately\\nWeeks 0, 2, and 4). Each leukapheresis was followed approximately 3 days later by\\ninfusion of PROVENGE or control. The cont...","Table 2 Summary of Overall Survival (All Patients as Randomized)\\n Hazard ratio and p-value based on the Cox Model adjusted for PSA (ln) and LDH (ln) and stratified\\nby bisphosphonate use, number of bone metastases, and primary Gleason grade.\\n Hazard ratio based on the unadjusted Cox Model (not pre-specified).\\n p-value based on a log-rank test (not pre-specified).\\nAbbreviations: CI = confidence interval.\\nStudy 1\\nStudy 2\\nPROVENGE \\n(N=341)\\nControl \\n(N=171)\\nPROVENGE\\n(N=82)\\nControl \\n(N=45)\\nOverall Sur...","NDC 30237-8900-6: One bag individually packed in a carton.\\nPROVENGE is shipped directly to the infusing provider in a cardboard shipping box with\\na special insulated polyurethane container inside. The insulated container and gel packs\\nwithin the container are designed to maintain the appropriate transportation and storage\\ntemperature of PROVENGE until infusion.\\nUpon receipt, open the outer cardboard shipping box to verify the product and\\npatient-specific labels located on the top of the insulate...","PROVENGE\\n(sipuleucel-T)\\nThis leaflet is designed to help you understand treatment with PROVENGE (pronounced\\nPROH-venj). The more you understand your treatment, the better you will be able to\\nparticipate in your care. This leaflet does not take the place of talking with your doctor or\\nhealthcare professional about your medical condition or your treatment. If you have any\\nquestions, speak with your doctor.\\nWhat is PROVENGE?\\nPROVENGE is a prescription medicine that is used to treat certain patients...","PROVENGE. Any of these may be signs of heart or lung problems.\\nyou develop numbness or weakness on one side of the body, decreased vision in one\\neye or difficulty speaking. Any of these may be signs of a stroke.\\nyou develop symptoms of thrombosis which may include: pain and/or swelling of an\\narm or leg with warmth over the affected area, discoloration of an arm or leg,\\nunexplained shortness of breath, chest pain that worsens on deep breathing.\\nyou get a fever over 100\\u00baF, or redness or pain at th...","Principal Display Panel \\u2013 Bag Label\\nNDC 30237-8900-5\\nsipuleucel-T\\nPROVENGE \\nRX ONLY FOR AUTOLOGOUS USE ONLY\\nNo U.S. standard of potency\\nCONTENTS: A minimum of 50 million autologous CD54 \\n cells activated with PAP-GM-CSF\\nand suspended in Lactated Ringer&#x27;s Injection, USP.\\nManufactured by:\\nDendreon Pharmaceuticals LLC Seal Beach, CA 90740\\nPhone: 877-256-4545\\nU.S. Lic. # 1749\\nNo preservatives. Gently mix and re-suspend the contents of the bag. 000074.01\\nOne autologous dose for infusion. See package ...","Package Label 2\\nsipuleucel-T 250 mL Lot XXXXXX-X\\nStore Refrigerated 2-8\\u00b0C DO NOT FREEZE\\nExpiration Date: DD-MMM-YYYY\\nExpiration Time: XX:XX Time Zone:\\nFirst Name MI:\\nLast Name:\\nDate of Birth: DD-MMM-YYYY\\nNOT EVALUATED FOR INFECTIOUS SUBSTANCES\\nPROVENGE  \\nsipuleucel-t injection","Product Information\\nProduct Type\\nCELLULAR THERAPY\\nItem Code (Source)\\nNDC:30237-8900\\nRoute of Administration\\nINTRAVENOUS\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nSIPULEUCEL-T\\n (UNII: 8Q622VDR18) \\n(SIPULEUCEL-T - UNII:8Q622VDR18)\\nSIPULEUCEL-T\\n50000000 \\nInactive Ingredients\\nIngredient Name\\nStrength\\nPOTASSIUM CHLORIDE\\n (UNII: 660YQ98I10)\\n \\nCALCIUM CHLORIDE\\n (UNII: M4I0D6VV5M)\\n \\nWATER\\n (UNII: 059QF0KO0R)\\n \\nSODIUM CHLORIDE\\n (UNII: 451W47IQ8X)\\n \\nSODIUM LACTATE\\n (UNII: ...","Dendreon Pharmaceuticals LLC\\nPharmaceuticals LLC\\n968590237\\n, label(30237-8900)\\n \\nRevised: 10/2024"]],["color",{"type":"ndarray","array":["#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#aec7e8","#999","#aec7e8","#aec7e8","#999","#aec7e8","#aec7e8","#999","#aec7e8","#999","#aec7e8","#aec7e8","#aec7e8","#aec7e8","#aec7e8","#1f77b4","#1f77b4","#1f77b4","#1f77b4"],"shape":[24],"dtype":"object","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p3236","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3237"}}},"glyph":{"type":"object","name":"Scatter","id":"p3232","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p3233","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p3234","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p3203","attributes":{"logo":"grey","tools":[{"type":"object","name":"HoverTool","id":"p3218","attributes":{"renderers":"auto","tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Document Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}},{"type":"object","name":"PanTool","id":"p3219"},{"type":"object","name":"WheelZoomTool","id":"p3220","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p3221","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p3222","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p3227"},{"type":"object","name":"SaveTool","id":"p3228"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p3213","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p3214","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p3215"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3216"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p3208","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p3209","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p3210"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3211"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p3212","attributes":{"axis":{"id":"p3208"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p3217","attributes":{"dimension":1,"axis":{"id":"p3213"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p3238","attributes":{"title":"Knowledge Base Tospics","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p3239","attributes":{"label":{"type":"value","value":"Others"},"renderers":[{"id":"p3235"}],"index":6}},{"type":"object","name":"LegendItem","id":"p3240","attributes":{"label":{"type":"value","value":"PROVENGE Treatment"},"renderers":[{"id":"p3235"}],"index":5}},{"type":"object","name":"LegendItem","id":"p3241","attributes":{"label":{"type":"value","value":"Pharmaceutical Product Information"},"renderers":[{"id":"p3235"}],"index":0}}]}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}},{"type":"object","name":"TabPanel","id":"p3311","attributes":{"title":"Failures","child":{"type":"object","name":"Figure","id":"p3247","attributes":{"sizing_mode":"stretch_width","x_range":{"type":"object","name":"Range1d","id":"p3256","attributes":{"start":3.2193270683288575,"end":11.019717979431153}},"y_range":{"type":"object","name":"Range1d","id":"p3257","attributes":{"start":10.767590999603271,"end":16.885708332061768}},"x_scale":{"type":"object","name":"LinearScale","id":"p3258"},"y_scale":{"type":"object","name":"LinearScale","id":"p3259"},"title":{"type":"object","name":"Title","id":"p3254","attributes":{"text_color":"#E0E0E0","text_font":"Helvetica","text_font_size":"14pt"}},"outline_line_color":"#E0E0E0","outline_line_alpha":0.25,"renderers":[{"type":"object","name":"GlyphRenderer","id":"p3286","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p3243","attributes":{"selected":{"type":"object","name":"Selection","id":"p3244","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3245"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"bKVwQLLQ+EATJ5RAOypdQDsVl0Cdn9hAlHN9QHDuAkG8w/pAzTjEQFUeyUDUMZ5Amxd4QNE8uEBY+OtAUSTqQEnWmUB345JA9+urQFwZq0CjCONAyd6+QGQ52EALMuVAnZ/YQA=="},"shape":[25],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"6hNqQevLUEE7qlxBmtNRQTThZkEar3ZBIoRFQTrbfUEI1W9BYLlCQbB+TkGwmDxBs8BfQQfwakED+nxBrUFiQZYwdkE4xU1BhDtUQYygRkH+aVlBNZhZQbTiakElckdBGq92QQ=="},"shape":[25],"dtype":"float32","order":"little"}],["topic",["PROVENGE Treatment","PROVENGE Treatment","Others","PROVENGE Treatment","PROVENGE Treatment","Medical Products","Others","Medical Products","Medical Products","PROVENGE Treatment","PROVENGE Treatment","Others","Others","Others","Medical Products","Medical Products","Others","PROVENGE Treatment","PROVENGE Treatment","Others","Medical Products","PROVENGE Treatment","Medical Products","PROVENGE Treatment","Medical Products"]],["correctness",[false,true,false,false,false,false,false,false,false,true,true,false,true,true,false,true,false,false,true,false,false,true,false,false,false]],["questions",["What are some of the severe acute infusion reactions reported in patients receiving PROVENGE, and how does the incidence of these reactions vary after subsequent infusions?","What are the specific storage conditions recommended for sipuleucel-T and what precaution should be taken regarding freezing?","In the event of acute infusion reactions during the administration of PROVENGE, what specific actions should be taken and what medical treatments can be administered?","What are the components of PROVENGE and in what form is it provided?","What are the handling precautions recommended for healthcare professionals in relation to the potential transmission of infectious diseases while dealing with PROVENGE, and what precautions should be taken regarding the concurrent use of chemotherapy or immunosuppressive agents with PROVENGE?","What are the specific instructions for administering the nasal spray, including the recommended number of sprays per nostril and the frequency of administration?","What were the specific criteria that led to the exclusion of patients in Study 1 of the clinical trials for PROVENGE?","What is the specific brand name of the nasal decongestant solution containing Oxymetazoline HCl and a soothing chamomile scent?","What is the specific active ingredient found in AFRIN NODRIP ALLERGY SINUS NIGHT spray that helps in reducing the swelling of nasal passages?","What is the specific dosage regimen recommended for PROVENGE, and what steps should be taken if a patient misses a scheduled infusion?","What are the components that make up PROVENGE, including the protein designed to trigger an immune response to prostate cancer and the infusion solution in which the product is suspended?","Could you explain in detail the process by which PROVENGE functions in the body to induce an immune response against PAP, an antigen commonly found in prostate cancers, including the role of autologous APCs, PAP-GM-CSF, and the display of small peptides on the APC surface?","What percentage of patients in the PROVENGE group experienced severe (Grade 3) adverse events in the clinical trials?","What are the adverse reactions with an incidence of at least 15% associated with the medication according to the provided document?","What are the specific health conditions that individuals should consult a doctor about before using Afrin NoDrip Allergy Sinus Night spray, and what are the potential consequences of prolonged or excessive use?","What is the specific label number associated with Dendreon Pharmaceuticals LLC mentioned in Document 23?","Can you list the adverse reactions identified during post-approval use, considering the data provided in Document 12?","What specific nervous system disorders have been associated with the post-approval use of PROVENGE, as indicated in the provided document?","What is the recommended dosage regimen for PROVENGE (sipuleucel-T) and what should be done if a patient is unable to receive a scheduled infusion?","What are the potential side effects that are most frequently experienced by individuals receiving PROVENGE, and what serious reactions should prompt immediate medical attention?","What is the name of the active ingredient or active moiety present in the product associated with the item code NDC:30237-8900?","In the scenario where a patient lacks sufficient peripheral venous access for the leukapheresis procedure and PROVENGE infusion, what alternative should be considered and what instructions should be given to the patient regarding this alternative?","When did Bayer HealthCare LLC start marketing the OTC Monograph Drug M012?","What is the specific number of autologous CD54 cells that must be present in each dose of PROVENGE according to the label?","What are the specific instructions for administering the nasal spray, including the number of sprays per nostril, frequency of use, and any precautions to be taken?"]],["agent_answer",["Here\\u2019s a detailed breakdown of severe acute infusion reactions associated with PROVENGE (sipuleucel-T) and their incidence patterns:\\n\\n### **Severe Acute Infusion Reactions Reported with PROVENGE:**\\n1. **Common Severe Reactions:**\\n   - **Chills** (occurring in ~54% of patients, severe in ~1.5%)\\n   - **Fever** (pyrexia, ~30% incidence, severe in ~1.3%)\\n   - **Fatigue** (~25% incidence, severe in ~3.5%)\\n   - **Respiratory Events** (e.g., dyspnea, hypoxia, severe in ~1%)\\n   - **Hypertension/Hypotension** (severe in ~1.5%)\\n   - **Nausea/Vomiting** (severe in ~1-2%)\\n   - **Headache** (~18% incidence, severe in &lt;1%)\\n\\n2. **Less Common but Critical Reactions:**\\n   - **Anaphylaxis** (rare but life-threatening)\\n   - **Cerebrovascular Events** (e.g., stroke, transient ischemic attacks)\\n   - **Cardiac Events** (e.g., arrhythmias, myocardial ischemia)\\n\\n### **Incidence Variation After Subsequent Infusions:**\\n- **First Infusion:** Highest rate of severe reactions (~60-70% of total reactions occur during/after the first dose).\\n- **Subsequent Infusions (2nd/3rd):**  \\n  - Reaction frequency **decreases** but can still occur (~20-30% incidence drop).\\n  - Severity may lessen, but systemic reactions (e.g., fever, chills) remain possible.\\n  - Patients with prior reactions should be monitored closely, as repeat exposure may trigger similar or escalated responses.\\n\\n### **Management Recommendations:**\\n- **Premedication:** Acetaminophen/antihistamines are often given prophylactically.\\n- **Extended Observation:** Patients are monitored for \\u226530 minutes post-infusion.\\n- **Contraindications:** Discontinue if life-threatening reactions occur.\\n\\nWould you like additional details on mitigation strategies or clinical trial data comparisons?","Sipuleucel-T (Provenge) is an autologous cellular immunotherapy requiring strict storage conditions to maintain potency. Here are the specific recommendations with precautions:\\n\\n**Storage Conditions:**\\n1. **Temperature:** Store at 2\\u00b0C to 8\\u00b0C (36\\u00b0F to 46\\u00b0F) in a refrigerated environment. \\n2. **Do Not Freeze:** The product must NOT be frozen at any point, as this will irreversibly damage the cellular components.\\n3. **Light Protection:** Keep in the original opaque infusion bag to protect from light.\\n4. **Shelf Life:** Use within 3 days of preparation (exact expiry date/time is provided on the product label).\\n\\n**Critical Precautions:**\\n- **Freezing Hazard:** Even brief exposure to freezing temperatures (e.g., accidental contact with freezer surfaces or ice packs) can render the product unusable. \\n- **Monitoring:** Continuously monitor storage temperature with validated equipment/alarms.\\n- **Transport:** During transit, use validated packaging with temperature buffers (e.g., phase-change materials) to avoid freezing or exceeding 8\\u00b0C.\\n\\n**Additional Notes:**\\n- Never use if the bag is frozen or leaking.\\n- Inspect for clumping/discoloration before infusion.\\n- Follow chain-of-custody protocols due to the personalized nature of the product.\\n\\nWould you like details on handling deviations (e.g., temperature excursions)?","**Management of Acute Infusion Reactions During PROVENGE Administration**  \\n\\n**Actions to Take:**  \\n1. **Immediate Response:**  \\n   - **Stop the infusion** at the first sign of an acute reaction (e.g., fever, chills, hypotension, tachycardia, dyspnea, hypoxia, nausea/vomiting, or allergic symptoms).  \\n   - **Assess the patient\\u2019s vital signs** (blood pressure, heart rate, oxygen saturation, temperature).  \\n   - **Administer supportive care** based on symptoms (e.g., supplemental oxygen, IV fluids).  \\n\\n2. **Medical Treatments:**  \\n   - **For mild-to-moderate reactions (e.g., fever, chills, nausea):**  \\n     - **Antipyretics (e.g., acetaminophen)** for fever.  \\n     - **Antihistamines (e.g., diphenhydramine)** for allergic symptoms.  \\n     - **IV fluids** for hypotension.  \\n   - **For severe reactions (e.g., anaphylaxis, respiratory distress):**  \\n     - **Epinephrine (1:1000, 0.3\\u20130.5 mg IM)** for anaphylaxis.  \\n     - **Corticosteroids (e.g., methylprednisolone IV)** for persistent hypersensitivity.  \\n     - **Bronchodilators (e.g., albuterol)** if bronchospasm occurs.  \\n   - **Hospitalization** may be required for refractory cases.  \\n\\n3. **Post-Reaction Assessment:**  \\n   - **Evaluate readiness for re-initiation**\\u2014if the reaction was mild, consider restarting at a slower rate with premedication (antihistamines, antipyretics, corticosteroids).  \\n   - **Permanently discontinue** PROVENGE if severe or recurrent reactions occur.  \\n\\n**Monitoring &amp; Prevention:**  \\n- Pre-treat with prophylactic **acetaminophen and antihistamines** (as per institutional protocols).  \\n- Monitor patients closely for **\\u226530 minutes post-infusion** (longer if previous reactions occurred).  \\n\\nWould you like additional details on specific symptom management or clinical guidelines?","PROVENGE (sipuleucel-T) is an autologous cellular immunotherapy used for the treatment of asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC).  \\n\\n### **Components of PROVENGE:**  \\n1. **Autologous Peripheral Blood Mononuclear Cells (PBMCs)** \\u2013 Collected from the patient via leukapheresis, these immune cells are enriched for antigen-presenting cells (APCs), especially dendritic cells.  \\n2. **Recombinant Fusion Protein (PA2024)** \\u2013 This consists of:  \\n   - **Prostatic Acid Phosphatase (PAP)** \\u2013 A prostate-associated antigen.  \\n   - **Granulocyte-Macrophage Colony-Stimulating Factor (GM-CSF)** \\u2013 An immune-stimulating cytokine that helps activate dendritic cells.  \\n\\nThe PBMCs are exposed to PA2024 *ex vivo*, allowing dendritic cells to process and present PAP as an antigen.  \\n\\n### **Form Provided:**  \\n- **Intravenous (IV) Infusion Suspension** \\u2013 PROVENGE is provided as a **sterile, thawed suspension of cells** in a sealed infusion bag (typically 250 mL).  \\n- **Dosed as a Course of Three Infusions** \\u2013 Given approximately two weeks apart (total treatment duration ~1 month).  \\n- **Cryopreserved** \\u2013 Prior to administration, the patient\\u2019s cells are shipped frozen, then thawed at the treatment center.  \\n\\nWould you like additional details on how it works or its clinical efficacy?","Here are the key handling precautions and concurrent-use considerations for healthcare professionals regarding PROVENGE (sipuleucel-T):\\n\\n### **Handling Precautions to Prevent Infectious Disease Transmission**\\n1. **Aseptic Technique &amp; Universal Precautions**  \\n   - PROVENGE contains autologous leukocytes, and although it undergoes quality testing, standard infection control measures must be followed.\\n   - Use gloves, masks, and gowns when handling blood products during leukapheresis and administration.\\n   - Avoid open-vial contamination by ensuring sterile technique during preparation and administration.\\n\\n2. **Blood-Borne Pathogen Prevention**  \\n   - Treat PROVENGE as any other blood-derived product\\u2014follow OSHA Bloodborne Pathogens Standard (29 CFR 1910.1030).\\n   - Dispose of used needles, IV tubing, and bags in designated biohazard containers.\\n\\n3. **Patient-Specific Handling**  \\n   - Each dose is patient-specific\\u2014strictly confirm patient identity before administration to prevent cross-contamination.\\n\\n### **Concurrent Use with Chemotherapy/Immunosuppressive Agents**\\n1. **Avoid Concomitant Immunosuppressive Therapy**  \\n   - Immunosuppressants (e.g., corticosteroids, cytotoxic chemotherapy, radiation) may reduce PROVENGE efficacy.\\n   - **Guideline:** Discontinue immunosuppressive agents at least 3 days before leukapheresis or infusion unless medically necessary.\\n\\n2. **Sequential Chemotherapy Considerations**  \\n   - Chemotherapy should not be administered **during** PROVENGE treatment (from leukapheresis to final infusion).\\n   - **Post-Infusion:** Allow **\\u226528 days** after the last PROVENGE dose before starting chemo to avoid interference with immune response.\\n\\n3. **Monitoring for Adverse Reactions**  \\n   - Concurrent use may increase infection risk\\u2014monitor for febrile neutropenia or sepsis if immunosuppressants are unavoidable.\\n   - Infusion reactions (e.g., chills, fever, hypotension) may occur; premedication with acetaminophen/antihistamines is recommended.\\n\\n### **Key Takeaway**  \\nPROVENGE requires strict infection control during handling and cautious coordination with immunosuppressive therapies to preserve immunologic activity. Always consult the latest FDA-approved prescribing information for updates.  \\n\\nWould you like any additional details on specific scenarios (e.g., steroid tapering protocols)?","Here are the specific instructions for administering a nasal spray, based on general medical guidelines:\\n\\n1. **Preparation**:\\n   - Blow your nose gently to clear both nostrils before use.\\n   - Shake the bottle if specified by the product instructions.\\n   - Remove the protective cap.\\n\\n2. **Prime the Pump (if first use or unused for a while)**:\\n   - Spray into the air until a fine mist appears (usually 1\\u20132 sprays), as directed by the manufacturer.\\n\\n3. **Administration**:\\n   - **Position**: Tilt your head slightly forward (do not tilt backward).\\n   - **Technique**: \\n     - Insert the nozzle into one nostril, pointing it slightly outward (toward the ear, not the septum).\\n     - Close the other nostril with a finger.\\n     - Breathe in gently through the nose while pressing down on the pump to release the spray.\\n     - Avoid sniffing forcefully to prevent medication from dripping into the throat.\\n   - **Repeat**: Administer the same number of sprays to the other nostril if required.\\n\\n4. **Dosage (Typical Recommendations)**:\\n   - **Number of Sprays**: Usually **1\\u20132 sprays per nostril** (check the product label; this varies by medication).\\n   - **Frequency**: Common regimens include:\\n     - **Once daily** (e.g., for allergy sprays like fluticasone).\\n     - **Twice daily** (e.g., for some steroid sprays).\\n     - **As needed** (e.g., for decongestant sprays, though these should not be used for more than 3 days consecutively due to rebound congestion).\\n\\n5. **Post-Use**:\\n   - Wipe the nozzle with a clean tissue and recap it.\\n   - Avoid sneezing or blowing your nose immediately after use.\\n\\n**Important Notes**:\\n- Always follow the **specific instructions** provided with your medication, as formulations vary (e.g., steroids, antihistamines, or saline sprays).\\n- Do not share nasal sprays to avoid contamination.\\n- For **children**, follow pediatric dosing guidelines\\u2014often 1 spray per nostril.\\n\\nIf the spray is for a **prescription medication** (e.g., Nasonex, Flonase), refer to your doctor\\u2019s or pharmacist\\u2019s directions for exact dosing. Let me know if you need details about a specific product!","In Study 1 (also known as D9901) of the clinical trials for PROVENGE (sipuleucel-T), the exclusion criteria were carefully designed to ensure patient safety and the integrity of the trial results. Based on the pivotal trials leading to FDA approval in 2010, the key exclusion criteria included:\\n\\n1. **Disease Progression Status**: Patients with rapidly progressive or symptomatic metastatic castration-resistant prostate cancer (mCRPC) were excluded to avoid confounds from aggressive disease.\\n\\n2. **Prior Treatments**:  \\n   - Patients who had received chemotherapy (e.g., docetaxel) for mCRPC were excluded.  \\n   - Recent use of immunotherapy (e.g., other cancer vaccines), corticosteroids, or any systemic prostate cancer therapy within a specified washout period was prohibited.\\n\\n3. **Immune System Compromise**:  \\n   - Conditions like HIV, chronic immunosuppressive therapy, or autoimmune diseases were exclusions due to PROVENGE\\u2019s mechanism of action (autologous immune cell therapy).\\n\\n4. **Organ Function**:  \\n   - Significant hepatic, renal, or hematologic dysfunction (e.g., low hemoglobin, platelets) that could affect treatment safety or efficacy.\\n\\n5. **Bone Metastases**: Patients with &gt;50% involvement of the spine/pelvis or impending fracture risk were excluded due to potential complications.\\n\\n6. **Performance Status**: Poor ECOG/Karnofsky scores (e.g., ECOG \\u22652) indicating limited life expectancy or inability to tolerate therapy.\\n\\n7. **Brain Metastases**: Excluded due to altered immune responses and poor prognosis.\\n\\n8. **Concurrent Illnesses**: Uncontrolled infections, cardiovascular events (e.g., recent MI), or other malignancies within 5 years.\\n\\nThese criteria ensured the enrolled population had stable, immunocompetent mCRPC, optimizing the assessment of PROVENGE\\u2019s survival benefit (median 4.1-month improvement in IMPACT trial). The full protocol details are available in publications like Kantoff et al., *NEJM* (2010). Let me know if you\\u2019d like deeper specifics!","The nasal decongestant solution you&#x27;re referring to is **Afrin No-Drip Severe Congestion with Soothing Chamomile**.  \\n\\nThis product contains **Oxymetazoline HCl (0.05%)** as its active ingredient and is infused with a **chamomile scent** for added soothing relief. It helps relieve nasal congestion while avoiding post-nasal drip.  \\n\\nLet me know if you&#x27;d like additional details!","The active ingredient in **Afrin NoDrip Allergy &amp; Sinus Night** spray that helps reduce swelling in nasal passages is **oxymetazoline hydrochloride (0.05%)**. \\n\\nHere\\u2019s a bit more detail:  \\n- **Oxymetazoline** is a decongestant that works by constricting blood vessels in the nasal passages, which reduces inflammation and swelling, allowing for easier breathing.  \\n- The \\"NoDrip\\" formula is designed to minimize excess liquid runoff, and the nighttime version may include additional ingredients (like an antihistamine) to address allergy symptoms during sleep.  \\n\\nWould you like details on how oxymetazoline compares to other decongestants or guidance on safe usage? Happy to help further!","PROVENGE (sipuleucel-T) is an autologous cellular immunotherapy used to treat asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC). Here\\u2019s the **specific dosage regimen** and **steps for missed infusions**:  \\n\\n### **Dosage Regimen**  \\n1. **Dosing Schedule**:  \\n   - PROVENGE is administered as **three intravenous (IV) infusions**, each given **approximately 2 weeks apart** (minimum interval: **at least 1 week** between infusions).  \\n   - Each dose contains **at least 50 million autologous CD54+ cells activated with PAP-GM-CSF** (prostatic acid phosphatase fused with granulocyte-macrophage colony-stimulating factor).  \\n\\n2. **Infusion Process**:  \\n   - Patients undergo **leukapheresis** 3\\u20134 days before each scheduled infusion to collect peripheral blood mononuclear cells (PBMCs).  \\n   - The collected cells are processed to produce the individualized vaccine.  \\n   - Each infusion is administered in a **one-hour IV session** at an approved healthcare facility.  \\n\\n### **Missed or Delayed Infusion**  \\n- **If a scheduled infusion is missed**:  \\n  - Re-initiate the regimen **as soon as possible** (once the product is available).  \\n  - Maintain the **same 2-week interval** for remaining doses (but gaps of \\u22651 week are permissible if delays occur).  \\n  - **Do not** administer more than three infusions in total.  \\n\\n- **Handling Delays**:  \\n  - If leukapheresis cannot be performed before an infusion (e.g., due to illness), reschedule the procedure as soon as feasible.  \\n  - If the product expires before use, a new leukapheresis and manufacturing process are required.  \\n\\n### **Important Considerations**  \\n- **Premedication**: Acetaminophen and an antihistamine (e.g., diphenhydramine) are recommended 30 minutes prior to infusion to manage potential reactions.  \\n- **Side Effects**: Monitor for acute infusion reactions (e.g., chills, fever, fatigue).  \\n\\nWould you like additional details on contraindications or post-infusion care?","**Answer:**  \\n\\nPROVENGE (sipuleucel-T) is an autologous cellular immunotherapy designed to treat asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC). It consists of the following key components:  \\n\\n### **1. Protein Designed to Trigger Immune Response (PA2024):**  \\n- **PA2024** is a recombinant fusion protein that combines **prostatic acid phosphatase (PAP)**\\u2014a prostate cancer-associated antigen\\u2014with **granulocyte-macrophage colony-stimulating factor (GM-CSF)**.  \\n  - **PAP** stimulates an immune response specifically targeting prostate cancer cells.  \\n  - **GM-CSF** enhances antigen presentation by dendritic cells, promoting anti-tumor immunity.  \\n\\n### **2. Infusion Solution (Lactated Ringer\\u2019s Solution with 5% Human Albumin):**  \\n- The final PROVENGE product is suspended in **Lactated Ringer\\u2019s injection solution containing 5% human serum albumin (HSA)**.  \\n- **Lactated Ringer\\u2019s** provides balanced electrolytes to maintain cellular stability.  \\n- **Human albumin** acts as a stabilizer to protect the activated cells during administration.  \\n\\n### **3. Manufacturing Process (Autologous Cellular Therapy):**  \\n1. **Leukapheresis:** The patient\\u2019s white blood cells (including antigen-presenting cells) are collected.  \\n2. **Ex Vivo Activation:** Cells are exposed to **PA2024** to prime immune cells to recognize PAP.  \\n3. **Final Product:** The activated cells are washed, resuspended in the infusion solution, and reinfused into the patient to stimulate an anti-tumor response.  \\n\\nPROVENGE uniquely harnesses the patient\\u2019s immune system to target prostate cancer cells, making it a personalized immunotherapy.  \\n\\nWould you like any additional details on its mechanism or clinical outcomes?","Certainly! **PROVENGE (sipuleucel-T)** is an **autologous cellular immunotherapy** approved for the treatment of **asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC)**. Its mechanism revolves around stimulating the patient\\u2019s immune system to target **prostatic acid phosphatase (PAP)**, an antigen expressed in &gt;95% of prostate cancers. Here\\u2019s a step-by-step breakdown of how it works:\\n\\n---\\n\\n### 1. **Harvesting Autologous Antigen-Presenting Cells (APCs)**  \\n   - **Autologous APCs (primarily dendritic cells)** are collected from the patient via **leukapheresis**, isolating CD54+ dendritic cells, macrophages, and B cells.  \\n   - These cells are sent to a lab for **ex vivo processing**.\\n\\n---\\n\\n### 2. **Activation with PAP-GM-CSF Fusion Protein**  \\n   - The APCs are incubated with a **recombinant fusion protein** consisting of:  \\n     - **PAP (prostatic acid phosphatase)**: The target antigen.  \\n     - **GM-CSF (granulocyte-macrophage colony-stimulating factor)**: A growth factor that:  \\n       - Enhances APC maturation.  \\n       - Promotes antigen uptake, processing, and presentation.  \\n   - **GM-CSF** ensures dendritic cells effectively **engulf, process, and display PAP-derived peptides** on their surface via **MHC class I and II molecules**.\\n\\n---\\n\\n### 3. **Processing of PAP and Peptide Display**  \\n   - Inside the APC, PAP is **proteolytically degraded** into small peptide fragments.  \\n   - These peptides are loaded onto **MHC molecules**:  \\n     - **MHC class I**: Presents peptides to **CD8+ cytotoxic T cells** (killing cancer cells directly).  \\n     - **MHC class II**: Activates **CD4+ helper T cells** (supporting immune response and antibody production).  \\n   - The APCs also upregulate **costimulatory molecules (e.g., CD80, CD86)** crucial for T-cell activation.\\n\\n---\\n\\n### 4. **Reinfusion of Activated APCs**  \\n   - The *now-activated APCs* are **reinfused back into the patient** via IV.  \\n   - In the bloodstream, they **migrate to lymphoid tissues** (lymph nodes/spleen) to interact with **na\\u00efve T cells**.\\n\\n---\\n\\n### 5. **Induction of Anti-PAP Immune Response**  \\n   - In lymph nodes, activated APCs **present PAP peptides to T cells**, triggering:  \\n     - **Clonal expansion of PAP-specific T cells** (both CD4+ and CD8+).  \\n     - **Memory T-cell formation** for long-term immunity.  \\n   - **Effector T cells** (CD8+) migrate to tumor sites, recognize **PAP-expressing prostate cancer cells**, and induce **apoptosis**.  \\n   - Helper T cells (CD4+) secrete cytokines (e.g., IFN-\\u03b3, IL-2) to amplify the response.  \\n\\n---\\n\\n### 6. **Additional Immune Effects**  \\n   - GM-CSF recruits **more APCs** to sustain the response.  \\n   - B cells may produce **anti-PAP antibodies** to tag cancer cells for destruction.  \\n   - Over time, the immune system develops **immune memory** against PAP, potentially controlling tumor growth.\\n\\n---\\n\\n### **Challenges &amp; Considerations**  \\n   - **Personalized nature**: Each dose is patient-specific (autologous).  \\n   - **Limited tumor penetration**: PROVENGE extends survival but is not curative.  \\n   - **Combination potential**: Often studied with checkpoint inhibitors or androgen-targeting therapies.\\n\\nWould you like a deeper dive into any specific molecular interactions (e.g., TCR signaling) or clinical outcomes?","In the IMPACT trial (a key Phase 3 clinical study for PROVENGE/sipuleucel-T), approximately **23.6% of patients** in the PROVENGE group experienced Grade 3 adverse events. The most common severe adverse events included chills, fever, fatigue, and headaches, consistent with the expected immune response to the therapy.  \\n\\nFor context:  \\n- **PROVENGE** is an autologous cellular immunotherapy for asymptomatic/minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC).  \\n- **Grade 3 adverse events** are classified as severe or medically significant but not immediately life-threatening.  \\n\\nLet me know if you&#x27;d like further details (e.g., specific event rates, comparator group data, or later analyses). I\\u2019m happy to dive deeper!","To provide a precise answer, I would need you to share the specific document or medication information you&#x27;re referring to. Adverse drug reactions vary significantly between medications, and without the details of the document, I cannot accurately list reactions with \\u226515% incidence.  \\n\\nHowever, if you&#x27;re referring to a common drug (e.g., certain chemotherapies, antidepressants, or biologics), typical high-incidence adverse reactions (&gt;15%) may include:  \\n- **Nausea, headaches, fatigue** (common with many medications)  \\n- **Gastrointestinal disturbances** (e.g., diarrhea, constipation)  \\n- **Dizziness or drowsiness** (common in CNS-acting drugs)  \\n- **Injection-site reactions** (for biologics or vaccines)  \\n- **Increased transaminases** (in some hepatotoxic drugs)  \\n\\nFor an exact answer tailored to your medication, please share:  \\n\\u2714\\ufe0f The **drug name**  \\n\\u2714\\ufe0f The **document excerpt** (if available)  \\n\\u2714\\ufe0f The **patient population** (if applicable)  \\n\\nI\\u2019ll then extract the precise adverse events with \\u226515% incidence from the data you provide. Looking forward to helping!","Here\\u2019s a detailed answer to your question about **Afrin NoDrip Allergy Sinus Night spray** (oxymetazoline hydrochloride 0.05%):\\n\\n### **Health Conditions to Consult a Doctor About Before Use:**  \\n1. **Heart Disease or High Blood Pressure** \\u2013 Oxymetazoline can cause systemic vasoconstriction (narrowing of blood vessels), which may exacerbate hypertension or cardiovascular conditions.  \\n2. **Diabetes** \\u2013 Nasal decongestants may affect blood sugar levels; caution is advised.  \\n3. **Thyroid Disorders** \\u2013 Hyperthyroidism (overactive thyroid) may increase sensitivity to stimulant effects.  \\n4. **Enlarged Prostate (BPH) or Urinary Retention** \\u2013 Alpha-adrenergic effects could worsen urinary symptoms.  \\n5. **Glaucoma (Narrow-Angle)** \\u2013 Risk of increased intraocular pressure.  \\n6. **Pregnancy/Breastfeeding** \\u2013 Safety not fully established; a doctor should weigh risks vs. benefits.  \\n7. **Allergy to Oxymetazoline or Other Ingredients** \\u2013 Prevents adverse reactions.  \\n8. **Chronic Sinusitis, Nasal Polyps, or Recent Nasal Surgery** \\u2013 May require alternative treatments to avoid irritation or complications.  \\n\\n### **Potential Consequences of Prolonged/Excessive Use:**  \\n- **Rebound Congestion (Rhinitis Medicamentosa)** \\u2013 Overuse (&gt;3\\u20135 days) can cause worsened nasal blockage due to dependency on the spray for relief.  \\n- **Nasal Tissue Damage** \\u2013 Chronic use may lead to dryness, irritation, or ulceration of nasal membranes.  \\n- **Systemic Absorption** \\u2013 Rare but possible side effects like elevated blood pressure, dizziness, or palpitations.  \\n- **Masking Underlying Conditions** \\u2013 Long-term reliance may delay diagnosis of chronic issues (e.g., allergies, infections).  \\n\\n### **Key Advice:**  \\n- Limit use to **\\u22643 days** unless directed otherwise by a doctor.  \\n- Seek medical advice if symptoms persist or worsen.  \\n\\nWould you like additional details on alternative treatments or safer usage tips?","I currently don&#x27;t have direct access to Document 23 (or any specific external documents or databases) to look up the label number associated with Dendreon Pharmaceuticals LLC. I&#x27;d recommend checking the document directly or consulting any provided references for that information.  \\n\\nIf you can share details from the document (e.g., regulatory filings, product labels, or sections where the label number might appear), I\\u2019d be happy to help interpret or analyze the content for you! Let me know how I can assist further.","Of course! Let me analyze **Document 12** and list the **adverse reactions** observed during **post-approval use** of the drug in question.  \\n\\n### **Adverse Reactions in Post-Approval Use**  \\nBased on **Document 12**, the following adverse reactions were reported after the drug&#x27;s approval:  \\n\\n1. **Common (\\u22651/100 to &lt;1/10)**  \\n   - Headache  \\n   - Nausea  \\n   - Fatigue  \\n   - Dizziness  \\n\\n2. **Uncommon (\\u22651/1,000 to &lt;1/100)**  \\n   - Skin rash  \\n   - Palpitations  \\n   - Gastrointestinal discomfort (diarrhea, abdominal pain)  \\n\\n3. **Rare (\\u22651/10,000 to &lt;1/1,000)**  \\n   - Severe allergic reactions (e.g., anaphylaxis)  \\n   - Liver enzyme elevations  \\n   - Neurological symptoms (e.g., paresthesia)  \\n\\n4. **Very rare (&lt;1/10,000)**  \\n   - Stevens-Johnson Syndrome (severe skin reaction)  \\n   - Cardiac arrhythmia  \\n\\nWould you like additional insights, such as risk factors, frequency trends, or comparisons with clinical trial data? Let me know how I can refine this further!","PROVENGE (sipuleucel-T) is an autologous cellular immunotherapy indicated for the treatment of asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC). Post-approval reports have identified rare but serious nervous system disorders associated with its use, including:  \\n\\n1. **Cerebrovascular events** (e.g., ischemic or hemorrhagic strokes, transient ischemic attacks).  \\n2. **Seizures** (including focal and generalized tonic-clonic seizures).  \\n3. **Posterior reversible encephalopathy syndrome (PRES)**\\u2014a rare condition involving brain swelling and neurological symptoms such as headache, altered mental status, seizures, and visual disturbances.  \\n\\nThese events were observed as part of post-marketing surveillance and suggest a potential link to immune-mediated or inflammatory mechanisms. Patients should be monitored for signs of neurological dysfunction during and after treatment. Always consult the latest prescribing information for complete safety updates.  \\n\\nWould you like additional details on management or risk factors?","**Recommended Dososis Regimen for PROVENGE (sipuleucel-T):**  \\nPROVENGE is administered as an **autologous cellular immunotherapy** for asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC). The standard dosage regimen consists of:  \\n\\n1. **Three intravenous (IV) infusions**, each spaced approximately **2 weeks apart** (e.g., Day 0, Day 14, Day 28).  \\n2. Each infusion contains **a minimum of 50 million autologous CD54+ cells** activated with the PROVENGE antigen.  \\n\\n**Key Administration Notes:**  \\n- **Pre-medication**: Administer oral acetaminophen (650 mg) and an antihistamine (e.g., diphenhydramine 25\\u201350 mg) **30 minutes before infusion** to mitigate infusion-related reactions (e.g., fever, chills).  \\n- **Infusion duration**: Typically **60 minutes**, with close monitoring for acute reactions.  \\n\\n**If a Patient Misses a Scheduled Infusion:**  \\n1. **Minor delays (&lt;2 weeks)**: Continue the regimen as soon as possible. The next dose should still maintain a roughly 2-week interval from the prior infusion.  \\n2. **Significant delays (&gt;4 weeks)**: Re-initiation of the **entire 3-dose series may be required**, as antigen-presenting cells (APCs) have a limited shelf life and efficacy window.  \\n3. **Manufacturing backup**: If a dose is lost (e.g., due to contamination), a new leukapheresis may be needed to produce additional cells, extending the treatment timeline.  \\n\\n**Clinical Guidance:**  \\n- Monitor patients for **cytokine release syndrome** (e.g., fever, hypotension) and manage supportively.  \\n- PROVENGE is **not** a substitutable product\\u2014each dose is patient-specific.  \\n\\nLet me know if you need further details!","PROVENGE (sipuleucel-T) is an autologous cellular immunotherapy used to treat asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer (mCRPC). Here&#x27;s an overview of the most common side effects and serious reactions to be aware of:  \\n\\n### **Most Frequent Side Effects (Commonly Reported in Clinical Trials):**  \\nThese reactions are generally mild to moderate and may resolve on their own:  \\n- **Fatigue** (reported in ~50% of patients)  \\n- **Chills** (~50%)  \\n- **Fever (pyrexia, ~30-40%)**  \\n- **Back pain (~30%)**  \\n- **Joint pain (arthralgia, ~25%)**  \\n- **Headache (~20%)**  \\n- **Nausea (~20%)**  \\n- **Muscle pain (myalgia, ~20%)**  \\n- **Weakness (asthenia, ~15%)**  \\n- **Shortness of breath (dyspnea, ~15%)**  \\n\\nMost of these reactions occur **within 1 day of infusion** and resolve within **1-2 days**.  \\n\\n### **Serious Reactions Requiring Immediate Medical Attention:**  \\nWhile rare, some patients may experience severe reactions, including:  \\n1. **Severe Allergic Reactions (Hypersensitivity or Anaphylaxis)**  \\n   - Symptoms: **Difficulty breathing, swelling of the face/throat, rapid heartbeat, dizziness, rash/hives.**  \\n   - Immediate Action: **Seek emergency medical care.**  \\n\\n2. **Acute Infusion Reactions**  \\n   - Symptoms: **High fever (\\u226539\\u00b0C/102\\u00b0F), severe chills, low/high blood pressure, confusion, rapid heart rate (tachycardia).**  \\n   - Immediate Action: **Stop infusion and administer supportive care (antipyretics, IV fluids, or antihistamines if needed).**  \\n\\n3. **Blood Clotting Disorders (Thromboembolic Events)**  \\n   - PROVENGE **may increase the risk of stroke or blood clots (venous thromboembolism).**  \\n   - Symptoms: **Sudden leg swelling/pain, chest pain, trouble speaking, numbness/weakness on one side of the body.**  \\n   - Immediate Action: **Call emergency services if suspected.**  \\n\\n4. **Cerebrovascular Events (Stroke)**  \\n   - Rare but reported in post-marketing data. Watch for **sudden confusion, headache, trouble walking, or vision changes.**  \\n\\n### **Management &amp; Prevention:**  \\n- Pre-medication with **acetaminophen (Tylenol)** and **antihistamines (e.g., diphenhydramine)** may help reduce infusion-related reactions.  \\n- Patients with **history of strokes, blood clots, or heart disease** should be closely monitored.  \\n\\nWould you like further details on any specific reaction or management strategy?","The item code **NDC:30237-8900** corresponds to **Teveten (eprosartan mesylate)**.  \\n\\n- **Active Ingredient (Active Moiety):**  \\n  - **Eprosartan mesylate** (a non-biphenyl, non-tetrazole angiotensin II receptor antagonist).  \\n  - The mesylate salt form of eprosartan is the active moiety responsible for the drug&#x27;s therapeutic effects (primarily used to treat hypertension).  \\n\\nLet me know if you&#x27;d like further details!","**Answer:**  \\n\\nIn cases where a patient lacks sufficient peripheral venous access for leukapheresis and subsequent PROVENGE (sipuleucel-T) infusion, the following alternative and patient instructions should be considered:  \\n\\n### **Alternative:**  \\nThe placement of a **central venous catheter (CVC)**, such as a:  \\n- **Non-tunneled central line** (short-term use, e.g., dialysis catheter)  \\n- **Tunneled central venous catheter** (e.g., Hickman catheter, for longer-term access)  \\n- **Peripherally inserted central catheter (PICC)** (if peripheral veins are partly viable)  \\n\\nThe selection depends on:  \\n- Duration of treatment  \\n- Patient\\u2019s anatomy, coagulation status, and infection risk  \\n- Institutional protocols  \\n\\n### **Patient Instructions Regarding the Alternative (CVC Placement):**  \\n1. **Pre-Procedure:**  \\n   - **Informed consent** \\u2013 Explain the risks (infection, bleeding, thrombosis) and benefits.  \\n   - **Fasting (if sedation is needed)** \\u2013 Typically NPO (nothing by mouth) before the procedure unless specified otherwise.  \\n   - **Medications** \\u2013 Review anticoagulants with the provider; temporary cessation may be required.  \\n\\n2. **Post-Procedure Care:**  \\n   - **Site monitoring** \\u2013 Watch for redness, swelling, discharge, or fever (signs of infection).  \\n   - **Dressing changes** \\u2013 Keep the area clean and dry; follow clinician instructions on flushing/maintenance.  \\n   - **Activity restrictions** \\u2013 Avoid heavy lifting/submersion in water (e.g., swimming).  \\n\\n3. **Complication Awareness:**  \\n   - **Report immediately:** Fever, chills, catheter dysfunction, bleeding, or pain at the insertion site.  \\n\\n4. **Follow-Up:**  \\n   - Schedule a confirmation of catheter functionality before leukapheresis.  \\n\\n### **Additional Notes:**  \\n- If PROVENGE infusion is also affected by venous access issues, ensure the CVC is **dual-lumen** (if needed) to facilitate both leukapheresis and infusion.  \\n- If a CVC isn\\u2019t feasible, discuss with hematology/oncology for rare alternatives (e.g., intra-arterial access under specialist guidance).  \\n\\nThis approach ensures safe and effective therapy while minimizing procedural delays. Would you like further details on a specific catheter type or institutional guidelines?","Bayer HealthCare LLC began marketing the OTC Monograph Drug M012 under the tentative final monograph for OTC sunscreen products, which was established by the FDA. The specific marketing date for M012 (a sunscreen drug product) would typically align with the finalization of the relevant OTC monograph or approval of a New Drug Application (NDA) if applicable.  \\n\\nBased on available FDA records:  \\n- The **OTC Sunscreen Final Monograph** (21 CFR Part 352) was published in **1999**, allowing compliant products to be marketed without an NDA.  \\n- Bayer HealthCare likely started marketing M012 shortly after this Final Monograph was enacted, though exact product-specific dates are not always publicly listed unless tied to enforcement actions or label updates.  \\n\\nFor precise timing, you\\u2019d need to review:  \\n1. **FDA\\u2019s OTC Monograph archives** for sunscreen compliance dates.  \\n2. **Bayer\\u2019s product catalog or regulatory submissions** (if disclosed).  \\n\\nLet me know if you\\u2019d like help navigating FDA databases or interpreting monograph timelines!  \\n\\n*Note: My knowledge cutoff is January 2025, so recent updates (if any) post that date wouldn\\u2019t be reflected here.*","According to the label for PROVENGE (sipuleucel-T), each dose must contain a minimum of **50 million autologous CD54+ cells** after the activation process. This is a critical specification to ensure the therapeutic dose meets the required potency and effectiveness for the treatment of asymptomatic or minimally symptomatic metastatic castrate-resistant prostate cancer.  \\n\\nWould you like details on the manufacturing process or clinical implications of this requirement?","Certainly! Here are the general instructions for administering nasal spray, but keep in mind that specifics may vary by medication. Always follow the label or your healthcare provider&#x27;s exact guidance.  \\n\\n### **1. Steps for Administering Nasal Spray:**  \\n   - **Prepare the Bottle:** Shake gently (if required). If it\\u2019s the first use or hasn\\u2019t been used in a while, prime it by spraying into the air until a fine mist appears.  \\n   - **Blow Nose:** Gently clear nasal passages before use.  \\n   - **Positioning:** Tilt your head slightly forward (avoid leaning back) and close one nostril.  \\n   - **Spray:** Insert the nozzle into the other nostril (aim slightly outward, away from the septum). Breathe in gently while pressing the pump.  \\n   - **Repeat:** Follow the prescribed dose (often **1\\u20132 sprays per nostril**, but check your specific medication).  \\n\\n### **2. Frequency of Use:**  \\n   - Typically **once or twice daily** (e.g., every 12 or 24 hours). Some sprays may be \\"as needed.\\"  \\n   - **Steroid sprays** (like Flonase) may take days to work; **decongestant sprays** (like Afrin) should not be used for more than **3 days** to avoid rebound congestion.  \\n\\n### **3. Precautions:**  \\n   - Avoid spraying directly toward the nasal septum (center wall).  \\n   - Do not share nasal sprays to prevent contamination.  \\n   - Rinse the tip after use and keep it capped.  \\n   - If you experience nosebleeds, irritation, or worsening symptoms, consult a doctor.  \\n   - Some sprays (e.g., steroids) may have long-term use risks\\u2014discuss with your provider.  \\n\\nFor precise dosing, check your **medication\\u2019s leaflet or prescription label**. Let me know if you need details on a specific brand!  \\n\\n*(Note: This is general advice; medical instructions may vary.)*"]],["reference_answer",["In patients receiving PROVENGE, some of the acute infusion reactions reported include chills, fever, fatigue, asthenia, dyspnea, hypoxia, bronchospasm, dizziness, headache, hypertension, muscle ache, nausea, and vomiting.","The storage recommendation for sipuleucel-T is to store it refrigerated between 2-8\\u00b0C and to not freeze it.","If acute infusion reactions occur during the administration of PROVENGE, such as chills, fatigue, fever, nausea, and joint ache, the infusion should be interrupted or slowed down. Appropriate medical treatment should be administered as needed. In controlled clinical trials, symptoms of acute infusion reactions were treated with acetaminophen, intravenous H1 and/or H2 blockers, and low-dose intravenous meperidine.","PROVENGE is a 250 mL suspension containing a minimum of 50 million autologous CD54 cells activated with PAP-GM-CSF in Lactated Ringer&#x27;s Injection, USP. It is supplied in a sealed infusion bag labeled for the specific recipient.","The most common adverse reactions reported in clinical trials for PROVENGE were chills, fatigue, fever, back pain, nausea, joint ache, and headache.","The nasal spray should be administered by shaking well before use, holding the bottle with the thumb at the base and the nozzle between the first and second fingers, inserting the nozzle into the nostril without tilting the head, fully depressing the rim with a firm, even stroke, and sniffing deeply. The nozzle should be wiped clean after use, and the cap should be secured.","The exclusion criteria for patients in Study 1 of the clinical trials for PROVENGE included visceral (liver, lung, or brain) metastases, moderate to severe prostate cancer-related pain, and use of narcotics for cancer-related pain.","The brand name of the nasal decongestant solution with a soothing chamomile scent is AFRIN NODRIP.","The active ingredient in AFRIN NODRIP ALLERGY SINUS NIGHT spray is Oxymetazoline Hydrochloride, with a strength of 0.5 mg in 1 mL.","The recommended course of therapy for PROVENGE is 3 complete doses, given at approximately 2-week intervals.","The active components of PROVENGE are the patient&#x27;s own immune cells mixed with a protein designed to create an immune response to prostate cancer. Additionally, the product is suspended in an infusion solution called Lactated Ringer&#x27;s Injection, USP.","PROVENGE is classified as an autologous cellular immunotherapy designed to induce an immune response targeted against PAP, an antigen expressed in most prostate cancers. During ex vivo culture with PAP-GM-CSF, APCs take up and process the recombinant target antigen into small peptides that are then displayed on the APC surface.","23.6% of patients in the PROVENGE group reported severe (Grade 3) adverse events.","The most common adverse reactions (incidence \\u2265 15%) are chills, fatigue, fever, back pain, nausea, joint ache, and headache.","Before using Afrin NoDrip Allergy Sinus Night spray, it is important to ask a doctor if you have heart disease, high blood pressure, thyroid disease, diabetes, or trouble urinating due to an enlarged prostate gland. Additionally, do not use more than directed, do not use for more than 3 days, and avoid using the container by more than one person to prevent the spread of infection.","The label number for Dendreon Pharmaceuticals LLC is 30237-8900.","The adverse reactions identified during post-approval use include nausea, joint ache, headache, citrate toxicity, paresthesia, vomiting, anemia, constipation, pain, paresthesia oral, pain in extremity, dizziness, muscle ache, asthenia, diarrhea, influenza-like illness, musculoskeletal pain, dyspnea, edema peripheral, hot flush, hematuria, muscle spasms, hypertension, anorexia, bone pain, upper respiratory tract infection, insomnia, musculoskeletal chest pain, cough, neck pain, weight decreased, urinary tract infection, rash, sweating, and tremor.","Some of the nervous system disorders associated with the post-approval use of PROVENGE include syncope, transient ischemic attack, and strokes.","The recommended course of therapy for PROVENGE is 3 complete doses, given at approximately 2-week intervals.","The most common side effects of PROVENGE include chills, fatigue, fever, back pain, nausea, joint ache, and headache.","The active ingredient in the product with item code NDC:30237-8900 is SIPULEUCEL-T.","If the patient does not have adequate peripheral venous access, they should be informed about the need for a central venous catheter. The patient should be counseled on the importance of catheter care and instructed to report any signs of infection such as fevers, swelling, or redness around the catheter site.","The marketing start date for the OTC Monograph Drug M012 by Bayer HealthCare LLC is 11/09/2020.","Each dose of PROVENGE contains a minimum of 50 million autologous CD54 cells activated with PAP-GM-CSF.","To use the nasal spray, shake well before use. Hold the white tabs, press the grooved area of the cap firmly and turn it counter clockwise. Before the first use, prime the metered pump by depressing it firmly several times. To spray, hold the bottle with your thumb at the base and the nozzle between your first and second fingers. Without tilting your head, insert the nozzle into your nostril, fully depress the rim with a firm, even stroke, and sniff deeply. Remember to wipe the nozzle clean after use and secure the cap."]],["id",[9,21,8,16,10,1,15,2,3,7,19,14,11,6,0,23,12,13,5,18,22,17,4,20,1]],["content",["ache, nausea, and vomiting. The incidence of severe events was greater following the\\nsecond infusion (2.1% vs. 0.8% following the first infusion), and decreased to 1.3%\\nfollowing the third infusion. Some (1.2%) patients in the PROVENGE group were\\nhospitalized within 1 day of infusion for management of acute infusion reactions. No\\nGrade 4 or 5 acute infusion reactions were reported in patients in the PROVENGE group.\\nIn controlled clinical trials, severe (Grade 3) acute infusion reactions were rep...","Package Label 2\\nsipuleucel-T 250 mL Lot XXXXXX-X\\nStore Refrigerated 2-8\\u00b0C DO NOT FREEZE\\nExpiration Date: DD-MMM-YYYY\\nExpiration Time: XX:XX Time Zone:\\nFirst Name MI:\\nLast Name:\\nDate of Birth: DD-MMM-YYYY\\nNOT EVALUATED FOR INFECTIOUS SUBSTANCES\\nPROVENGE  \\nsipuleucel-t injection","3\\n. \\nMatch the patient&#x27;s identity with the patient identifiers on the Final\\nProduct Disposition Notification form and the PROVENGE infusion bag.\\n4\\n. \\nInfuse the entire volume of the PROVENGE infusion bag intravenously over\\napproximately 60 minutes. \\nDo not use a cell filter.\\n5\\n. \\nObserve the patient for acute infusion reactions for at least 30 minutes following\\neach infusion.\\nIf acute infusion reactions occur, such as chills, fatigue, fever, nausea, and joint\\nache, interrupt or slow the infusion...","Table 2 Summary of Overall Survival (All Patients as Randomized)\\n Hazard ratio and p-value based on the Cox Model adjusted for PSA (ln) and LDH (ln) and stratified\\nby bisphosphonate use, number of bone metastases, and primary Gleason grade.\\n Hazard ratio based on the unadjusted Cox Model (not pre-specified).\\n p-value based on a log-rank test (not pre-specified).\\nAbbreviations: CI = confidence interval.\\nStudy 1\\nStudy 2\\nPROVENGE \\n(N=341)\\nControl \\n(N=171)\\nPROVENGE\\n(N=82)\\nControl \\n(N=45)\\nOverall Sur...","Provenge. The clinical significance and causal relationship are uncertain. Most patients\\nhad multiple risk factors for these events. \\nCardiovascular disorders\\n:  In controlled clinical\\ntrials, myocardial infarctions were observed in 0.8% of patients in the PROVENGE group\\ncompared with 0.3% of patients in the control group.  In the postmarketing setting,\\nmyocardial infarctions have been observed following infusion of Provenge. The clinical\\nsignificance and causal relationship are uncertain. Most ...","supervision): 2 or 3 sprays in each nostril not more often than\\nevery 10 to 12 hours. Do not exceed 2 doses in any 24-hour\\nperiod.\\n\\u25aa children under 6 years of age: ask a doctor\\nTo Use: Shake well before use. Hold white tabs, press grooved area of cap firmly and\\nturn counter clockwise. Before using the first time, prime metered pump by depressing\\npump firmly several times. To spray, hold bottle with thumb at base and nozzle between\\nfirst and second fingers. Without tilting head, insert nozzle int...","13 NONCLINICAL TOXICOLOGY\\n14 CLINICAL STUDIES\\nThe effect of PROVENGE on patients with metastatic castrate-resistant (hormone-\\nrefractory) prostate cancer was studied in three similar randomized, double-blind,\\nplacebo-controlled, multicenter trials. Following randomization, patients from both\\ntreatment groups underwent a series of 3 leukapheresis procedures (at approximately\\nWeeks 0, 2, and 4). Each leukapheresis was followed approximately 3 days later by\\ninfusion of PROVENGE or control. The cont...","Oxymetazoline HCl\\nNasal Solution-Nasal Decongestant\\nAFRIN\\nNODRIP\\nWont drive from nose or down throat\\nAllergy Sinus\\nNight\\nwith soothing chamomile scent\\nPUMP MIST\\nInstant Congestion","Relief from Allergies\\nfor a More Restful Night\\nReduces\\nSwelling of\\nNasal\\nPassages\\n1/2 FL OZ (15mL)\\nAFRIN NODRIP ALLERGY SINUS NIGHT  \\noxymetazoline hydrochloride spray\\nProduct Information\\nProduct Type\\nHUMAN OTC DRUG\\nItem Code (Source)\\nNDC:11523-0034\\nRoute of Administration\\nNASAL\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nOXYMETAZOLINE HYDROCHLORIDE\\n (UNII: K89MJ0S5VY) \\n(OXYMETAZOLINE\\n- UNII:8VLN5B44ZY)\\nOXYMETAZOLINE\\nHYDROCHLORIDE\\n0.5 mg\\n in 1 mL\\nInactive Ingredien...","PROVENGE \\n (sipuleucel-T) is an autologous cellular immunotherapy indicated for the\\ntreatment of asymptomatic or minimally symptomatic metastatic castrate-resistant\\n(hormone-refractory) prostate cancer.\\n2 DOSAGE AND ADMINISTRATION\\nFor autologous use only.\\nFor intravenous use only.\\n2.1 Dose\\nEach dose of PROVENGE contains a minimum of 50 million autologous CD54 \\n cells\\nactivated with PAP-GM-CSF [ \\nsee Description ( \\n11\\n) \\n].\\nThe recommended course of therapy for PROVENGE is 3 complete doses, given...","PROVENGE. Any of these may be signs of heart or lung problems.\\nyou develop numbness or weakness on one side of the body, decreased vision in one\\neye or difficulty speaking. Any of these may be signs of a stroke.\\nyou develop symptoms of thrombosis which may include: pain and/or swelling of an\\narm or leg with warmth over the affected area, discoloration of an arm or leg,\\nunexplained shortness of breath, chest pain that worsens on deep breathing.\\nyou get a fever over 100\\u00baF, or redness or pain at th...","CSF, consisting of prostatic acid phosphatase (PAP), an antigen expressed in prostate\\ncancer tissue, linked to granulocyte-macrophage colony-stimulating factor (GM-CSF), an\\nimmune cell activator. Each dose of PROVENGE contains a minimum of 50 million\\nautologous CD54 \\n cells activated with PAP-GM-CSF, suspended in 250 mL of Lactated\\nRinger&#x27;s Injection, USP.\\nThe active components of PROVENGE are autologous APCs and PAP-GM-CSF. During\\nculture, the recombinant antigen can bind to and be processed by...","PROVENGE group who underwent at least 1 leukapheresis procedure in four\\nrandomized, controlled clinical trials. The control group (n = 303) received non-activated\\nautologous peripheral blood mononuclear cells. Patients received 3 infusions of\\nPROVENGE or control every other week over a period of 4 weeks.\\nAlmost all (98.3%) patients in the PROVENGE group and 96% in the control group\\nreported an adverse event. In 67.4% of patients in the PROVENGE group, these adverse\\nevents were mild or moderate i...","ADVERSE REACTIONS\\nThe most common adverse reactions (incidence \\u2265 15%) are chills, fatigue, fever, back pain, nausea, joint\\nache, and headache. ( \\n6\\n)\\nTo report SUSPECTED ADVERSE REACTIONS, contact Dendreon Pharmaceuticals LLC at 1-\\n877-336-3736 or FDA at 1-800-FDA-1088 or \\nwww.fda.gov/medwatch\\n.\\nSee 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling.\\nRevised: 7/2017\\nFULL PRESCRIBING INFORMATION: CONTENTS\\n*\\n1 INDICATIONS AND USAGE\\n2 DOSAGE AND ADMINISTRATION\\n2.1 Dose\\n2.2 Admi...","AFRIN NODRIP ALLERGY SINUS NIGHT- oxymetazoline hydrochloride spray \\n \\nBayer HealthCare LLC.\\n----------\\nAfrin NoDrip Allergy Sinus Night UI1612461\\nDrug Facts\\nActive ingredient \\nPurpose\\nOxymetazoline hydrochloride 0.05%\\u2026\\u2026.\\u2026....Nasal decongestant\\nUses\\n\\u25aa \\ntemporarily relieves nasal congestion due to:\\n\\u25aa \\ncommon cold \\n\\u25aahay fever\\n\\u25aa \\nupper respiratory allergies\\n\\u25aa \\nreduces swelling of nasal passages so you can breathe more freely\\n\\u25aa \\ntemporarily relieves sinus congestion and pressure\\nWarnings\\n\\u25aa \\nAsk a do...","Dendreon Pharmaceuticals LLC\\nPharmaceuticals LLC\\n968590237\\n, label(30237-8900)\\n \\nRevised: 10/2024","Control group received non-activated autologous peripheral blood mononuclear cells.\\nNausea\\n129 (21.5)\\n3 (0.5)\\n45 (14.9)\\n0 (0.0)\\nJoint ache\\n118 (19.6)\\n11 (1.8)\\n62 (20.5)\\n5 (1.7)\\nHeadache\\n109 (18.1)\\n4 (0.7)\\n20 (6.6)\\n0 (0.0)\\nCitrate toxicity\\n89 (14.8)\\n0 (0.0)\\n43 (14.2)\\n0 (0.0)\\nParesthesia\\n85 (14.1)\\n1 (0.2)\\n43 (14.2)\\n0 (0.0)\\nVomiting\\n80 (13.3)\\n2 (0.3)\\n23 (7.6)\\n0 (0.0)\\nAnemia\\n75 (12.5)\\n11 (1.8)\\n34 (11.2)\\n7 (2.3)\\nConstipation\\n74 (12.3)\\n1 (0.2)\\n40 (13.2)\\n3 (1.0)\\nPain\\n74 (12.3)\\n7 (1.2)\\n20 (6.6)\\n3 (1.0)\\n...","The following adverse reactions have been identified during post-approval use of\\nPROVENGE. Because these reactions are reported voluntarily from a population of\\nuncertain size, it is not always possible to reliably estimate their frequency or establish a\\ncausal relationship to drug exposure.\\nNervous system disorders\\n:\\n syncope, transient ischemic attack, strokes [see\\nWarnings and Precautions ( \\n5.1\\n, \\n5.3\\n)]\\nVascular disorders\\n:\\n hypotension [see \\nWarnings and Precautions ( \\n5.1\\n)]\\nCardiovascula...","PROVENGE- sipuleucel-t injection \\n \\nDendreon Pharmaceuticals LLC\\n----------\\nHIGHLIGHTS OF PRESCRIBING INFORMATION\\nThese highlights do not include all the information needed to use PROVENGE \\n (sipuleucel-\\nT) safely and effectively. See full prescribing information for PROVENGE. \\nPROVENGE \\n (sipuleucel-T) \\nSuspension for Intravenous Infusion \\nInitial U.S. Approval: 2010\\nRECENT MAJOR CHANGES\\nDosage and Administration\\n     Administration ( \\n2.2\\n)\\n9/2014\\nWarnings and Precautions\\n     Acute Infusion R...","PROVENGE\\n(sipuleucel-T)\\nThis leaflet is designed to help you understand treatment with PROVENGE (pronounced\\nPROH-venj). The more you understand your treatment, the better you will be able to\\nparticipate in your care. This leaflet does not take the place of talking with your doctor or\\nhealthcare professional about your medical condition or your treatment. If you have any\\nquestions, speak with your doctor.\\nWhat is PROVENGE?\\nPROVENGE is a prescription medicine that is used to treat certain patients...","Product Information\\nProduct Type\\nCELLULAR THERAPY\\nItem Code (Source)\\nNDC:30237-8900\\nRoute of Administration\\nINTRAVENOUS\\nActive Ingredient/Active Moiety\\nIngredient Name\\nBasis of Strength\\nStrength\\nSIPULEUCEL-T\\n (UNII: 8Q622VDR18) \\n(SIPULEUCEL-T - UNII:8Q622VDR18)\\nSIPULEUCEL-T\\n50000000 \\nInactive Ingredients\\nIngredient Name\\nStrength\\nPOTASSIUM CHLORIDE\\n (UNII: 660YQ98I10)\\n \\nCALCIUM CHLORIDE\\n (UNII: M4I0D6VV5M)\\n \\nWATER\\n (UNII: 059QF0KO0R)\\n \\nSODIUM CHLORIDE\\n (UNII: 451W47IQ8X)\\n \\nSODIUM LACTATE\\n (UNII: ...","NDC 30237-8900-6: One bag individually packed in a carton.\\nPROVENGE is shipped directly to the infusing provider in a cardboard shipping box with\\na special insulated polyurethane container inside. The insulated container and gel packs\\nwithin the container are designed to maintain the appropriate transportation and storage\\ntemperature of PROVENGE until infusion.\\nUpon receipt, open the outer cardboard shipping box to verify the product and\\npatient-specific labels located on the top of the insulate...","Bayer HealthCare LLC.\\nMarketing Information\\nMarketing\\nCategory\\nApplication Number or Monograph\\nCitation\\nMarketing Start\\nDate\\nMarketing End\\nDate\\nOTC Monograph Drug\\nM012\\n11/09/2020\\nLabeler - \\nBayer HealthCare LLC. \\n(112117283)\\n \\nRevised: 12/2024","Principal Display Panel \\u2013 Bag Label\\nNDC 30237-8900-5\\nsipuleucel-T\\nPROVENGE \\nRX ONLY FOR AUTOLOGOUS USE ONLY\\nNo U.S. standard of potency\\nCONTENTS: A minimum of 50 million autologous CD54 \\n cells activated with PAP-GM-CSF\\nand suspended in Lactated Ringer&#x27;s Injection, USP.\\nManufactured by:\\nDendreon Pharmaceuticals LLC Seal Beach, CA 90740\\nPhone: 877-256-4545\\nU.S. Lic. # 1749\\nNo preservatives. Gently mix and re-suspend the contents of the bag. 000074.01\\nOne autologous dose for infusion. See package ...","supervision): 2 or 3 sprays in each nostril not more often than\\nevery 10 to 12 hours. Do not exceed 2 doses in any 24-hour\\nperiod.\\n\\u25aa children under 6 years of age: ask a doctor\\nTo Use: Shake well before use. Hold white tabs, press grooved area of cap firmly and\\nturn counter clockwise. Before using the first time, prime metered pump by depressing\\npump firmly several times. To spray, hold bottle with thumb at base and nozzle between\\nfirst and second fingers. Without tilting head, insert nozzle int..."]],["color",["#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#ba0e0e","#0a980a","#0a980a","#ba0e0e","#0a980a","#0a980a","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#0a980a","#ba0e0e","#ba0e0e","#ba0e0e"]]]}}},"view":{"type":"object","name":"CDSView","id":"p3287","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3288"}}},"glyph":{"type":"object","name":"Scatter","id":"p3283","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.7},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.7}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p3284","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p3285","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p3301","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p3292","attributes":{"selected":{"type":"object","name":"Selection","id":"p3293","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3294"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"WPjrQJ2f2EBw7gJBvMP6QGQ52ED366tA0Ty4QM04xEATJ5RAbKVwQDsVl0CbF3hASdaZQHfjkkDUMZ5AlHN9QDsqXUDJ3r5AXBmrQFUeyUALMuVAstD4QKMI40BRJOpA"},"shape":[24],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"A/p8QRqvdkE6231BCNVvQbTiakGEO1RBB/BqQWC5QkE7qlxB6hNqQTThZkGzwF9BljB2QTjFTUGwmDxBIoRFQZrTUUE1mFlBjKBGQbB+TkElckdB68tQQf5pWUGtQWJB"},"shape":[24],"dtype":"float32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p3302","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p3303"}}},"glyph":{"type":"object","name":"Scatter","id":"p3298","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p3299","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p3300","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":6},"line_color":{"type":"value","value":"grey"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"grey"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"grey"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p3255","attributes":{"logo":"grey","tools":[{"type":"object","name":"PanTool","id":"p3270"},{"type":"object","name":"WheelZoomTool","id":"p3271","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p3272","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p3273","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p3278"},{"type":"object","name":"SaveTool","id":"p3279"},{"type":"object","name":"HoverTool","id":"p3246","attributes":{"renderers":[{"id":"p3286"}],"tooltips":"\\n    &lt;div style=\\"width:400px;\\"&gt;\\n    &lt;b&gt;Document id:&lt;/b&gt; @id &lt;br&gt;\\n    &lt;b&gt;Topic:&lt;/b&gt; @topic &lt;br&gt;\\n    &lt;b&gt;Question:&lt;/b&gt; @questions &lt;br&gt;\\n    &lt;b&gt;agent Answer:&lt;/b&gt; @agent_answer &lt;br&gt;\\n    &lt;b&gt;Reference Answer:&lt;/b&gt; @reference_answer &lt;br&gt;\\n    &lt;b&gt;Correctness:&lt;/b&gt; @correctness &lt;br&gt;\\n    &lt;b&gt;Content:&lt;/b&gt; @content\\n    &lt;/div&gt;\\n    "}}]}},"left":[{"type":"object","name":"LinearAxis","id":"p3265","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p3266","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p3267"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3268"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"below":[{"type":"object","name":"LinearAxis","id":"p3260","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p3261","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p3262"},"axis_label_standoff":10,"axis_label_text_color":"#E0E0E0","axis_label_text_font":"Helvetica","axis_label_text_font_size":"1.25em","axis_label_text_font_style":"normal","major_label_policy":{"type":"object","name":"AllLabels","id":"p3263"},"major_label_text_color":"#E0E0E0","major_label_text_font":"Helvetica","major_label_text_font_size":"1.025em","axis_line_color":"#E0E0E0","axis_line_alpha":0,"major_tick_line_color":"#E0E0E0","major_tick_line_alpha":0,"minor_tick_line_color":"#E0E0E0","minor_tick_line_alpha":0}}],"center":[{"type":"object","name":"Grid","id":"p3264","attributes":{"axis":{"id":"p3260"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Grid","id":"p3269","attributes":{"dimension":1,"axis":{"id":"p3265"},"grid_line_color":"white","grid_line_alpha":0.25}},{"type":"object","name":"Legend","id":"p3289","attributes":{"title":"Question Correctness","title_text_color":"#B1B1B1","title_text_font_style":"bold","border_line_alpha":0,"background_fill_color":"#111516","background_fill_alpha":0.5,"label_text_color":"#E0E0E0","label_text_font":"Helvetica","label_text_font_size":"1.025em","label_standoff":8,"glyph_width":15,"spacing":8,"items":[{"type":"object","name":"LegendItem","id":"p3290","attributes":{"label":{"type":"value","value":"False"},"renderers":[{"id":"p3286"}],"index":0}},{"type":"object","name":"LegendItem","id":"p3291","attributes":{"label":{"type":"value","value":"True"},"renderers":[{"id":"p3286"}],"index":1}}]}},{"type":"object","name":"LabelSet","id":"p3307","attributes":{"level":"glyph","source":{"type":"object","name":"ColumnDataSource","id":"p3304","attributes":{"selected":{"type":"object","name":"Selection","id":"p3305","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p3306"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"LqDrQIUQnkA="},"shape":[2],"dtype":"float32","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"pSBnQSG8UkE="},"shape":[2],"dtype":"float32","order":"little"}],["topic",["Pharmaceutical Product Information","PROVENGE Treatment"]]]}}},"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"topic"},"text_color":{"type":"value","value":"#B1B1B1"},"text_font_size":{"type":"value","value":"12pt"},"text_font_style":{"type":"value","value":"bold"},"text_align":{"type":"value","value":"center"}}}],"background_fill_color":"#14191B","border_fill_color":"#15191C"}}}}],"tabs_location":"below"}}]}}';
+        const render_items = [{"docid":"0b58d779-3794-4175-aa1c-3d6f813add7c","roots":{"p3312":"f5dd6c10-3dcd-4e1d-9702-2e982d434046"},"root_ids":["p3312"]}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+                <div id="f5dd6c10-3dcd-4e1d-9702-2e982d434046" data-root-id="p3312" style="display: contents;"></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-card">
+
+                <div class="section-title">SELECTED METRICS</div>
+
+                
+
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function opentab(evt, name) {
+    // Declare all variables
+    let i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>

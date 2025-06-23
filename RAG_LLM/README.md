@@ -43,3 +43,9 @@ The script includes example questions about:
 
 ollama run llama3
 ollama pull nomic-embed-text
+
+backend:
+uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+
+frontend:
+npm run start

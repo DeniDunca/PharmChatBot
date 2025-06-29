@@ -30,4 +30,9 @@ build/
 *.swp
 
 # Coverage directory
-coverage/ 
+coverage/
+
+# Chroma vector database
+chroma_db/
+*.chroma
+chroma/ 

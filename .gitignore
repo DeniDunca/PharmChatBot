@@ -31,8 +31,3 @@ build/
 
 # Coverage directory
 coverage/
-
-# Chroma vector database
-chroma_db/
-*.chroma
-chroma/ 
